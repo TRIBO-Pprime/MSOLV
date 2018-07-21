@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="MSOLV-fortran – A modern Fortran API for Sparse Direct Solvers, as part of">
+    
+    <meta name="author" content="Arthur Francisco - Noël Brunetière" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>umf4scal &ndash; MSOLV-fortran</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">MSOLV-fortran </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../program/test_solvers.html">Program</a></li>
+      
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../program/test_solvers.html">Program</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>umf4scal
+   <small>Interface</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title="<p> 0.0% of total for procedures.</p>Including implementation: 39 statements,  0.4% of total for procedures.">3 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/umfpack.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/umfpack.f90.html'>umfpack.f90</a></li>
+    
+     <li><a href='../module/mumfpack.html'>mumfpack</a></li>
+    
+  
+     <li class="active">umf4scal</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#modprocs-0">Module Procedures</a></h3></div>
+  <div id="modprocs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../interface/umf4scal.html#moduleprocedure-umf4scal">umf4scal</a>
+      
+      <a class="list-group-item" href="../interface/umf4scal.html#moduleprocedure-umf4scal_ip">umf4scal_ip</a>
+      
+      <a class="list-group-item" href="../interface/umf4scal.html#moduleprocedure-umf4zscal%7E2">umf4zscal</a>
+      
+      <a class="list-group-item" href="../interface/umf4scal.html#moduleprocedure-umf4zscal_ip%7E2">umf4zscal_ip</a>
+      
+      <a class="list-group-item" href="../interface/umf4scal.html#moduleprocedure-umf4cscal%7E3">umf4cscal</a>
+      
+      <a class="list-group-item" href="../interface/umf4scal.html#moduleprocedure-umf4cscal_ip%7E3">umf4cscal_ip</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+      <h2>public interface umf4scal</h2>
+   
+     
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Calls</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.36.0 (20140111.2315)
+ -->
+<!-- Title: interface~~umf4scal~~CallsGraph Pages: 1 -->
+<svg id="interfaceumf4scalCallsGraph" width="641pt" height="124pt"
+ viewBox="0.00 0.00 641.00 124.44" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="interface~~umf4scal~~CallsGraph" class="graph" transform="scale(0.656762 0.656762) rotate(0) translate(4 185.478)">
+<title>interface~~umf4scal~~CallsGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-185.478 972,-185.478 972,4 -4,4"/>
+<!-- interface~umf4scal -->
+<g id="interface~~umf4scal~~CallsGraph_node1" class="node"><title>interface~umf4scal</title>
+<polygon fill="none" stroke="black" points="55.5,-83.4776 0.5,-83.4776 0.5,-59.4776 55.5,-59.4776 55.5,-83.4776"/>
+<text text-anchor="middle" x="28" y="-69.0776" font-family="Helvetica,sans-Serif" font-size="10.50">umf4scal</text>
+</g>
+<!-- interface~umf4scal&#45;&gt;interface~umf4scal -->
+<g id="interface~~umf4scal~~CallsGraph_edge2" class="edge"><title>interface~umf4scal&#45;&gt;interface~umf4scal</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M12.4576,-83.4915C7.03015,-92.4493 12.2109,-101.478 28,-101.478 37.6215,-101.478 43.3037,-98.1251 45.0466,-93.4789"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="48.4928,-92.8587 43.5424,-83.4915 41.5708,-93.9013 48.4928,-92.8587"/>
+</g>
+<!-- proc~umf4scal_ip -->
+<g id="interface~~umf4scal~~CallsGraph_node2" class="node"><title>proc~umf4scal_ip</title>
+<g id="a_interface~~umf4scal~~CallsGraph_node2"><a xlink:href=".././proc/umf4scal_ip.html" xlink:title="umf4scal_ip">
+<polygon fill="#d9534f" stroke="#d9534f" points="375,-181.478 305,-181.478 305,-157.478 375,-157.478 375,-181.478"/>
+<text text-anchor="middle" x="340" y="-167.078" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umf4scal_ip</text>
+</a>
+</g>
+</g>
+<!-- interface~umf4scal&#45;&gt;proc~umf4scal_ip -->
+<g id="interface~~umf4scal~~CallsGraph_edge6" class="edge"><title>interface~umf4scal&#45;&gt;proc~umf4scal_ip</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M38.2208,-83.749C49.3642,-97.6399 69.4488,-119.844 92,-131.478 156.932,-164.973 243.318,-170.845 294.836,-170.941"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="294.988,-174.44 304.969,-170.885 294.95,-167.44 294.988,-174.44"/>
+</g>
+<!-- proc~umf4cscal_ip -->
+<g id="interface~~umf4scal~~CallsGraph_node3" class="node"><title>proc~umf4cscal_ip</title>
+<g id="a_interface~~umf4scal~~CallsGraph_node3"><a xlink:href=".././proc/umf4cscal_ip.html" xlink:title="umf4cscal_ip">
+<polygon fill="#d9534f" stroke="#d9534f" points="377.5,-72.4776 302.5,-72.4776 302.5,-48.4776 377.5,-48.4776 377.5,-72.4776"/>
+<text text-anchor="middle" x="340" y="-58.0776" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umf4cscal_ip</text>
+</a>
+</g>
+</g>
+<!-- interface~umf4scal&#45;&gt;proc~umf4cscal_ip -->
+<g id="interface~~umf4scal~~CallsGraph_edge4" class="edge"><title>interface~umf4scal&#45;&gt;proc~umf4cscal_ip</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M47.0819,-59.3986C59.3307,-51.6618 76.1183,-41.9033 92,-35.4776 164.424,-6.17522 191.368,12.6308 266,-10.4776 285.808,-16.6107 305.023,-30.1774 318.763,-41.6333"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="316.722,-44.4957 326.567,-48.4082 321.31,-39.2096 316.722,-44.4957"/>
+</g>
+<!-- proc~umf4zscal_ip -->
+<g id="interface~~umf4scal~~CallsGraph_node4" class="node"><title>proc~umf4zscal_ip</title>
+<g id="a_interface~~umf4scal~~CallsGraph_node4"><a xlink:href=".././proc/umf4zscal_ip.html" xlink:title="umf4zscal_ip">
+<polygon fill="#d9534f" stroke="#d9534f" points="265.5,-141.478 190.5,-141.478 190.5,-117.478 265.5,-117.478 265.5,-141.478"/>
+<text text-anchor="middle" x="228" y="-127.078" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umf4zscal_ip</text>
+</a>
+</g>
+</g>
+<!-- interface~umf4scal&#45;&gt;proc~umf4zscal_ip -->
+<g id="interface~~umf4scal~~CallsGraph_edge5" class="edge"><title>interface~umf4scal&#45;&gt;proc~umf4zscal_ip</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M44.6221,-83.7225C56.8246,-92.6247 74.5808,-104.177 92,-110.478 120.295,-120.712 153.778,-125.467 180.32,-127.661"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="180.265,-131.167 190.494,-128.406 180.777,-124.185 180.265,-131.167"/>
+</g>
+<!-- interface~umf4cscal -->
+<g id="interface~~umf4scal~~CallsGraph_node5" class="node"><title>interface~umf4cscal</title>
+<g id="a_interface~~umf4scal~~CallsGraph_node5"><a xlink:href=".././interface/umf4cscal.html" xlink:title="umf4cscal">
+<polygon fill="#a7506f" stroke="#a7506f" points="258.5,-43.4776 197.5,-43.4776 197.5,-19.4776 258.5,-19.4776 258.5,-43.4776"/>
+<text text-anchor="middle" x="228" y="-29.0776" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umf4cscal</text>
+</a>
+</g>
+</g>
+<!-- interface~umf4scal&#45;&gt;interface~umf4cscal -->
+<g id="interface~~umf4scal~~CallsGraph_edge3" class="edge"><title>interface~umf4scal&#45;&gt;interface~umf4cscal</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M55.6688,-61.3926C66.7721,-57.5084 79.8787,-53.3258 92,-50.4776 123.63,-43.0454 160.157,-38.1206 187.234,-35.1512"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="187.906,-38.5999 197.484,-34.0708 187.172,-31.6384 187.906,-38.5999"/>
+</g>
+<!-- interface~umf4zscal -->
+<g id="interface~~umf4scal~~CallsGraph_node6" class="node"><title>interface~umf4zscal</title>
+<g id="a_interface~~umf4scal~~CallsGraph_node6"><a xlink:href=".././interface/umf4zscal.html" xlink:title="umf4zscal">
+<polygon fill="#a7506f" stroke="#a7506f" points="153.5,-83.4776 92.5,-83.4776 92.5,-59.4776 153.5,-59.4776 153.5,-83.4776"/>
+<text text-anchor="middle" x="123" y="-69.0776" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umf4zscal</text>
+</a>
+</g>
+</g>
+<!-- interface~umf4scal&#45;&gt;interface~umf4zscal -->
+<g id="interface~~umf4scal~~CallsGraph_edge1" class="edge"><title>interface~umf4scal&#45;&gt;interface~umf4zscal</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M55.8995,-71.4776C64.0737,-71.4776 73.237,-71.4776 82.0767,-71.4776"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="82.2265,-74.9777 92.2265,-71.4776 82.2265,-67.9777 82.2265,-74.9777"/>
+</g>
+<!-- interface~umfpack_scale_function -->
+<g id="interface~~umf4scal~~CallsGraph_node7" class="node"><title>interface~umfpack_scale_function</title>
+<g id="a_interface~~umf4scal~~CallsGraph_node7"><a xlink:href=".././interface/umfpack_scale_function.html" xlink:title="umfpack_scale_function">
+<polygon fill="#a7506f" stroke="#a7506f" points="541.5,-141.478 414.5,-141.478 414.5,-117.478 541.5,-117.478 541.5,-141.478"/>
+<text text-anchor="middle" x="478" y="-127.078" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack_scale_function</text>
+</a>
+</g>
+</g>
+<!-- proc~umf4scal_ip&#45;&gt;interface~umfpack_scale_function -->
+<g id="interface~~umf4scal~~CallsGraph_edge7" class="edge"><title>proc~umf4scal_ip&#45;&gt;interface~umfpack_scale_function</title>
+<path fill="none" stroke="#ff0000" d="M375.319,-159.384C390.711,-154.857 409.184,-149.424 426.136,-144.438"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="427.301,-147.743 435.907,-141.564 425.326,-141.028 427.301,-147.743"/>
+</g>
+<!-- proc~umf4cscal_ip&#45;&gt;interface~umfpack_scale_function -->
+<g id="interface~~umf4scal~~CallsGraph_edge8" class="edge"><title>proc~umf4cscal_ip&#45;&gt;interface~umfpack_scale_function</title>
+<path fill="none" stroke="#cbff00" d="M364.689,-72.4965C386.689,-83.6579 419.647,-100.379 444.177,-112.825"/>
+<polygon fill="#cbff00" stroke="#cbff00" points="442.624,-115.962 453.126,-117.365 445.791,-109.719 442.624,-115.962"/>
+</g>
+<!-- proc~umf4zscal_ip&#45;&gt;interface~umfpack_scale_function -->
+<g id="interface~~umf4scal~~CallsGraph_edge9" class="edge"><title>proc~umf4zscal_ip&#45;&gt;interface~umfpack_scale_function</title>
+<path fill="none" stroke="#00ff66" d="M265.593,-129.478C301.92,-129.478 358.609,-129.478 404.143,-129.478"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="404.269,-132.978 414.269,-129.478 404.269,-125.978 404.269,-132.978"/>
+</g>
+<!-- interface~umf4cscal&#45;&gt;proc~umf4cscal_ip -->
+<g id="interface~~umf4scal~~CallsGraph_edge10" class="edge"><title>interface~umf4cscal&#45;&gt;proc~umf4cscal_ip</title>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M258.768,-39.3254C269.102,-42.05 280.954,-45.1745 292.32,-48.1712"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="291.572,-51.5934 302.134,-50.7583 293.356,-44.8247 291.572,-51.5934"/>
+</g>
+<!-- interface~umf4cscal&#45;&gt;interface~umf4cscal -->
+<g id="interface~~umf4scal~~CallsGraph_edge11" class="edge"><title>interface~umf4cscal&#45;&gt;interface~umf4cscal</title>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M210.804,-43.4915C204.799,-52.4493 210.531,-61.4776 228,-61.4776 238.645,-61.4776 244.932,-58.1251 246.86,-53.4789"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="250.292,-52.7802 245.196,-43.4915 243.387,-53.9308 250.292,-52.7802"/>
+</g>
+<!-- interface~umf4zscal&#45;&gt;proc~umf4cscal_ip -->
+<g id="interface~~umf4scal~~CallsGraph_edge12" class="edge"><title>interface~umf4zscal&#45;&gt;proc~umf4cscal_ip</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M153.689,-72.381C182.447,-72.9935 227.27,-73.2551 266,-70.4776 274.529,-69.866 283.581,-68.892 292.301,-67.7866"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="292.888,-71.2393 302.334,-66.4423 291.958,-64.3013 292.888,-71.2393"/>
+</g>
+<!-- interface~umf4zscal&#45;&gt;proc~umf4zscal_ip -->
+<g id="interface~~umf4scal~~CallsGraph_edge13" class="edge"><title>interface~umf4zscal&#45;&gt;proc~umf4zscal_ip</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M145.342,-83.4953C160.257,-91.8942 180.383,-103.227 196.922,-112.541"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="195.255,-115.618 205.686,-117.475 198.69,-109.519 195.255,-115.618"/>
+</g>
+<!-- interface~umf4zscal&#45;&gt;interface~umf4cscal -->
+<g id="interface~~umf4scal~~CallsGraph_edge14" class="edge"><title>interface~umf4zscal&#45;&gt;interface~umf4cscal</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M153.516,-60.0152C164.29,-55.8309 176.645,-51.0329 188.112,-46.5799"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="189.425,-49.8245 197.48,-42.9417 186.891,-43.2992 189.425,-49.8245"/>
+</g>
+<!-- interface~umf4zscal&#45;&gt;interface~umf4zscal -->
+<g id="interface~~umf4scal~~CallsGraph_edge15" class="edge"><title>interface~umf4zscal&#45;&gt;interface~umf4zscal</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M107.458,-83.4915C102.03,-92.4493 107.211,-101.478 123,-101.478 132.621,-101.478 138.304,-98.1251 140.047,-93.4789"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="143.493,-92.8587 138.542,-83.4915 136.571,-93.9013 143.493,-92.8587"/>
+</g>
+<!-- interface~umfpack_zi_scale -->
+<g id="interface~~umf4scal~~CallsGraph_node8" class="node"><title>interface~umfpack_zi_scale</title>
+<g id="a_interface~~umf4scal~~CallsGraph_node8"><a xlink:href=".././interface/umfpack_zi_scale.html" xlink:title="umfpack_zi_scale">
+<polygon fill="#a7506f" stroke="#a7506f" points="675.5,-141.478 578.5,-141.478 578.5,-117.478 675.5,-117.478 675.5,-141.478"/>
+<text text-anchor="middle" x="627" y="-127.078" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack_zi_scale</text>
+</a>
+</g>
+</g>
+<!-- interface~umfpack_scale_function&#45;&gt;interface~umfpack_zi_scale -->
+<g id="interface~~umf4scal~~CallsGraph_edge16" class="edge"><title>interface~umfpack_scale_function&#45;&gt;interface~umfpack_zi_scale</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M541.768,-129.478C550.422,-129.478 559.28,-129.478 567.846,-129.478"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="568.118,-132.978 578.118,-129.478 568.118,-125.978 568.118,-132.978"/>
+</g>
+<!-- proc~umfpack_di_scale -->
+<g id="interface~~umf4scal~~CallsGraph_node9" class="node"><title>proc~umfpack_di_scale</title>
+<g id="a_interface~~umf4scal~~CallsGraph_node9"><a xlink:href=".././proc/umfpack_di_scale.html" xlink:title="umfpack_di_scale">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="676,-99.4776 578,-99.4776 578,-75.4776 676,-75.4776 676,-99.4776"/>
+<text text-anchor="middle" x="627" y="-85.0776" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack_di_scale</text>
+</a>
+</g>
+</g>
+<!-- interface~umfpack_scale_function&#45;&gt;proc~umfpack_di_scale -->
+<g id="interface~~umf4scal~~CallsGraph_edge17" class="edge"><title>interface~umfpack_scale_function&#45;&gt;proc~umfpack_di_scale</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M521.124,-117.442C537.578,-112.741 556.614,-107.302 573.916,-102.359"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="575.216,-105.628 583.87,-99.5149 573.293,-98.8968 575.216,-105.628"/>
+</g>
+<!-- proc~umfpack_ci_scale -->
+<g id="interface~~umf4scal~~CallsGraph_node10" class="node"><title>proc~umfpack_ci_scale</title>
+<g id="a_interface~~umf4scal~~CallsGraph_node10"><a xlink:href=".././proc/umfpack_ci_scale.html" xlink:title="umfpack_ci_scale">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="815.5,-170.478 718.5,-170.478 718.5,-146.478 815.5,-146.478 815.5,-170.478"/>
+<text text-anchor="middle" x="767" y="-156.078" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack_ci_scale</text>
+</a>
+</g>
+</g>
+<!-- interface~umfpack_scale_function&#45;&gt;proc~umfpack_ci_scale -->
+<g id="interface~~umf4scal~~CallsGraph_edge18" class="edge"><title>interface~umfpack_scale_function&#45;&gt;proc~umfpack_ci_scale</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M502.255,-141.531C521.858,-150.974 550.958,-163.343 578,-168.478 621.147,-176.67 670.793,-173.508 708.229,-168.653"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="709.019,-172.077 718.449,-167.247 708.065,-165.143 709.019,-172.077"/>
+</g>
+<!-- interface~umfpack_zi_scale&#45;&gt;interface~umfpack_zi_scale -->
+<g id="interface~~umf4scal~~CallsGraph_edge19" class="edge"><title>interface~umfpack_zi_scale&#45;&gt;interface~umfpack_zi_scale</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M603.852,-141.492C595.768,-150.449 603.484,-159.478 627,-159.478 641.33,-159.478 649.793,-156.125 652.389,-151.479"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="655.752,-150.483 650.148,-141.492 648.922,-152.015 655.752,-150.483"/>
+</g>
+<!-- interface~umfpack_zi_scale&#45;&gt;proc~umfpack_ci_scale -->
+<g id="interface~~umf4scal~~CallsGraph_edge20" class="edge"><title>interface~umfpack_zi_scale&#45;&gt;proc~umfpack_ci_scale</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M675.878,-139.539C686.368,-141.743 697.579,-144.099 708.404,-146.374"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="707.7,-149.803 718.206,-148.434 709.14,-142.952 707.7,-149.803"/>
+</g>
+<!-- interface~c_umfpack_di_scale -->
+<g id="interface~~umf4scal~~CallsGraph_node12" class="node"><title>interface~c_umfpack_di_scale</title>
+<g id="a_interface~~umf4scal~~CallsGraph_node12"><a xlink:href=".././interface/c_umfpack_di_scale.html" xlink:title="c_umfpack_di_scale">
+<polygon fill="#a7506f" stroke="#a7506f" points="821.5,-99.4776 712.5,-99.4776 712.5,-75.4776 821.5,-75.4776 821.5,-99.4776"/>
+<text text-anchor="middle" x="767" y="-85.0776" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">c_umfpack_di_scale</text>
+</a>
+</g>
+</g>
+<!-- proc~umfpack_di_scale&#45;&gt;interface~c_umfpack_di_scale -->
+<g id="interface~~umf4scal~~CallsGraph_edge21" class="edge"><title>proc~umfpack_di_scale&#45;&gt;interface~c_umfpack_di_scale</title>
+<path fill="none" stroke="#00ff00" d="M676.266,-87.4776C684.645,-87.4776 693.475,-87.4776 702.193,-87.4776"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="702.343,-90.9777 712.343,-87.4776 702.343,-83.9777 702.343,-90.9777"/>
+</g>
+<!-- interface~c_umfpack_zi_scale -->
+<g id="interface~~umf4scal~~CallsGraph_node11" class="node"><title>interface~c_umfpack_zi_scale</title>
+<g id="a_interface~~umf4scal~~CallsGraph_node11"><a xlink:href=".././interface/c_umfpack_zi_scale.html" xlink:title="c_umfpack_zi_scale">
+<polygon fill="#a7506f" stroke="#a7506f" points="967.5,-170.478 858.5,-170.478 858.5,-146.478 967.5,-146.478 967.5,-170.478"/>
+<text text-anchor="middle" x="913" y="-156.078" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">c_umfpack_zi_scale</text>
+</a>
+</g>
+</g>
+<!-- proc~umfpack_ci_scale&#45;&gt;interface~c_umfpack_zi_scale -->
+<g id="interface~~umf4scal~~CallsGraph_edge22" class="edge"><title>proc~umfpack_ci_scale&#45;&gt;interface~c_umfpack_zi_scale</title>
+<path fill="none" stroke="#0000ff" d="M815.55,-158.478C825.918,-158.478 837.053,-158.478 847.943,-158.478"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="848.275,-161.978 858.275,-158.478 848.275,-154.978 848.275,-161.978"/>
+</g>
+</g>
+</svg>
+</div><script>var paninterfaceumf4scalCallsGraph = svgPanZoom('#interfaceumf4scalCallsGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.36.0 (20140111.2315)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="559pt" height="32pt"
+ viewBox="0.00 0.00 559.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 555,-28 555,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,-0 64,-0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,-0 136,-0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node"><title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.25,-24 154.75,-24 154.75,-0 209.25,-0 209.25,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node"><title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,-0 364,-0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,-0 436,-0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="551.25,-24 454.75,-24 454.75,-0 551.25,-0 551.25,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+     
+    <br>
+
+     <section class="visible-xs visible-sm hidden-md">
+       
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#modprocs-1">Module Procedures</a></h3></div>
+  <div id="modprocs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../interface/umf4scal.html#moduleprocedure-umf4scal">umf4scal</a>
+      
+      <a class="list-group-item" href="../interface/umf4scal.html#moduleprocedure-umf4scal_ip">umf4scal_ip</a>
+      
+      <a class="list-group-item" href="../interface/umf4scal.html#moduleprocedure-umf4zscal%7E2">umf4zscal</a>
+      
+      <a class="list-group-item" href="../interface/umf4scal.html#moduleprocedure-umf4zscal_ip%7E2">umf4zscal_ip</a>
+      
+      <a class="list-group-item" href="../interface/umf4scal.html#moduleprocedure-umf4cscal%7E3">umf4cscal</a>
+      
+      <a class="list-group-item" href="../interface/umf4scal.html#moduleprocedure-umf4cscal_ip%7E3">umf4cscal_ip</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+     </section>
+     <br class="visible-xs visible-sm hidden-md">
+     
+  
+
+  
+
+  
+   <h2>Module Procedures</h2>
+   
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-umf4scal"></span><h3>
+public interface <a href='../interface/umf4scal.html'>umf4scal</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+   
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-umf4scal_ip"></span><h3>
+public subroutine <a href='../proc/umf4scal_ip.html'>umf4scal_ip</a>(x, b, Numeric, status)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=r8),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>x</strong>(*)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=r8),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>b</strong>(*)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=ip)</td>
+  <td></td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>Numeric</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>status</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+   
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-umf4zscal"></span><h3>
+public interface <a href='../interface/umf4zscal.html'>umf4zscal</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+   
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-umf4zscal_ip"></span><h3>
+public subroutine <a href='../proc/umf4zscal_ip.html'>umf4zscal_ip</a>(x, xz, b, bz, Numeric, status)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=r8),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>x</strong>(*)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=r8),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>xz</strong>(*)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=r8),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>b</strong>(*)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=r8),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>bz</strong>(*)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=ip)</td>
+  <td></td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>Numeric</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>status</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+   
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-umf4cscal"></span><h3>
+public interface <a href='../interface/umf4cscal.html'>umf4cscal</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+   
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-umf4cscal_ip"></span><h3>
+public subroutine <a href='../proc/umf4cscal_ip.html'>umf4cscal_ip</a>(x, b, Numeric, status)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>complex(kind=r8),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>x</strong>(*)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>complex(kind=r8),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>b</strong>(*)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=ip)</td>
+  <td></td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>Numeric</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>status</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+   
+     
+
+ </div>
+</div>
+
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2018 
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2018-07-20 11:50  
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> MSOLV-fortran was developed by Arthur Francisco - Noël Brunetière</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

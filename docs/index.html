@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="MSOLV-fortran – A modern Fortran API for Sparse Direct Solvers, as part of">
+    
+    <meta name="author" content="Arthur Francisco - Noël Brunetière" >
+    <link rel="icon" href="./favicon.png">
+
+    <title> MSOLV-fortran </title>
+
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/pygments.css" rel="stylesheet">
+    <link href="./css/font-awesome.min.css" rel="stylesheet">
+    <link href="./css/local.css" rel="stylesheet">
+    
+    <link  href="./tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="./js/jquery-2.1.3.min.js"></script>
+    <script src="./js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="./index.html">MSOLV-fortran </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="./lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="./lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="./lists/procedures.html">Procedures</a></li>
+        
+               
+            <li><a href="./lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="./program/test_solvers.html">Program</a></li>
+      
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="./lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="./lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="./lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="./lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="./program/test_solvers.html">Program</a></li>
+
+          </ul>
+        
+        <form action="./search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <p>MSOLV-fortran &ndash; A modern Fortran API for Sparse Direct Solvers, as part of <br/><br/> <img alt="MUSST_img" src="media/MUSST_long_petit.png"></p>
+        	 
+	<p> Find us on&hellip;</p>
+        <p>
+        	 
+          <a class="btn btn-lg btn-primary" href="https://github.com/TRIBO-Pprime/MSOLV" role="button">GitHub</a>
+			 
+			 
+			 
+			 
+	         
+			 
+        </p>
+      </div>
+
+      <div class="row" id='text'>
+		  
+        <div class="col-md-8">
+		  
+          <h1>MSOLV-fortran</h1>
+          <hr>
+<div class="toc">
+<ul>
+<li><a href="#brief-description">Brief description</a></li>
+<li><a href="#requested-libraries">Requested libraries</a></li>
+<li><a href="#example-of-use">Example of use</a></li>
+<li><a href="#data-format">Data format</a></li>
+<li><a href="#limitations">Limitations</a></li>
+<li><a href="#prerequesites">Prerequesites</a></li>
+<li><a href="#wrappers">Wrappers</a></li>
+<li><a href="#make">Make</a></li>
+<li><a href="#full-description">Full description</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+</div>
+<h2 id="brief-description">Brief description</h2>
+<p>A generic API for using Sparse Direct Solvers, written in modern Fortran. It is designed to work with:</p>
+<ul>
+<li><a href="http://mumps.enseeiht.fr/index.php?page=doc">MUMPS</a> - <strong>MU</strong>ltifrontal <strong>M</strong>assively <strong>P</strong>arallel sparse direct <strong>S</strong>olver <sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup></li>
+<li><a href="http://faculty.cse.tamu.edu/davis/suitesparse.html">UMFPACK</a> - <strong>U</strong>nsymmetric <strong>M</strong>ulti<strong>F</strong>rontal method solver <sup id="fnref-2"><a class="footnote-ref" href="#fn-2">2</a></sup></li>
+<li><a href="http://crd-legacy.lbl.gov/~xiaoye/SuperLU/#superlu">SuperLU</a> - LU decomposition with partial pivoting and triangular system solves through forward and back substitution <sup id="fnref-3"><a class="footnote-ref" href="#fn-3">3</a></sup></li>
+<li><a href="http://www.hsl.rl.ac.uk/catalogue/ma48.html">MA48</a> - Sparse unsymmetric system solver <sup id="fnref-4"><a class="footnote-ref" href="#fn-4">4</a></sup></li>
+</ul>
+<h2 id="requested-libraries">Requested libraries</h2>
+<ul>
+<li><em>Generic</em></br><ul>
+<li><code>librefblas.a</code></li>
+<li><code>liblapack.a</code></br></br></li>
+</ul>
+</li>
+<li><strong>MUMPS</strong></br><ul>
+<li><code>libmetis.a</code></li>
+<li><code>libmpiseq.a</code></li>
+<li><code>libmumps_common.a</code></li>
+<li><code>libdmumps.a</code></br></br></li>
+</ul>
+</li>
+<li><strong>UMFPACK</strong></br><ul>
+<li><code>libamd.a</code></li>
+<li><code>libcamd.a</code></li>
+<li><code>libcolamd.a</code></li>
+<li><code>libccolamd.a</code></li>
+<li><code>libcholmod.a</code></li>
+<li><code>libsuitesparseconfig.a</code></li>
+<li><code>libumfpack.a</code></br></br></li>
+</ul>
+</li>
+<li><strong>SuperLU</strong></br><ul>
+<li><code>libsuperlu.a</code></br></br></li>
+</ul>
+</li>
+<li><strong>MA48</strong></br><ul>
+<li><code>libhsl_ma48.a</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="example-of-use">Example of use</h2>
+<p><a href="./program/test_solvers.html">test_solvers</a> proposes to test the solvers on two systems, a very small one and a "bigger" one. Some solvers have an "analyze" step during which symbolic factorization is performed.
+Hence if the sparsity of a new system does not change much, the symbolic factorisation is reused for the numerical factorization. To assess the time gained, after the first resolution other
+resolution are proposed with the same matrix pattern.
+After each resolution, the error is assessed remultipying the solution by the matrix and comparing it to the right-hand side.</p>
+<h2 id="data-format">Data format</h2>
+<p>By default, </p>
+<ul>
+<li><strong>UMFPACK</strong> and <strong>SuperLU</strong> are configured to read <strong>C</strong>ompressed <strong>C</strong>olumn <a href="http://netlib.org/linalg/html_templates/node92.html">Harwell/Boeing</a> formatted data,</br></br></li>
+<li><strong>MUMPS</strong> reads elemental CC formatted data,</br></br></li>
+<li><strong>MA48</strong> reads sparse triplet formatted data.</li>
+</ul>
+<h2 id="limitations">Limitations</h2>
+<p>The package <strong>MUSST</strong> is developped to handle some lubrication problems thanks to a multiscale approach. During the processe, sparse linear systems are solved either on concurrent threads or using all threads. In the first case, 'OpenMP' is not usefull because each thread is dedicated to the resolution of its own bunch of systems (<strong>B</strong>ottom <strong>S</strong>cale systems). In the second case, 'OpenMP' is desirable to speed up the resolution (<strong>T</strong>op <strong>S</strong>cale systems). For the moment, <strong>MUSST</strong> isn't designed for distributed shared memory architectures. 
+Therefore the following choices are made:</p>
+<ul>
+<li><strong>MUMPS</strong> is built with its <em>sequential</em> configuration (<em>OpenMP</em>, but not <em>MPI</em>). It is dedicated to <strong>TS</strong> systems.</br></br></li>
+<li><strong>BLAS</strong> is built without <em>OpenMP</em></br></br></li>
+<li><strong>UMFPACK</strong>, <strong>SuperLU</strong> and <strong>MA48</strong> are built without <em>OpenMP</em>. They are dedicated to <strong>BS</strong> systems.</li>
+</ul>
+<h2 id="prerequesites">Prerequesites</h2>
+<p>The solver libraries must be downloaded and statically compiled together with their prerequisites:</p>
+<ul>
+<li><strong>UMFPACK</strong></br>
+    <em>BLAS</em>, <em>LAPACK</em></br></br></li>
+<li><strong>MUMPS</strong></br>
+    <em>BLAS</em>, <em>SCOTCH</em></br></br></li>
+<li><strong>SuperLU</strong></br>
+    <em>BLAS</em></br></br></li>
+<li><strong>MA48</strong></br>
+    <em>BLAS</em></li>
+</ul>
+<h2 id="wrappers">Wrappers</h2>
+<ul>
+<li><strong>UMFPACK</strong> </br>
+    A module <a href="./module/mumfpack.html">mumfpack</a> has been developped by <a href="http://geo.mff.cuni.cz/~lh/Fortran/UMFPACK/">Ladislav Hanyk</a>. It has been checked with UMFPACK 5.6.2, but it also works fine here with UMFPACK 5.7.6.</br></br></li>
+<li><strong>MUMPS</strong></br>
+    A module <a href="./module/mumps_wrapper.html">mumps_wrapper</a> is created with the content of <code>dmumps_struc.h</code> provided by MUMPS and it includes <code>mpif.h</code>, also provided by MUMPS. It is to be noticed that almost all global variables are deactivated in <code>mpif.h</code>.</br></br></li>
+<li><strong>SuperLU</strong></br>
+    A module <a href="./module/sulu_wrapper.html">sulu_wrapper</a> is created from scratch because following SuperLU fortran examples (with the wrapper provided by SuperLU), we were not able to continuously solve systems with systematic memory release. As a consequence, the memory needed by MUSST increased untill the programs would stop.</br></br></li>
+<li><strong>MA48</strong></br>
+    In its <em>double</em> flavour, <em>HSL_MA48</em> needs 3 files: <code>common90.f90</code>, <code>ddeps90.f90</code> and <code>hsl_ma48d.f90</code>, renamed <a>hsl_common90.f90</a> and <a>hsl_ddeps90.f90</a> for the two first.
+    In order to work with arrays independently from the solvers, the global solver type <a href="./type/mat_solv.html">MAT_SOLV</a> contains the system arrays &ndash;like <code>eltptr</code>, <code>eltvar</code>, <code>a_elt</code>, etc.&ndash; pointed by a solver type, for instance <a>ZD11_TYPE</a>. Therefore, in version 3.3 of <em>HSL_MA48</em>, the attribute <code>allocatable</code> (in ZD11_TYPE) of <code>row</code>, <code>col</code>, <code>ptr</code> and <code>val</code> is changed to <code>pointer</code>.</li>
+</ul>
+<h2 id="make">Make</h2>
+<p>General syntax:</p>
+<div class="codehilite"><pre><span></span>./comp.sh ALL:s/a FORT:gfortran-x DEBUG:yes/no GPROF:yes/no
+</pre></div>
+
+
+<p>Examples with gfortran-7:</p>
+<ul>
+<li>first rebuild all, then make the 'debug' executable <code>prg</code> for profiling</li>
+</ul>
+<div class="codehilite"><pre><span></span>./comp.sh a gfortran-7 yes yes
+</pre></div>
+
+
+<ul>
+<li>just build the modified sources, then make a productive executable</li>
+</ul>
+<div class="codehilite"><pre><span></span>./comp.sh s gfortran-7 no no
+</pre></div>
+
+
+<h2 id="full-description">Full description</h2>
+<p>The aim of the present project is to provide generic subroutines for the direct full resolution of sparse linear systems:</p>
+<ul>
+<li>solver initialization</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="k">call </span><span class="n">solve_syst</span><span class="p">(</span><span class="n">mat</span><span class="o">=</span><span class="n">system_type</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="s1">&#39;ini&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<ul>
+<li>system analyze</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="k">call </span><span class="n">solve_syst</span><span class="p">(</span><span class="n">mat</span><span class="o">=</span><span class="n">system_type</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="s1">&#39;ana&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<ul>
+<li>system factorization</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="k">call </span><span class="n">solve_syst</span><span class="p">(</span><span class="n">mat</span><span class="o">=</span><span class="n">system_type</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="s1">&#39;fac&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<ul>
+<li>system solution</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="k">call </span><span class="n">solve_syst</span><span class="p">(</span><span class="n">mat</span><span class="o">=</span><span class="n">system_type</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="s1">&#39;sol&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<ul>
+<li>memory release</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="k">call </span><span class="n">solve_syst</span><span class="p">(</span><span class="n">mat</span><span class="o">=</span><span class="n">system_type</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="s1">&#39;fre&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<ul>
+<li>solver finalization</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="k">call </span><span class="n">solve_syst</span><span class="p">(</span><span class="n">mat</span><span class="o">=</span><span class="n">system_type</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="s1">&#39;end&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p><code>system_type</code> is of complex type <a href="./type/mat_solv.html">MAT_SOLV</a> built to deal with <em>MUMPS</em>, <em>UMFPACK</em>, <em>SuperLU</em> and <em>MA48</em> requirements.</p>
+<h2 id="license">License</h2>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn-1">
+<p>CeCILL-C license&#160;<a class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn-2">
+<p>GNU GPL&#160;<a class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn-3">
+<p>New BSD-3&#160;<a class="footnote-backref" href="#fnref-3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn-4">
+<p>HSL software is strictly intended for Personal academic use on the download page&#160;<a class="footnote-backref" href="#fnref-4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+        </div>
+		  
+        <div class="col-md-4">
+	  <div class="well">
+          <h2>Developer Info</h2>
+          <h4>Arthur Francisco - Noël Brunetière</h4>
+          
+          
+			   
+            <div class="text-center"><div class="btn-group" role="group">
+              
+              <a class="btn btn-lg btn-primary" href="mailto:arthur.francisco@univ-poitiers.fr"><i class="fa fa-envelope fa-lg"></i></a>
+              
+              
+             <a class="btn btn-lg btn-primary" href="https://www.pprime.fr/?q=fr/recherche-scientifique/d3/mecanique-des-interfaces-lubrifiees"><i class="fa fa-globe fa-lg"></i></a>
+              
+              
+              <a class="btn btn-lg btn-primary" href="https://github.com/Arthur-Francisco"><i class="fa fa-github fa-lg"></i></a>
+				  
+				  
+              
+              
+              
+              
+            </div></div>
+            
+       </div>
+       </div>
+       
+      </div>
+      
+      
+      
+      
+		
+      <div class="row">
+        <div class="col-xs-6 col-sm-3">
+              <h3>Source Files</h3>
+              <ul>
+                
+                  
+                    <li><a href='./sourcefile/dmumps_struc.f90.html'>dmumps_struc.f90</a></li>
+                  
+                
+                  
+                    <li><a href='./sourcefile/mod_data_arch.f90.html'>mod_data_arch.f90</a></li>
+                  
+                
+                  
+                    <li><a href='./sourcefile/mod_num_par.f90.html'>mod_num_par.f90</a></li>
+                  
+                
+                  
+                    <li><a href='./sourcefile/mod_solver.f90.html'>mod_solver.f90</a></li>
+                  
+                
+                  
+                    <li><a href='./sourcefile/prg.f90.html'>prg.f90</a></li>
+                  
+                
+                  
+                    <li><a href='./sourcefile/superlu.f90.html'>superlu.f90</a></li>
+                  
+                
+                  
+                    <li><a href='./sourcefile/umfpack.f90.html'>umfpack.f90</a></li>
+                  
+                
+              </ul>
+          </div>
+          
+		  <div class="col-xs-6 col-sm-3">
+              <h3>Modules</h3>
+              <ul>
+                
+                  
+                    <li><a href='./module/data_arch.html'>data_arch</a></li>
+                  
+                
+                  
+                    <li><a href='./module/mumfpack.html'>mumfpack</a></li>
+                  
+                
+                  
+                    <li><a href='./module/mumps_wrapper.html'>mumps_wrapper</a></li>
+                  
+                
+                  
+                    <li><a href='./module/num_param.html'>num_param</a></li>
+                  
+                
+                  
+                    <li><a href='./module/solver.html'>solver</a></li>
+                  
+                
+                  
+                    <li><a href='./module/sulu_wrapper.html'>sulu_wrapper</a></li>
+                  
+                
+              </ul>
+          </div>
+          
+          
+		  <div class="col-xs-6 col-sm-3">
+              <h3>Procedures</h3>
+              <ul>
+                
+                  
+                    <li><a href='./proc/analyse_solver.html'>analyse_solver</a></li>
+                  
+                
+                  
+                    <li><a href='./interface/c_umfpack_di_defaults.html'>c_umfpack_di_defaults</a></li>
+                  
+                
+                  
+                    <li><a href='./interface/c_umfpack_di_free_numeric.html'>c_umfpack_di_free_numeric</a></li>
+                  
+                
+                  
+                    <li><a href='./interface/c_umfpack_di_free_symbolic.html'>c_umfpack_di_free_symbolic</a></li>
+                  
+                
+                  
+                    <li><a href='./interface/c_umfpack_di_load_numeric.html'>c_umfpack_di_load_numeric</a></li>
+                  
+                
+                  
+                    <li><a href='./interface/c_umfpack_di_load_symbolic.html'>c_umfpack_di_load_symbolic</a></li>
+                  
+                
+                  
+                    <li><a href='./interface/c_umfpack_di_numeric.html'>c_umfpack_di_numeric</a></li>
+                  
+                
+                  
+                    <li><a href='./interface/c_umfpack_di_report_control.html'>c_umfpack_di_report_control</a></li>
+                  
+                
+                  
+                    <li><a href='./interface/c_umfpack_di_report_info.html'>c_umfpack_di_report_info</a></li>
+                  
+                
+                  
+                    <li><a href='./interface/c_umfpack_di_report_numeric.html'>c_umfpack_di_report_numeric</a></li>
+                  
+                
+                  
+                    <li><a href="./lists/procedures.html"><em>All procedures&hellip;</em></a></li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+          </div>
+          
+          
+		  <div class="col-xs-6 col-sm-3">
+              <h3>Derived Types</h3>
+              <ul>
+                
+                  
+                    <li><a href='./type/dmumps_struc.html'>DMUMPS_STRUC</a></li>
+                  
+                
+                  
+                    <li><a href='./type/expheader.html'>EXPHEADER</a></li>
+                  
+                
+                  
+                    <li><a href='./type/globallu_t.html'>GLOBALLU_T</a></li>
+                  
+                
+                  
+                    <li><a href='./type/lu_stack_t.html'>LU_STACK_T</a></li>
+                  
+                
+                  
+                    <li><a href='./type/mat_ma48.html'>MAT_MA48</a></li>
+                  
+                
+                  
+                    <li><a href='./type/mat_solv.html'>MAT_SOLV</a></li>
+                  
+                
+                  
+                    <li><a href='./type/mat_umfp.html'>MAT_UMFP</a></li>
+                  
+                
+                  
+                    <li><a href='./type/mem_usage_t.html'>MEM_USAGE_T</a></li>
+                  
+                
+                  
+                    <li><a href='./type/ms_mat_solv.html'>MS_MAT_SOLV</a></li>
+                  
+                
+                  
+                    <li><a href='./type/ncformat.html'>NCFORMAT</a></li>
+                  
+                
+                  
+                    <li><a href="./lists/types.html"><em>All derived types&hellip;</em></a></li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+          </div>
+          
+      </div>
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2018 
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2018-07-20 11:50  
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> MSOLV-fortran was developed by Arthur Francisco - Noël Brunetière</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="./js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="./tipuesearch/tipuesearch_content.js"></script>
+    <script src="./tipuesearch/tipuesearch_set.js"></script>
+    <script src="./tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="MSOLV-fortran – A modern Fortran API for Sparse Direct Solvers, as part of">
+    
+    <meta name="author" content="Arthur Francisco - Noël Brunetière" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>SUPERLU_OPTIONS_T &ndash; MSOLV-fortran </title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">MSOLV-fortran </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../program/test_solvers.html">Program</a></li>
+      
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../program/test_solvers.html">Program</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>SUPERLU_OPTIONS_T
+    <small>Derived Type</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title="<p> 7.4% of total for derived types.</p>Including implementation: 28 statements,  7.4% of total for derived types.">28 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/superlu.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/superlu.f90.html'>superlu.f90</a></li>
+    
+     <li><a href='../module/sulu_wrapper.html'>sulu_wrapper</a></li>
+    
+  
+     <li class="active">SUPERLU_OPTIONS_T</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-fact">Fact</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-equil">Equil</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-colperm">ColPerm</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-trans">Trans</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-iterrefine">IterRefine</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-diagpivotthresh">DiagPivotThresh</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-symmetricmode">SymmetricMode</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-pivotgrowth">PivotGrowth</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-conditionnumber">ConditionNumber</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-rowperm">RowPerm</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-ilu_droprule">ILU_DropRule</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-ilu_droptol">ILU_DropTol</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-ilu_fillfactor">ILU_FillFactor</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-ilu_norm">ILU_Norm</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-ilu_filltol">ILU_FillTol</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-ilu_milu">ILU_MILU</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-ilu_milu_dim">ILU_MILU_Dim</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-parsymbfact">ParSymbFact</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-replacetinypivot">ReplaceTinyPivot</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-solveinitialized">SolveInitialized</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-refineinitialized">RefineInitialized</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-printstat">PrintStat</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-nnzl">nnzL</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-nnzu">nnzU</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-num_lookaheads">num_lookaheads</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-lookahead_etree">lookahead_etree</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-sympattern">SymPattern</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../type/superlu_options_t.html#src">SUPERLU_OPTIONS_T</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+      <h2>type, private, bind(c) :: SUPERLU_OPTIONS_T</h2>
+    <ul>
+<li>= FACTORED: On entry, L, U, perm_r and perm_c contain the</li>
+</ul>
+    <br>
+    
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Inherited by</h3>
+      </div>
+      <div class="panel-body">
+     <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.36.0 (20140111.2315)
+ -->
+<!-- Title: type~~superlu_options_t~~InheritedByGraph Pages: 1 -->
+<svg id="typesuperlu_options_tInheritedByGraph" width="272pt" height="32pt"
+ viewBox="0.00 0.00 272.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="type~~superlu_options_t~~InheritedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>type~~superlu_options_t~~InheritedByGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 268,-28 268,4 -4,4"/>
+<!-- type~superlu_options_t -->
+<g id="type~~superlu_options_t~~InheritedByGraph_node1" class="node"><title>type~superlu_options_t</title>
+<polygon fill="none" stroke="black" points="127.5,-24 0.5,-24 0.5,-0 127.5,-0 127.5,-24"/>
+<text text-anchor="middle" x="64" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">SUPERLU_OPTIONS_T</text>
+</g>
+<!-- type~sulu_env -->
+<g id="type~~superlu_options_t~~InheritedByGraph_node2" class="node"><title>type~sulu_env</title>
+<g id="a_type~~superlu_options_t~~InheritedByGraph_node2"><a xlink:href=".././type/sulu_env.html" xlink:title="SULU_ENV">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="263.5,-24 196.5,-24 196.5,-0 263.5,-0 263.5,-24"/>
+<text text-anchor="middle" x="230" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SULU_ENV</text>
+</a>
+</g>
+</g>
+<!-- type~sulu_env&#45;&gt;type~superlu_options_t -->
+<g id="type~~superlu_options_t~~InheritedByGraph_edge1" class="edge"><title>type~sulu_env&#45;&gt;type~superlu_options_t</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M196.206,-12C179.414,-12 158.252,-12 137.855,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="137.606,-8.5001 127.606,-12 137.606,-15.5001 137.606,-8.5001"/>
+<text text-anchor="middle" x="162" y="-14.4" font-family="Helvetica,sans-Serif" font-size="9.50">options</text>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.36.0 (20140111.2315)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="177pt" height="32pt"
+ viewBox="0.00 0.00 177.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 173,-28 173,4 -4,4"/>
+<!-- Type -->
+<g id="node1" class="node"><title>Type</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="54,-24 0,-24 0,-0 54,-0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="169.25,-24 72.75,-24 72.75,-0 169.25,-0 169.25,-24"/>
+<text text-anchor="middle" x="121" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a derived type to the parent type which it
+    extends. Dashed arrows point from a derived type to the other
+    types it contains as a components, with a label listing the name(s) of
+    said component(s). Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+    
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-fact">Fact</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-equil">Equil</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-colperm">ColPerm</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-trans">Trans</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-iterrefine">IterRefine</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-diagpivotthresh">DiagPivotThresh</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-symmetricmode">SymmetricMode</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-pivotgrowth">PivotGrowth</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-conditionnumber">ConditionNumber</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-rowperm">RowPerm</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-ilu_droprule">ILU_DropRule</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-ilu_droptol">ILU_DropTol</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-ilu_fillfactor">ILU_FillFactor</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-ilu_norm">ILU_Norm</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-ilu_filltol">ILU_FillTol</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-ilu_milu">ILU_MILU</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-ilu_milu_dim">ILU_MILU_Dim</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-parsymbfact">ParSymbFact</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-replacetinypivot">ReplaceTinyPivot</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-solveinitialized">SolveInitialized</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-refineinitialized">RefineInitialized</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-printstat">PrintStat</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-nnzl">nnzL</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-nnzu">nnzU</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-num_lookaheads">num_lookaheads</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-lookahead_etree">lookahead_etree</a>
+      
+      <a class="list-group-item" href="../type/superlu_options_t.html#variable-sympattern">SymPattern</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../type/superlu_options_t.html#src">SUPERLU_OPTIONS_T</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+    <section>
+    <h2>Components</h2>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fact"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>Fact</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-equil"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>Equil</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-colperm"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>ColPerm</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-trans"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>Trans</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-iterrefine"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>IterRefine</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-diagpivotthresh"></span>real(kind=C_DOUBLE),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>DiagPivotThresh</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-symmetricmode"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>SymmetricMode</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-pivotgrowth"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>PivotGrowth</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-conditionnumber"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>ConditionNumber</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-rowperm"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>RowPerm</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ilu_droprule"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>ILU_DropRule</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ilu_droptol"></span>real(kind=C_DOUBLE),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>ILU_DropTol</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ilu_fillfactor"></span>real(kind=C_DOUBLE),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>ILU_FillFactor</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ilu_norm"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>ILU_Norm</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ilu_filltol"></span>real(kind=C_DOUBLE),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>ILU_FillTol</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ilu_milu"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>ILU_MILU</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ilu_milu_dim"></span>real(kind=C_DOUBLE),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>ILU_MILU_Dim</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-parsymbfact"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>ParSymbFact</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-replacetinypivot"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>ReplaceTinyPivot</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-solveinitialized"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>SolveInitialized</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-refineinitialized"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>RefineInitialized</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-printstat"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>PrintStat</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nnzl"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>nnzL</strong></td><td></td><td></td><td><p><em>used to store nnzs for now</em></p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nnzu"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>nnzU</strong></td><td></td><td></td><td><p><em>used to store nnzs for now</em></p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-num_lookaheads"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>num_lookaheads</strong></td><td></td><td></td><td><p><em>num of levels in look-ahead</em></p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-lookahead_etree"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>lookahead_etree</strong></td><td></td><td></td><td><p><em>use etree computed from the serial symbolic factorization</em></p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-sympattern"></span>integer(kind=C_INT),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>SymPattern</strong></td><td></td><td></td><td><p><em>symmetric factorization</em></p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <section>
+    <h3><span class="anchor" id="src"></span>Source Code</h3>
+    <div class="highlight"><pre><span></span><span class="k">type</span><span class="p">,</span> <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="kd">::</span> <span class="n">SUPERLU_OPTIONS_T</span>
+   <span class="c">!/*</span>
+   <span class="c">! *-- This contains the options used to control the solution process.</span>
+   <span class="c">! *</span>
+   <span class="c">! * Fact   (fact_t)</span>
+   <span class="c">! *        Specifies whether or not the factored form of the matrix</span>
+   <span class="c">! *        A is supplied on entry, and if not, how the matrix A should</span>
+   <span class="c">! *        be factorizaed.</span>
+   <span class="c">! *        = DOFACT: The matrix A will be factorized from scratch, and the</span>
+   <span class="c">! *             factors will be stored in L and U.</span>
+   <span class="c">! *        = SamePattern: The matrix A will be factorized assuming</span>
+   <span class="c">! *             that a factorization of a matrix with the same sparsity</span>
+   <span class="c">! *             pattern was performed prior to this one. Therefore, this</span>
+   <span class="c">! *             factorization will reuse column permutation vector</span>
+   <span class="c">! *             ScalePermstruct-&gt;perm_c and the column elimination tree</span>
+   <span class="c">! *             LUstruct-&gt;etree.</span>
+   <span class="c">! *        = SamePattern_SameRowPerm: The matrix A will be factorized</span>
+   <span class="c">! *             assuming that a factorization of a matrix with the same</span>
+   <span class="c">! *             sparsity   pattern and similar numerical values was performed</span>
+   <span class="c">! *             prior to this one. Therefore, this factorization will reuse</span>
+   <span class="c">! *             both row and column scaling factors R and C, both row and</span>
+   <span class="c">! *             column permutation vectors perm_r and perm_c, and the</span>
+   <span class="c">! *             L &amp; U data structures set up from the previous factorization.</span>
+   <span class="c">!! *        = FACTORED: On entry, L, U, perm_r and perm_c contain the</span>
+   <span class="c">! *              factored form of A. If DiagScale is not NOEQUIL, the matrix</span>
+   <span class="c">! *              A has been equilibrated with scaling factors R and C.</span>
+   <span class="c">! *</span>
+   <span class="c">! * Equil  (yes_no_t)</span>
+   <span class="c">! *        Specifies whether to equilibrate the system (scale A&#39;s row and</span>
+   <span class="c">! *        columns to have unit norm).</span>
+   <span class="c">! *</span>
+   <span class="c">! * ColPerm (colperm_t)</span>
+   <span class="c">! *        Specifies what type of column permutation to use to reduce fill.</span>
+   <span class="c">! *        = NATURAL: use the natural ordering</span>
+   <span class="c">! *        = MMD_ATA: use minimum degree ordering on structure of A&#39;*A</span>
+   <span class="c">! *        = MMD_AT_PLUS_A: use minimum degree ordering on structure of A&#39;+A</span>
+   <span class="c">! *        = COLAMD: use approximate minimum degree column ordering</span>
+   <span class="c">! *        = MY_PERMC: use the ordering specified by the user</span>
+   <span class="c">! *</span>
+   <span class="c">! * Trans  (trans_t)</span>
+   <span class="c">! *        Specifies the form of the system of equations:</span>
+   <span class="c">! *        = NOTRANS: A * X = B        (No transpose)</span>
+   <span class="c">! *        = TRANS:   A**T * X = B     (Transpose)</span>
+   <span class="c">! *        = CONJ:    A**H * X = B     (Transpose)</span>
+   <span class="c">! *</span>
+   <span class="c">! * IterRefine (IterRefine_t)</span>
+   <span class="c">! *        Specifies whether to perform iterative refinement.</span>
+   <span class="c">! *        = NO: no iterative refinement</span>
+   <span class="c">! *        = SLU_SINGLE: perform iterative refinement in single precision</span>
+   <span class="c">! *        = SLU_DOUBLE: perform iterative refinement in double precision</span>
+   <span class="c">! *        = SLU_EXTRA: perform iterative refinement in extra precision</span>
+   <span class="c">! *</span>
+   <span class="c">! * DiagPivotThresh (double, in [0.0, 1.0]) (only for sequential SuperLU)</span>
+   <span class="c">! *        Specifies the threshold used for a diagonal entry to be an</span>
+   <span class="c">! *        acceptable pivot.</span>
+   <span class="c">! *</span>
+   <span class="c">! * SymmetricMode (yest_no_t)</span>
+   <span class="c">! *        Specifies whether to use symmetric mode. Symmetric mode gives</span>
+   <span class="c">! *        preference to diagonal pivots, and uses an (A&#39;+A)-based column</span>
+   <span class="c">! *        permutation algorithm.</span>
+   <span class="c">! *</span>
+   <span class="c">! * PivotGrowth (yes_no_t)</span>
+   <span class="c">! *        Specifies whether to compute the reciprocal pivot growth.</span>
+   <span class="c">! *</span>
+   <span class="c">! * ConditionNumber (ues_no_t)</span>
+   <span class="c">! *        Specifies whether to compute the reciprocal condition number.</span>
+   <span class="c">! *</span>
+   <span class="c">! * RowPerm (rowperm_t) (only for SuperLU_DIST or ILU)</span>
+   <span class="c">! *        Specifies whether to permute rows of the original matrix.</span>
+   <span class="c">! *        = NO: not to permute the rows</span>
+   <span class="c">! *        = LargeDiag: make the diagonal large relative to the off-diagonal</span>
+   <span class="c">! *        = MY_PERMR: use the permutation given by the user</span>
+   <span class="c">! *</span>
+   <span class="c">! * ILU_DropRule (int)</span>
+   <span class="c">! *        Specifies the dropping rule:</span>
+   <span class="c">! *     = DROP_BASIC:   Basic dropping rule, supernodal based ILUTP(tau).</span>
+   <span class="c">! *     = DROP_PROWS:   Supernodal based ILUTP(p,tau), p = gamma * nnz(A)/n.</span>
+   <span class="c">! *     = DROP_COLUMN:  Variant of ILUTP(p,tau), for j-th column,</span>
+   <span class="c">! *                     p = gamma * nnz(A(:,j)).</span>
+   <span class="c">! *     = DROP_AREA:    Variation of ILUTP, for j-th column, use</span>
+   <span class="c">! *                     nnz(F(:,1:j)) / nnz(A(:,1:j)) to control memory.</span>
+   <span class="c">! *     = DROP_DYNAMIC: Modify the threshold tau during factorizaion:</span>
+   <span class="c">! *                     If nnz(L(:,1:j)) / nnz(A(:,1:j)) &gt; gamma</span>
+   <span class="c">! *                         tau_L(j) := MIN(tau_0, tau_L(j-1) * 2);</span>
+   <span class="c">! *                     Otherwise</span>
+   <span class="c">! *                         tau_L(j) := MAX(tau_0, tau_L(j-1) / 2);</span>
+   <span class="c">! *                     tau_U(j) uses the similar rule.</span>
+   <span class="c">! *                     NOTE: the thresholds used by L and U are separate.</span>
+   <span class="c">! *     = DROP_INTERP:  Compute the second dropping threshold by</span>
+   <span class="c">! *                     interpolation instead of sorting (default).</span>
+   <span class="c">! *                     In this case, the actual fill ratio is not</span>
+   <span class="c">! *                     guaranteed to be smaller than gamma.</span>
+   <span class="c">! *                     Note: DROP_PROWS, DROP_COLUMN and DROP_AREA are mutually exclusive.</span>
+   <span class="c">! *    ( Default: DROP_BASIC | DROP_AREA )</span>
+   <span class="c">! *</span>
+   <span class="c">! * ILU_DropTol (double)</span>
+   <span class="c">! *        numerical threshold for dropping.</span>
+   <span class="c">! *</span>
+   <span class="c">! * ILU_FillFactor (double)</span>
+   <span class="c">! *        Gamma in the secondary dropping.</span>
+   <span class="c">! *</span>
+   <span class="c">! * ILU_Norm (norm_t)</span>
+   <span class="c">! *        Specify which norm to use to measure the row size in a</span>
+   <span class="c">! *        supernode: infinity-norm, 1-norm, or 2-norm.</span>
+   <span class="c">! *</span>
+   <span class="c">! * ILU_FillTol (double)</span>
+   <span class="c">! *        numerical threshold for zero pivot perturbation.</span>
+   <span class="c">! *</span>
+   <span class="c">! * ILU_MILU (milu_t)</span>
+   <span class="c">! *        Specifies which version of MILU to use.</span>
+   <span class="c">! *</span>
+   <span class="c">! * ILU_MILU_Dim (double)</span>
+   <span class="c">! *        Dimension of the PDE if available.</span>
+   <span class="c">! *</span>
+   <span class="c">! * ReplaceTinyPivot (yes_no_t) (only for SuperLU_DIST)</span>
+   <span class="c">! *        Specifies whether to replace the tiny diagonals by</span>
+   <span class="c">! *        sqrt(epsilon)*||A|| during LU factorization.</span>
+   <span class="c">! *</span>
+   <span class="c">! * SolveInitialized (yes_no_t) (only for SuperLU_DIST)</span>
+   <span class="c">! *        Specifies whether the initialization has been performed to the</span>
+   <span class="c">! *        triangular solve.</span>
+   <span class="c">! *</span>
+   <span class="c">! * RefineInitialized (yes_no_t) (only for SuperLU_DIST)</span>
+   <span class="c">! *        Specifies whether the initialization has been performed to the</span>
+   <span class="c">! *        sparse matrix-vector multiplication routine needed in iterative</span>
+   <span class="c">! *        refinement.</span>
+   <span class="c">! *</span>
+   <span class="c">! * PrintStat (yes_no_t)</span>
+   <span class="c">! *        Specifies whether to print the solver&#39;s statistics.</span>
+   <span class="c">! */</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Fact</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Equil</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ColPerm</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Trans</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">IterRefine</span>
+   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">)</span> <span class="kd">::</span> <span class="n">DiagPivotThresh</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">SymmetricMode</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">PivotGrowth</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ConditionNumber</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">RowPerm</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ILU_DropRule</span>
+   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ILU_DropTol</span>
+   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ILU_FillFactor</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ILU_Norm</span>
+   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ILU_FillTol</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ILU_MILU</span>
+   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ILU_MILU_Dim</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ParSymbFact</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ReplaceTinyPivot</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">SolveInitialized</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">RefineInitialized</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">PrintStat</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nnzL</span><span class="p">,</span> <span class="n">nnzU</span>      <span class="c">!! *used to store nnzs for now*</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">num_lookaheads</span>  <span class="c">!! *num of levels in look-ahead*</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">lookahead_etree</span> <span class="c">!! *use etree computed from the serial symbolic factorization*</span>
+   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">SymPattern</span>      <span class="c">!! *symmetric factorization*</span>
+<span class="n">endtype</span> <span class="n">SUPERLU_OPTIONS_T</span>
+</pre></div>
+
+    </section>
+    
+    
+    </div>
+  </div>
+
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2018 
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2018-07-20 11:50  
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> MSOLV-fortran was developed by Arthur Francisco - Noël Brunetière</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

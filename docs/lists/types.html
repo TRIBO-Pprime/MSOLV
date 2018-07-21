@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="MSOLV-fortran – A modern Fortran API for Sparse Direct Solvers, as part of">
+    
+    <meta name="author" content="Arthur Francisco - Noël Brunetière" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>
+All Types &ndash; MSOLV-fortran
+</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">MSOLV-fortran </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../program/test_solvers.html">Program</a></li>
+      
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../program/test_solvers.html">Program</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+      <div class="row">
+        <div class="col-lg-12" id='text'>
+			 <h1>Derived Types</h1>
+			 <table class="table table-striped nostretched">
+			 <thead>
+			 <tr><th>Type</th><th>Location</th><th>Extends</th><th>Description</th></tr>
+			 </thead><tbody>
+			 
+			   <tr><td><a href='../type/dmumps_struc.html'>DMUMPS_STRUC</a></td><td><a href='../module/mumps_wrapper.html'>mumps_wrapper</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/expheader.html'>EXPHEADER</a></td><td><a href='../module/sulu_wrapper.html'>sulu_wrapper</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/globallu_t.html'>GLOBALLU_T</a></td><td><a href='../module/sulu_wrapper.html'>sulu_wrapper</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/lu_stack_t.html'>LU_STACK_T</a></td><td><a href='../module/sulu_wrapper.html'>sulu_wrapper</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/mat_ma48.html'>MAT_MA48</a></td><td><a href='../module/solver.html'>solver</a></td><td>None</td><td><p><span style="color:green">All the stuff needed by <em>HSL_MA48</em></span></p></td></tr>
+			 
+			   <tr><td><a href='../type/mat_solv.html'>MAT_SOLV</a></td><td><a href='../module/solver.html'>solver</a></td><td>None</td><td><p><span style="color:green">MUSST high level system type</span></p></td></tr>
+			 
+			   <tr><td><a href='../type/mat_umfp.html'>MAT_UMFP</a></td><td><a href='../module/solver.html'>solver</a></td><td>None</td><td><p><span style="color:green">All the stuff needed by <em>UMFPACK</em></span></p></td></tr>
+			 
+			   <tr><td><a href='../type/mem_usage_t.html'>MEM_USAGE_T</a></td><td><a href='../module/sulu_wrapper.html'>sulu_wrapper</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/ms_mat_solv.html'>MS_MAT_SOLV</a></td><td><a href='../module/solver.html'>solver</a></td><td>None</td><td><p><span style="color:green">MUSST multiscale high level solver type</span>
+  </p><a href="../type/ms_mat_solv.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			 
+			   <tr><td><a href='../type/ncformat.html'>NCFORMAT</a></td><td><a href='../module/sulu_wrapper.html'>sulu_wrapper</a></td><td>None</td><td><p></p><a href="../type/ncformat.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			 
+			   <tr><td><a href='../type/num_par.html'>NUM_PAR</a></td><td><a href='../module/num_param.html'>num_param</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/pcsc_ci.html'>pCSC_ci</a></td><td><a href='../module/mumfpack.html'>mumfpack</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/pcsc_di.html'>pCSC_di</a></td><td><a href='../module/mumfpack.html'>mumfpack</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/pcsc_zi.html'>pCSC_zi</a></td><td><a href='../module/mumfpack.html'>mumfpack</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/pcsr_ci.html'>pCSR_ci</a></td><td><a href='../module/mumfpack.html'>mumfpack</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/pcsr_di.html'>pCSR_di</a></td><td><a href='../module/mumfpack.html'>mumfpack</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/pcsr_zi.html'>pCSR_zi</a></td><td><a href='../module/mumfpack.html'>mumfpack</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/pvec_zi.html'>pVec_zi</a></td><td><a href='../module/mumfpack.html'>mumfpack</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/sulu_env.html'>SULU_ENV</a></td><td><a href='../module/sulu_wrapper.html'>sulu_wrapper</a></td><td>None</td><td><p><span style="color:green">Global type for <em>SuperLU</em> which covers all the stuff needed</span></p></td></tr>
+			 
+			   <tr><td><a href='../type/superlu_options_t.html'>SUPERLU_OPTIONS_T</a></td><td><a href='../module/sulu_wrapper.html'>sulu_wrapper</a></td><td>None</td><td><a href="../type/superlu_options_t.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			 
+			   <tr><td><a href='../type/superlustat_t.html'>SUPERLUSTAT_T</a></td><td><a href='../module/sulu_wrapper.html'>sulu_wrapper</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/supermatrix.html'>SUPERMATRIX</a></td><td><a href='../module/sulu_wrapper.html'>sulu_wrapper</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/tcsc_ci.html'>tCSC_ci</a></td><td><a href='../module/mumfpack.html'>mumfpack</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/tcsc_di.html'>tCSC_di</a></td><td><a href='../module/mumfpack.html'>mumfpack</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/tcsc_zi.html'>tCSC_zi</a></td><td><a href='../module/mumfpack.html'>mumfpack</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/tcsr_ci.html'>tCSR_ci</a></td><td><a href='../module/mumfpack.html'>mumfpack</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/tcsr_di.html'>tCSR_di</a></td><td><a href='../module/mumfpack.html'>mumfpack</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/tcsr_zi.html'>tCSR_zi</a></td><td><a href='../module/mumfpack.html'>mumfpack</a></td><td>None</td><td></td></tr>
+			 
+			   <tr><td><a href='../type/tvec_zi.html'>tVec_zi</a></td><td><a href='../module/mumfpack.html'>mumfpack</a></td><td>None</td><td></td></tr>
+			 
+			 </tbody></table>
+             <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.36.0 (20140111.2315)
+ -->
+<!-- Title: type~~graph~~TypeGraph Pages: 1 -->
+<svg id="typegraphTypeGraph" width="855pt" height="1129pt"
+ viewBox="0.00 0.00 855.00 1129.47" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="type~~graph~~TypeGraph" class="graph" transform="scale(0.987298 0.987298) rotate(0) translate(4 1140)">
+<title>type~~graph~~TypeGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-1140 862,-1140 862,4 -4,4"/>
+<!-- type~mat_umfp -->
+<g id="type~~graph~~TypeGraph_node1" class="node"><title>type~mat_umfp</title>
+<g id="a_type~~graph~~TypeGraph_node1"><a xlink:href=".././type/mat_umfp.html" xlink:title="MAT_UMFP">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="317.5,-260 246.5,-260 246.5,-236 317.5,-236 317.5,-260"/>
+<text text-anchor="middle" x="282" y="-245.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MAT_UMFP</text>
+</a>
+</g>
+</g>
+<!-- c_ptr -->
+<g id="type~~graph~~TypeGraph_node37" class="node"><title>c_ptr</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="76,-276 22,-276 22,-252 76,-252 76,-276"/>
+<text text-anchor="middle" x="49" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">c_ptr</text>
+</g>
+<!-- type~mat_umfp&#45;&gt;c_ptr -->
+<g id="type~~graph~~TypeGraph_edge1" class="edge"><title>type~mat_umfp&#45;&gt;c_ptr</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M246.417,-250.395C203.395,-253.375 130.273,-258.44 86.4165,-261.478"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="85.9326,-258.003 76.1984,-262.185 86.4163,-264.986 85.9326,-258.003"/>
+<text text-anchor="middle" x="165" y="-262.4" font-family="Helvetica,sans-Serif" font-size="9.50">c_symbolic, c_numeric</text>
+</g>
+<!-- type~superlu_options_t -->
+<g id="type~~graph~~TypeGraph_node2" class="node"><title>type~superlu_options_t</title>
+<g id="a_type~~graph~~TypeGraph_node2"><a xlink:href=".././type/superlu_options_t.html" xlink:title="SUPERLU_OPTIONS_T">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="602.5,-566 475.5,-566 475.5,-542 602.5,-542 602.5,-566"/>
+<text text-anchor="middle" x="539" y="-551.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SUPERLU_OPTIONS_T</text>
+</a>
+</g>
+</g>
+<!-- type~pcsr_ci -->
+<g id="type~~graph~~TypeGraph_node3" class="node"><title>type~pcsr_ci</title>
+<g id="a_type~~graph~~TypeGraph_node3"><a xlink:href=".././type/pcsr_ci.html" xlink:title="pCSR_ci">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="834,-506 780,-506 780,-482 834,-482 834,-506"/>
+<text text-anchor="middle" x="807" y="-491.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pCSR_ci</text>
+</a>
+</g>
+</g>
+<!-- type~tcsc_zi -->
+<g id="type~~graph~~TypeGraph_node4" class="node"><title>type~tcsc_zi</title>
+<g id="a_type~~graph~~TypeGraph_node4"><a xlink:href=".././type/tcsc_zi.html" xlink:title="tCSC_zi">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="834,-548 780,-548 780,-524 834,-524 834,-548"/>
+<text text-anchor="middle" x="807" y="-533.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tCSC_zi</text>
+</a>
+</g>
+</g>
+<!-- type~num_par -->
+<g id="type~~graph~~TypeGraph_node5" class="node"><title>type~num_par</title>
+<g id="a_type~~graph~~TypeGraph_node5"><a xlink:href=".././type/num_par.html" xlink:title="NUM_PAR">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="839,-590 775,-590 775,-566 839,-566 839,-590"/>
+<text text-anchor="middle" x="807" y="-575.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">NUM_PAR</text>
+</a>
+</g>
+</g>
+<!-- type~superlustat_t -->
+<g id="type~~graph~~TypeGraph_node6" class="node"><title>type~superlustat_t</title>
+<g id="a_type~~graph~~TypeGraph_node6"><a xlink:href=".././type/superlustat_t.html" xlink:title="SUPERLUSTAT_T">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="451.5,-572 350.5,-572 350.5,-548 451.5,-548 451.5,-572"/>
+<text text-anchor="middle" x="401" y="-557.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SUPERLUSTAT_T</text>
+</a>
+</g>
+</g>
+<!-- C_PTR -->
+<g id="type~~graph~~TypeGraph_node35" class="node"><title>C_PTR</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="76,-496 22,-496 22,-472 76,-472 76,-496"/>
+<text text-anchor="middle" x="49" y="-481.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">C_PTR</text>
+</g>
+<!-- type~superlustat_t&#45;&gt;C_PTR -->
+<g id="type~~graph~~TypeGraph_edge2" class="edge"><title>type~superlustat_t&#45;&gt;C_PTR</title>
+<path fill="none" stroke="#f6ff00" stroke-dasharray="5,2" d="M350.388,-562.371C292.173,-563.418 193.729,-559.702 116,-529 99.8607,-522.625 83.7311,-511.732 71.4573,-502.26"/>
+<polygon fill="#f6ff00" stroke="#f6ff00" points="73.6212,-499.508 63.6234,-496.002 69.2524,-504.978 73.6212,-499.508"/>
+<text text-anchor="middle" x="282" y="-564.4" font-family="Helvetica,sans-Serif" font-size="9.50">panel_histo, utime, ops</text>
+</g>
+<!-- type~dmumps_struc -->
+<g id="type~~graph~~TypeGraph_node7" class="node"><title>type~dmumps_struc</title>
+<g id="a_type~~graph~~TypeGraph_node7"><a xlink:href=".././type/dmumps_struc.html" xlink:title="DMUMPS_STRUC">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="857.5,-632 756.5,-632 756.5,-608 857.5,-608 857.5,-632"/>
+<text text-anchor="middle" x="807" y="-617.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">DMUMPS_STRUC</text>
+</a>
+</g>
+</g>
+<!-- DMUMPS_ROOT_STRUC -->
+<g id="type~~graph~~TypeGraph_node39" class="node"><title>DMUMPS_ROOT_STRUC</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="608,-632 470,-632 470,-608 608,-608 608,-632"/>
+<text text-anchor="middle" x="539" y="-617.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">DMUMPS_ROOT_STRUC</text>
+</g>
+<!-- type~dmumps_struc&#45;&gt;DMUMPS_ROOT_STRUC -->
+<g id="type~~graph~~TypeGraph_edge3" class="edge"><title>type~dmumps_struc&#45;&gt;DMUMPS_ROOT_STRUC</title>
+<path fill="none" stroke="#c1ff00" stroke-dasharray="5,2" d="M756.279,-620C717.497,-620 662.907,-620 618.275,-620"/>
+<polygon fill="#c1ff00" stroke="#c1ff00" points="618.039,-616.5 608.039,-620 618.039,-623.5 618.039,-616.5"/>
+<text text-anchor="middle" x="682" y="-622.4" font-family="Helvetica,sans-Serif" font-size="9.50">root</text>
+</g>
+<!-- type~pcsc_di -->
+<g id="type~~graph~~TypeGraph_node8" class="node"><title>type~pcsc_di</title>
+<g id="a_type~~graph~~TypeGraph_node8"><a xlink:href=".././type/pcsc_di.html" xlink:title="pCSC_di">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="834.5,-674 779.5,-674 779.5,-650 834.5,-650 834.5,-674"/>
+<text text-anchor="middle" x="807" y="-659.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pCSC_di</text>
+</a>
+</g>
+</g>
+<!-- type~pcsr_zi -->
+<g id="type~~graph~~TypeGraph_node9" class="node"><title>type~pcsr_zi</title>
+<g id="a_type~~graph~~TypeGraph_node9"><a xlink:href=".././type/pcsr_zi.html" xlink:title="pCSR_zi">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="834,-716 780,-716 780,-692 834,-692 834,-716"/>
+<text text-anchor="middle" x="807" y="-701.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pCSR_zi</text>
+</a>
+</g>
+</g>
+<!-- type~pcsc_ci -->
+<g id="type~~graph~~TypeGraph_node10" class="node"><title>type~pcsc_ci</title>
+<g id="a_type~~graph~~TypeGraph_node10"><a xlink:href=".././type/pcsc_ci.html" xlink:title="pCSC_ci">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="834,-758 780,-758 780,-734 834,-734 834,-758"/>
+<text text-anchor="middle" x="807" y="-743.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pCSC_ci</text>
+</a>
+</g>
+</g>
+<!-- type~ncformat -->
+<g id="type~~graph~~TypeGraph_node11" class="node"><title>type~ncformat</title>
+<g id="a_type~~graph~~TypeGraph_node11"><a xlink:href=".././type/ncformat.html" xlink:title="NCFORMAT">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="318.5,-324 245.5,-324 245.5,-300 318.5,-300 318.5,-324"/>
+<text text-anchor="middle" x="282" y="-309.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">NCFORMAT</text>
+</a>
+</g>
+</g>
+<!-- type~ncformat&#45;&gt;C_PTR -->
+<g id="type~~graph~~TypeGraph_edge4" class="edge"><title>type~ncformat&#45;&gt;C_PTR</title>
+<path fill="none" stroke="#00ff11" stroke-dasharray="5,2" d="M245.332,-318.244C209.348,-326.064 153.844,-342.453 116,-374 87.2608,-397.957 67.818,-437.844 57.847,-462.435"/>
+<polygon fill="#00ff11" stroke="#00ff11" points="54.5108,-461.357 54.1541,-471.946 61.0362,-463.891 54.5108,-461.357"/>
+<text text-anchor="middle" x="165" y="-376.4" font-family="Helvetica,sans-Serif" font-size="9.50">nzval, rowind, colptr</text>
+</g>
+<!-- type~tcsr_di -->
+<g id="type~~graph~~TypeGraph_node12" class="node"><title>type~tcsr_di</title>
+<g id="a_type~~graph~~TypeGraph_node12"><a xlink:href=".././type/tcsr_di.html" xlink:title="tCSR_di">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="834,-800 780,-800 780,-776 834,-776 834,-800"/>
+<text text-anchor="middle" x="807" y="-785.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tCSR_di</text>
+</a>
+</g>
+</g>
+<!-- type~ms_mat_solv -->
+<g id="type~~graph~~TypeGraph_node13" class="node"><title>type~ms_mat_solv</title>
+<g id="a_type~~graph~~TypeGraph_node13"><a xlink:href=".././type/ms_mat_solv.html" xlink:title="MS_MAT_SOLV">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="852.5,-127 761.5,-127 761.5,-103 852.5,-103 852.5,-127"/>
+<text text-anchor="middle" x="807" y="-112.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MS_MAT_SOLV</text>
+</a>
+</g>
+</g>
+<!-- type~mat_solv -->
+<g id="type~~graph~~TypeGraph_node21" class="node"><title>type~mat_solv</title>
+<g id="a_type~~graph~~TypeGraph_node21"><a xlink:href=".././type/mat_solv.html" xlink:title="MAT_SOLV">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="573.5,-127 504.5,-127 504.5,-103 573.5,-103 573.5,-127"/>
+<text text-anchor="middle" x="539" y="-112.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MAT_SOLV</text>
+</a>
+</g>
+</g>
+<!-- type~ms_mat_solv&#45;&gt;type~mat_solv -->
+<g id="type~~graph~~TypeGraph_edge5" class="edge"><title>type~ms_mat_solv&#45;&gt;type~mat_solv</title>
+<path fill="none" stroke="#00ff7b" stroke-dasharray="5,2" d="M761.478,-115C712.15,-115 633.104,-115 583.991,-115"/>
+<polygon fill="#00ff7b" stroke="#00ff7b" points="583.687,-111.5 573.687,-115 583.687,-118.5 583.687,-111.5"/>
+<text text-anchor="middle" x="682" y="-117.4" font-family="Helvetica,sans-Serif" font-size="9.50">ts_mat, bs_mat</text>
+</g>
+<!-- type~tcsr_ci -->
+<g id="type~~graph~~TypeGraph_node14" class="node"><title>type~tcsr_ci</title>
+<g id="a_type~~graph~~TypeGraph_node14"><a xlink:href=".././type/tcsr_ci.html" xlink:title="tCSR_ci">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="834,-842 780,-842 780,-818 834,-818 834,-842"/>
+<text text-anchor="middle" x="807" y="-827.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tCSR_ci</text>
+</a>
+</g>
+</g>
+<!-- type~globallu_t -->
+<g id="type~~graph~~TypeGraph_node15" class="node"><title>type~globallu_t</title>
+<g id="a_type~~graph~~TypeGraph_node15"><a xlink:href=".././type/globallu_t.html" xlink:title="GLOBALLU_T">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="579.5,-486 498.5,-486 498.5,-462 579.5,-462 579.5,-486"/>
+<text text-anchor="middle" x="539" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">GLOBALLU_T</text>
+</a>
+</g>
+</g>
+<!-- type~lu_stack_t -->
+<g id="type~~graph~~TypeGraph_node20" class="node"><title>type~lu_stack_t</title>
+<g id="a_type~~graph~~TypeGraph_node20"><a xlink:href=".././type/lu_stack_t.html" xlink:title="LU_STACK_T">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="321.5,-538 242.5,-538 242.5,-514 321.5,-514 321.5,-538"/>
+<text text-anchor="middle" x="282" y="-523.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">LU_STACK_T</text>
+</a>
+</g>
+</g>
+<!-- type~globallu_t&#45;&gt;type~lu_stack_t -->
+<g id="type~~graph~~TypeGraph_edge6" class="edge"><title>type~globallu_t&#45;&gt;type~lu_stack_t</title>
+<path fill="none" stroke="#00ffe4" stroke-dasharray="5,2" d="M498.291,-484.207C483.769,-487.804 467.18,-491.757 452,-495 411.684,-503.612 365.643,-511.961 331.809,-517.82"/>
+<polygon fill="#00ffe4" stroke="#00ffe4" points="330.982,-514.411 321.721,-519.556 332.169,-521.309 330.982,-514.411"/>
+<text text-anchor="middle" x="401" y="-516.4" font-family="Helvetica,sans-Serif" font-size="9.50">stack</text>
+</g>
+<!-- type~expheader -->
+<g id="type~~graph~~TypeGraph_node24" class="node"><title>type~expheader</title>
+<g id="a_type~~graph~~TypeGraph_node24"><a xlink:href=".././type/expheader.html" xlink:title="EXPHEADER">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="320,-496 244,-496 244,-472 320,-472 320,-496"/>
+<text text-anchor="middle" x="282" y="-481.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">EXPHEADER</text>
+</a>
+</g>
+</g>
+<!-- type~globallu_t&#45;&gt;type~expheader -->
+<g id="type~~graph~~TypeGraph_edge8" class="edge"><title>type~globallu_t&#45;&gt;type~expheader</title>
+<path fill="none" stroke="#00ffe4" stroke-dasharray="5,2" d="M498.436,-475.552C453.081,-477.33 378.782,-480.244 330.381,-482.142"/>
+<polygon fill="#00ffe4" stroke="#00ffe4" points="330.022,-478.653 320.167,-482.542 330.296,-485.648 330.022,-478.653"/>
+<text text-anchor="middle" x="401" y="-483.4" font-family="Helvetica,sans-Serif" font-size="9.50">expanders</text>
+</g>
+<!-- type~globallu_t&#45;&gt;C_PTR -->
+<g id="type~~graph~~TypeGraph_edge7" class="edge"><title>type~globallu_t&#45;&gt;C_PTR</title>
+<path fill="none" stroke="#00ffe4" stroke-dasharray="5,2" d="M498.463,-464.805C405.918,-443.435 181.818,-392.626 166,-398"/>
+<text text-anchor="middle" x="282" y="-428.4" font-family="Helvetica,sans-Serif" font-size="9.50">lusup, ucol</text>
+</g>
+<!-- type~pcsc_zi -->
+<g id="type~~graph~~TypeGraph_node16" class="node"><title>type~pcsc_zi</title>
+<g id="a_type~~graph~~TypeGraph_node16"><a xlink:href=".././type/pcsc_zi.html" xlink:title="pCSC_zi">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="834,-884 780,-884 780,-860 834,-860 834,-884"/>
+<text text-anchor="middle" x="807" y="-869.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pCSC_zi</text>
+</a>
+</g>
+</g>
+<!-- type~supermatrix -->
+<g id="type~~graph~~TypeGraph_node17" class="node"><title>type~supermatrix</title>
+<g id="a_type~~graph~~TypeGraph_node17"><a xlink:href=".././type/supermatrix.html" xlink:title="SUPERMATRIX">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="445,-419 357,-419 357,-395 445,-395 445,-419"/>
+<text text-anchor="middle" x="401" y="-404.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SUPERMATRIX</text>
+</a>
+</g>
+</g>
+<!-- type~supermatrix&#45;&gt;C_PTR -->
+<g id="type~~graph~~TypeGraph_edge9" class="edge"><title>type~supermatrix&#45;&gt;C_PTR</title>
+<path fill="none" stroke="#00afff" stroke-dasharray="5,2" d="M356.899,-396.51C308.971,-386.843 229.89,-376.9 166,-398"/>
+<text text-anchor="middle" x="282" y="-394.4" font-family="Helvetica,sans-Serif" font-size="9.50">Store</text>
+</g>
+<!-- type~pvec_zi -->
+<g id="type~~graph~~TypeGraph_node18" class="node"><title>type~pvec_zi</title>
+<g id="a_type~~graph~~TypeGraph_node18"><a xlink:href=".././type/pvec_zi.html" xlink:title="pVec_zi">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="834,-926 780,-926 780,-902 834,-902 834,-926"/>
+<text text-anchor="middle" x="807" y="-911.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pVec_zi</text>
+</a>
+</g>
+</g>
+<!-- type~mem_usage_t -->
+<g id="type~~graph~~TypeGraph_node19" class="node"><title>type~mem_usage_t</title>
+<g id="a_type~~graph~~TypeGraph_node19"><a xlink:href=".././type/mem_usage_t.html" xlink:title="MEM_USAGE_T">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="585,-406 493,-406 493,-382 585,-382 585,-406"/>
+<text text-anchor="middle" x="539" y="-391.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MEM_USAGE_T</text>
+</a>
+</g>
+</g>
+<!-- type~lu_stack_t&#45;&gt;C_PTR -->
+<g id="type~~graph~~TypeGraph_edge10" class="edge"><title>type~lu_stack_t&#45;&gt;C_PTR</title>
+<path fill="none" stroke="#0011ff" stroke-dasharray="5,2" d="M242.247,-519.883C208.758,-514.488 159.096,-506.224 116,-498 106.368,-496.162 95.9768,-494.029 86.3539,-491.99"/>
+<polygon fill="#0011ff" stroke="#0011ff" points="86.7968,-488.506 76.2855,-489.834 85.3307,-495.35 86.7968,-488.506"/>
+<text text-anchor="middle" x="165" y="-517.4" font-family="Helvetica,sans-Serif" font-size="9.50">array</text>
+</g>
+<!-- type~mat_solv&#45;&gt;type~mat_umfp -->
+<g id="type~~graph~~TypeGraph_edge14" class="edge"><title>type~mat_solv&#45;&gt;type~mat_umfp</title>
+<path fill="none" stroke="#2300ff" stroke-dasharray="5,2" d="M514.921,-127.037C469.332,-150.815 367.629,-203.86 315.369,-231.117"/>
+<polygon fill="#2300ff" stroke="#2300ff" points="313.459,-228.166 306.211,-235.894 316.696,-234.373 313.459,-228.166"/>
+<text text-anchor="middle" x="401" y="-215.4" font-family="Helvetica,sans-Serif" font-size="9.50">matumfp</text>
+</g>
+<!-- type~mat_ma48 -->
+<g id="type~~graph~~TypeGraph_node29" class="node"><title>type~mat_ma48</title>
+<g id="a_type~~graph~~TypeGraph_node29"><a xlink:href=".././type/mat_ma48.html" xlink:title="MAT_MA48">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="316.5,-150 247.5,-150 247.5,-126 316.5,-126 316.5,-150"/>
+<text text-anchor="middle" x="282" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MAT_MA48</text>
+</a>
+</g>
+</g>
+<!-- type~mat_solv&#45;&gt;type~mat_ma48 -->
+<g id="type~~graph~~TypeGraph_edge12" class="edge"><title>type~mat_solv&#45;&gt;type~mat_ma48</title>
+<path fill="none" stroke="#2300ff" stroke-dasharray="5,2" d="M504.401,-118.03C458.821,-122.142 377.314,-129.493 326.929,-134.038"/>
+<polygon fill="#2300ff" stroke="#2300ff" points="326.319,-130.579 316.673,-134.963 326.947,-137.55 326.319,-130.579"/>
+<text text-anchor="middle" x="401" y="-134.4" font-family="Helvetica,sans-Serif" font-size="9.50">matma48</text>
+</g>
+<!-- MAT_MUMP -->
+<g id="type~~graph~~TypeGraph_node31" class="node"><title>MAT_MUMP</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="318.5,-108 245.5,-108 245.5,-84 318.5,-84 318.5,-108"/>
+<text text-anchor="middle" x="282" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MAT_MUMP</text>
+</g>
+<!-- type~mat_solv&#45;&gt;MAT_MUMP -->
+<g id="type~~graph~~TypeGraph_edge13" class="edge"><title>type~mat_solv&#45;&gt;MAT_MUMP</title>
+<path fill="none" stroke="#2300ff" stroke-dasharray="5,2" d="M504.208,-108.977C488.401,-106.395 469.291,-103.608 452,-102 410.408,-98.1309 362.844,-96.7092 328.795,-96.2096"/>
+<polygon fill="#2300ff" stroke="#2300ff" points="328.727,-92.7085 318.684,-96.0824 328.639,-99.708 328.727,-92.7085"/>
+<text text-anchor="middle" x="401" y="-104.4" font-family="Helvetica,sans-Serif" font-size="9.50">matmump</text>
+</g>
+<!-- MAT_SULU -->
+<g id="type~~graph~~TypeGraph_node38" class="node"><title>MAT_SULU</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="316.5,-66 247.5,-66 247.5,-42 316.5,-42 316.5,-66"/>
+<text text-anchor="middle" x="282" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MAT_SULU</text>
+</g>
+<!-- type~mat_solv&#45;&gt;MAT_SULU -->
+<g id="type~~graph~~TypeGraph_edge11" class="edge"><title>type~mat_solv&#45;&gt;MAT_SULU</title>
+<path fill="none" stroke="#2300ff" stroke-dasharray="5,2" d="M509.767,-102.977C493.19,-96.3029 471.69,-88.3029 452,-83 410.19,-71.7395 361.333,-63.913 326.935,-59.2534"/>
+<polygon fill="#2300ff" stroke="#2300ff" points="327.12,-55.7475 316.748,-57.9087 326.204,-62.6873 327.12,-55.7475"/>
+<text text-anchor="middle" x="401" y="-85.4" font-family="Helvetica,sans-Serif" font-size="9.50">matsulu</text>
+</g>
+<!-- type~sulu_env -->
+<g id="type~~graph~~TypeGraph_node22" class="node"><title>type~sulu_env</title>
+<g id="a_type~~graph~~TypeGraph_node22"><a xlink:href=".././type/sulu_env.html" xlink:title="SULU_ENV">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="840.5,-464 773.5,-464 773.5,-440 840.5,-440 840.5,-464"/>
+<text text-anchor="middle" x="807" y="-449.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SULU_ENV</text>
+</a>
+</g>
+</g>
+<!-- type~sulu_env&#45;&gt;type~superlu_options_t -->
+<g id="type~~graph~~TypeGraph_edge19" class="edge"><title>type~sulu_env&#45;&gt;type~superlu_options_t</title>
+<path fill="none" stroke="#5700ff" stroke-dasharray="5,2" d="M773.278,-460.983C766.892,-463.961 760.722,-467.877 756,-473 738.568,-491.911 757.795,-511.578 738,-528 703.685,-556.468 653.88,-562.895 612.807,-562.242"/>
+<polygon fill="#5700ff" stroke="#5700ff" points="612.669,-558.737 602.568,-561.933 612.458,-565.734 612.669,-558.737"/>
+<text text-anchor="middle" x="682" y="-564.4" font-family="Helvetica,sans-Serif" font-size="9.50">options</text>
+</g>
+<!-- type~sulu_env&#45;&gt;type~superlustat_t -->
+<g id="type~~graph~~TypeGraph_edge20" class="edge"><title>type~sulu_env&#45;&gt;type~superlustat_t</title>
+<path fill="none" stroke="#5700ff" stroke-dasharray="5,2" d="M777.551,-464.019C760.81,-471.037 742.125,-478.756 738,-480 621.754,-515.06 586.465,-498.675 470,-533 459.567,-536.075 448.504,-540.114 438.402,-544.128"/>
+<polygon fill="#5700ff" stroke="#5700ff" points="437,-540.92 429.061,-547.936 439.643,-547.401 437,-540.92"/>
+<text text-anchor="middle" x="682" y="-505.4" font-family="Helvetica,sans-Serif" font-size="9.50">stat</text>
+</g>
+<!-- type~sulu_env&#45;&gt;type~globallu_t -->
+<g id="type~~graph~~TypeGraph_edge16" class="edge"><title>type~sulu_env&#45;&gt;type~globallu_t</title>
+<path fill="none" stroke="#5700ff" stroke-dasharray="5,2" d="M773.383,-454.698C727.507,-458.492 643.535,-465.437 589.814,-469.88"/>
+<polygon fill="#5700ff" stroke="#5700ff" points="589.5,-466.394 579.823,-470.706 590.077,-473.37 589.5,-466.394"/>
+<text text-anchor="middle" x="682" y="-468.4" font-family="Helvetica,sans-Serif" font-size="9.50">Glu</text>
+</g>
+<!-- type~sulu_env&#45;&gt;type~supermatrix -->
+<g id="type~~graph~~TypeGraph_edge17" class="edge"><title>type~sulu_env&#45;&gt;type~supermatrix</title>
+<path fill="none" stroke="#5700ff" stroke-dasharray="5,2" d="M773.165,-447.469C762.012,-445.979 749.471,-444.358 738,-443 619.071,-428.92 589.028,-428.219 470,-415 465.23,-414.47 460.273,-413.909 455.307,-413.338"/>
+<polygon fill="#5700ff" stroke="#5700ff" points="455.494,-409.837 445.157,-412.163 454.688,-416.79 455.494,-409.837"/>
+<text text-anchor="middle" x="682" y="-445.4" font-family="Helvetica,sans-Serif" font-size="9.50">sma, smb, smx, sml, smu</text>
+</g>
+<!-- type~sulu_env&#45;&gt;type~mem_usage_t -->
+<g id="type~~graph~~TypeGraph_edge18" class="edge"><title>type~sulu_env&#45;&gt;type~mem_usage_t</title>
+<path fill="none" stroke="#5700ff" stroke-dasharray="5,2" d="M794.289,-439.903C781.682,-427.79 760.402,-409.854 738,-402 691.759,-385.788 635.683,-385.14 595.028,-387.755"/>
+<polygon fill="#5700ff" stroke="#5700ff" points="594.759,-384.265 585.04,-388.482 595.268,-391.246 594.759,-384.265"/>
+<text text-anchor="middle" x="682" y="-404.4" font-family="Helvetica,sans-Serif" font-size="9.50">mem_usage</text>
+</g>
+<!-- type~sulu_env&#45;&gt;C_PTR -->
+<g id="type~~graph~~TypeGraph_edge15" class="edge"><title>type~sulu_env&#45;&gt;C_PTR</title>
+<path fill="none" stroke="#5700ff" stroke-dasharray="5,2" d="M798.283,-439.925C787.171,-423.723 765,-395.538 738,-383 685.442,-358.594 665.906,-375.224 608,-373 440.964,-366.585 397.421,-357.959 232,-382 202.131,-386.341 194.321,-387.562 166,-398"/>
+<path fill="none" stroke="#5700ff" stroke-dasharray="5,2" d="M164,-398C124.947,-410.836 88.6568,-443.124 67.9351,-464.28"/>
+<polygon fill="#5700ff" stroke="#5700ff" points="65.1514,-462.128 60.7822,-471.78 70.2168,-466.959 65.1514,-462.128"/>
+<text text-anchor="middle" x="401" y="-371.4" font-family="Helvetica,sans-Serif" font-size="9.50">work</text>
+</g>
+<!-- type~pcsr_di -->
+<g id="type~~graph~~TypeGraph_node23" class="node"><title>type~pcsr_di</title>
+<g id="a_type~~graph~~TypeGraph_node23"><a xlink:href=".././type/pcsr_di.html" xlink:title="pCSR_di">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="834.5,-968 779.5,-968 779.5,-944 834.5,-944 834.5,-968"/>
+<text text-anchor="middle" x="807" y="-953.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pCSR_di</text>
+</a>
+</g>
+</g>
+<!-- type~expheader&#45;&gt;C_PTR -->
+<g id="type~~graph~~TypeGraph_edge21" class="edge"><title>type~expheader&#45;&gt;C_PTR</title>
+<path fill="none" stroke="#c100ff" stroke-dasharray="5,2" d="M243.886,-484C200.528,-484 129.265,-484 86.2723,-484"/>
+<polygon fill="#c100ff" stroke="#c100ff" points="86.2457,-480.5 76.2457,-484 86.2456,-487.5 86.2457,-480.5"/>
+<text text-anchor="middle" x="165" y="-486.4" font-family="Helvetica,sans-Serif" font-size="9.50">mem</text>
+</g>
+<!-- type~tcsr_zi -->
+<g id="type~~graph~~TypeGraph_node25" class="node"><title>type~tcsr_zi</title>
+<g id="a_type~~graph~~TypeGraph_node25"><a xlink:href=".././type/tcsr_zi.html" xlink:title="tCSR_zi">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="834,-1010 780,-1010 780,-986 834,-986 834,-1010"/>
+<text text-anchor="middle" x="807" y="-995.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tCSR_zi</text>
+</a>
+</g>
+</g>
+<!-- type~tcsc_ci -->
+<g id="type~~graph~~TypeGraph_node26" class="node"><title>type~tcsc_ci</title>
+<g id="a_type~~graph~~TypeGraph_node26"><a xlink:href=".././type/tcsc_ci.html" xlink:title="tCSC_ci">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="834,-1052 780,-1052 780,-1028 834,-1028 834,-1052"/>
+<text text-anchor="middle" x="807" y="-1037.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tCSC_ci</text>
+</a>
+</g>
+</g>
+<!-- type~tcsc_di -->
+<g id="type~~graph~~TypeGraph_node27" class="node"><title>type~tcsc_di</title>
+<g id="a_type~~graph~~TypeGraph_node27"><a xlink:href=".././type/tcsc_di.html" xlink:title="tCSC_di">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="834,-1094 780,-1094 780,-1070 834,-1070 834,-1094"/>
+<text text-anchor="middle" x="807" y="-1079.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tCSC_di</text>
+</a>
+</g>
+</g>
+<!-- type~tvec_zi -->
+<g id="type~~graph~~TypeGraph_node28" class="node"><title>type~tvec_zi</title>
+<g id="a_type~~graph~~TypeGraph_node28"><a xlink:href=".././type/tvec_zi.html" xlink:title="tVec_zi">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="834,-1136 780,-1136 780,-1112 834,-1112 834,-1136"/>
+<text text-anchor="middle" x="807" y="-1121.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tVec_zi</text>
+</a>
+</g>
+</g>
+<!-- MA48_FINFO -->
+<g id="type~~graph~~TypeGraph_node30" class="node"><title>MA48_FINFO</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="88.5,-234 9.5,-234 9.5,-210 88.5,-210 88.5,-234"/>
+<text text-anchor="middle" x="49" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MA48_FINFO</text>
+</g>
+<!-- type~mat_ma48&#45;&gt;MA48_FINFO -->
+<g id="type~~graph~~TypeGraph_edge22" class="edge"><title>type~mat_ma48&#45;&gt;MA48_FINFO</title>
+<path fill="none" stroke="#ff0034" stroke-dasharray="5,2" d="M266.785,-150.124C253.831,-160.57 233.758,-175.303 214,-184 177.031,-200.274 132.181,-210.051 98.7338,-215.604"/>
+<polygon fill="#ff0034" stroke="#ff0034" points="98.0666,-212.166 88.7409,-217.194 99.1667,-219.079 98.0666,-212.166"/>
+<text text-anchor="middle" x="165" y="-215.4" font-family="Helvetica,sans-Serif" font-size="9.50">finf</text>
+</g>
+<!-- MA48_CONTROL -->
+<g id="type~~graph~~TypeGraph_node32" class="node"><title>MA48_CONTROL</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="98,-192 7.10543e-15,-192 7.10543e-15,-168 98,-168 98,-192"/>
+<text text-anchor="middle" x="49" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MA48_CONTROL</text>
+</g>
+<!-- type~mat_ma48&#45;&gt;MA48_CONTROL -->
+<g id="type~~graph~~TypeGraph_edge23" class="edge"><title>type~mat_ma48&#45;&gt;MA48_CONTROL</title>
+<path fill="none" stroke="#ff0034" stroke-dasharray="5,2" d="M247.308,-145.293C236.669,-147.528 224.858,-149.939 214,-152 178.919,-158.658 139.476,-165.415 108.065,-170.622"/>
+<polygon fill="#ff0034" stroke="#ff0034" points="107.46,-167.175 98.1639,-172.257 108.6,-174.081 107.46,-167.175"/>
+<text text-anchor="middle" x="165" y="-172.4" font-family="Helvetica,sans-Serif" font-size="9.50">ctrl</text>
+</g>
+<!-- MA48_FACTORS -->
+<g id="type~~graph~~TypeGraph_node33" class="node"><title>MA48_FACTORS</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="97.5,-150 0.5,-150 0.5,-126 97.5,-126 97.5,-150"/>
+<text text-anchor="middle" x="49" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MA48_FACTORS</text>
+</g>
+<!-- type~mat_ma48&#45;&gt;MA48_FACTORS -->
+<g id="type~~graph~~TypeGraph_edge24" class="edge"><title>type~mat_ma48&#45;&gt;MA48_FACTORS</title>
+<path fill="none" stroke="#ff0034" stroke-dasharray="5,2" d="M247.411,-138C210.92,-138 151.955,-138 107.955,-138"/>
+<polygon fill="#ff0034" stroke="#ff0034" points="107.681,-134.5 97.6806,-138 107.681,-141.5 107.681,-134.5"/>
+<text text-anchor="middle" x="165" y="-140.4" font-family="Helvetica,sans-Serif" font-size="9.50">fact</text>
+</g>
+<!-- ZD11_TYPE -->
+<g id="type~~graph~~TypeGraph_node34" class="node"><title>ZD11_TYPE</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="85,-108 13,-108 13,-84 85,-84 85,-108"/>
+<text text-anchor="middle" x="49" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ZD11_TYPE</text>
+</g>
+<!-- type~mat_ma48&#45;&gt;ZD11_TYPE -->
+<g id="type~~graph~~TypeGraph_edge26" class="edge"><title>type~mat_ma48&#45;&gt;ZD11_TYPE</title>
+<path fill="none" stroke="#ff0034" stroke-dasharray="5,2" d="M247.308,-130.707C236.669,-128.472 224.858,-126.061 214,-124 174.054,-116.419 128.452,-108.709 95.492,-103.304"/>
+<polygon fill="#ff0034" stroke="#ff0034" points="95.6914,-99.7908 85.2581,-101.634 94.5635,-106.699 95.6914,-99.7908"/>
+<text text-anchor="middle" x="165" y="-126.4" font-family="Helvetica,sans-Serif" font-size="9.50">zmat</text>
+</g>
+<!-- MA48_SINFO -->
+<g id="type~~graph~~TypeGraph_node36" class="node"><title>MA48_SINFO</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="88.5,-66 9.5,-66 9.5,-42 88.5,-42 88.5,-66"/>
+<text text-anchor="middle" x="49" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MA48_SINFO</text>
+</g>
+<!-- type~mat_ma48&#45;&gt;MA48_SINFO -->
+<g id="type~~graph~~TypeGraph_edge25" class="edge"><title>type~mat_ma48&#45;&gt;MA48_SINFO</title>
+<path fill="none" stroke="#ff0034" stroke-dasharray="5,2" d="M247.259,-126.333C241.88,-123.704 236.584,-120.603 232,-117 221.517,-108.761 225.15,-100.311 214,-93 179.622,-70.4577 133.594,-60.9115 99.0511,-56.8864"/>
+<polygon fill="#ff0034" stroke="#ff0034" points="99.0353,-53.3657 88.7253,-55.8062 98.3069,-60.3277 99.0353,-53.3657"/>
+<text text-anchor="middle" x="165" y="-95.4" font-family="Helvetica,sans-Serif" font-size="9.50">sinf</text>
+</g>
+<!-- MA48_AINFO -->
+<g id="type~~graph~~TypeGraph_node40" class="node"><title>MA48_AINFO</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="88.5,-24 9.5,-24 9.5,-0 88.5,-0 88.5,-24"/>
+<text text-anchor="middle" x="49" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MA48_AINFO</text>
+</g>
+<!-- type~mat_ma48&#45;&gt;MA48_AINFO -->
+<g id="type~~graph~~TypeGraph_edge27" class="edge"><title>type~mat_ma48&#45;&gt;MA48_AINFO</title>
+<path fill="none" stroke="#ff0034" stroke-dasharray="5,2" d="M247.401,-128.526C241.621,-125.619 236.149,-121.855 232,-117 210.852,-92.2509 237.518,-68.5086 214,-46 183.695,-16.9964 135.467,-9.88407 99.1385,-9.20094"/>
+<polygon fill="#ff0034" stroke="#ff0034" points="98.7668,-5.69997 88.7569,-9.17171 98.747,-12.6999 98.7668,-5.69997"/>
+<text text-anchor="middle" x="165" y="-48.4" font-family="Helvetica,sans-Serif" font-size="9.50">ainf</text>
+</g>
+</g>
+</svg>
+</div><script>var pantypegraphTypeGraph = svgPanZoom('#typegraphTypeGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.36.0 (20140111.2315)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="177pt" height="32pt"
+ viewBox="0.00 0.00 177.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 173,-28 173,4 -4,4"/>
+<!-- Type -->
+<g id="node1" class="node"><title>Type</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="54,-24 0,-24 0,-0 54,-0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="169.25,-24 72.75,-24 72.75,-0 169.25,-0 169.25,-24"/>
+<text text-anchor="middle" x="121" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a derived type to the parent type which it
+    extends. Dashed arrows point from a derived type to the other
+    types it contains as a components, with a label listing the name(s) of
+    said component(s). Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+        </div>
+      </div>
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2018 
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2018-07-20 11:50  
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> MSOLV-fortran was developed by Arthur Francisco - Noël Brunetière</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

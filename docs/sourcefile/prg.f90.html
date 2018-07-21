@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="MSOLV-fortran – A modern Fortran API for Sparse Direct Solvers, as part of">
+    
+    <meta name="author" content="Arthur Francisco - Noël Brunetière" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>prg.f90 &ndash; MSOLV-fortran</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">MSOLV-fortran </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../program/test_solvers.html">Program</a></li>
+      
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../program/test_solvers.html">Program</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>prg.f90
+    <small>Source File</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 6.4% of total for source files.">234 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/prg.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+  
+     <li class="active">prg.f90</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#progs-0">Programs</a></h3></div>
+  <div id="progs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/test_solvers.html">test_solvers</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/prg.f90.html#src">prg.f90</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    <div class="col-md-9" id='text'>
+      
+      <br>
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">This file depends on</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.36.0 (20140111.2315)
+ -->
+<!-- Title: sourcefile~~prg.f90~~EfferentGraph Pages: 1 -->
+<svg id="sourcefileprgf90EfferentGraph" width="464pt" height="226pt"
+ viewBox="0.00 0.00 464.00 226.34" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~prg.f90~~EfferentGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 222.342)">
+<title>sourcefile~~prg.f90~~EfferentGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-222.342 460,-222.342 460,4 -4,4"/>
+<!-- sourcefile~prg.f90 -->
+<g id="sourcefile~~prg.f90~~EfferentGraph_node1" class="node"><title>sourcefile~prg.f90</title>
+<polygon fill="none" stroke="black" points="456,-188 402,-188 402,-164 456,-164 456,-188"/>
+<text text-anchor="middle" x="429" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50">prg.f90</text>
+</g>
+<!-- sourcefile~mod_data_arch.f90 -->
+<g id="sourcefile~~prg.f90~~EfferentGraph_node2" class="node"><title>sourcefile~mod_data_arch.f90</title>
+<g id="a_sourcefile~~prg.f90~~EfferentGraph_node2"><a xlink:href=".././sourcefile/mod_data_arch.f90.html" xlink:title="mod_data_arch.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="106,-188 7.10543e-15,-188 7.10543e-15,-164 106,-164 106,-188"/>
+<text text-anchor="middle" x="53" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mod_data_arch.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~prg.f90&#45;&gt;sourcefile~mod_data_arch.f90 -->
+<g id="sourcefile~~prg.f90~~EfferentGraph_edge1" class="edge"><title>sourcefile~prg.f90&#45;&gt;sourcefile~mod_data_arch.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M322,-216C245.078,-224.036 156.425,-205.254 102.833,-190.784"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="103.491,-187.335 92.9205,-188.049 101.629,-194.083 103.491,-187.335"/>
+</g>
+<!-- sourcefile~mod_num_par.f90 -->
+<g id="sourcefile~~prg.f90~~EfferentGraph_node3" class="node"><title>sourcefile~mod_num_par.f90</title>
+<g id="a_sourcefile~~prg.f90~~EfferentGraph_node3"><a xlink:href=".././sourcefile/mod_num_par.f90.html" xlink:title="mod_num_par.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="243,-188 143,-188 143,-164 243,-164 243,-188"/>
+<text text-anchor="middle" x="193" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mod_num_par.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~prg.f90&#45;&gt;sourcefile~mod_num_par.f90 -->
+<g id="sourcefile~~prg.f90~~EfferentGraph_edge2" class="edge"><title>sourcefile~prg.f90&#45;&gt;sourcefile~mod_num_par.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M406.53,-188.107C386.068,-198.697 354.015,-212.864 324,-216"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M322,-216C287.299,-219.625 249.364,-205.3 223.871,-192.797"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="225.24,-189.566 214.743,-188.136 222.057,-195.801 225.24,-189.566"/>
+</g>
+<!-- sourcefile~mod_solver.f90 -->
+<g id="sourcefile~~prg.f90~~EfferentGraph_node4" class="node"><title>sourcefile~mod_solver.f90</title>
+<g id="a_sourcefile~~prg.f90~~EfferentGraph_node4"><a xlink:href=".././sourcefile/mod_solver.f90.html" xlink:title="mod_solver.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-128 280,-128 280,-104 366,-104 366,-128"/>
+<text text-anchor="middle" x="323" y="-113.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mod_solver.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~prg.f90&#45;&gt;sourcefile~mod_solver.f90 -->
+<g id="sourcefile~~prg.f90~~EfferentGraph_edge3" class="edge"><title>sourcefile~prg.f90&#45;&gt;sourcefile~mod_solver.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M406.954,-163.858C391.73,-155.075 370.94,-143.081 353.982,-133.297"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="355.426,-130.089 345.015,-128.124 351.927,-136.153 355.426,-130.089"/>
+</g>
+<!-- sourcefile~mod_num_par.f90&#45;&gt;sourcefile~mod_data_arch.f90 -->
+<g id="sourcefile~~prg.f90~~EfferentGraph_edge4" class="edge"><title>sourcefile~mod_num_par.f90&#45;&gt;sourcefile~mod_data_arch.f90</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M142.958,-176C134.29,-176 125.161,-176 116.189,-176"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="116.157,-172.5 106.157,-176 116.156,-179.5 116.157,-172.5"/>
+</g>
+<!-- sourcefile~mod_solver.f90&#45;&gt;sourcefile~mod_data_arch.f90 -->
+<g id="sourcefile~~prg.f90~~EfferentGraph_edge5" class="edge"><title>sourcefile~mod_solver.f90&#45;&gt;sourcefile~mod_data_arch.f90</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M279.756,-124.892C243.244,-132.641 189.078,-144.284 142,-155 132.793,-157.096 123.057,-159.365 113.549,-161.611"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="112.676,-158.221 103.754,-163.935 114.292,-165.032 112.676,-158.221"/>
+</g>
+<!-- sourcefile~mod_solver.f90&#45;&gt;sourcefile~mod_num_par.f90 -->
+<g id="sourcefile~~prg.f90~~EfferentGraph_edge6" class="edge"><title>sourcefile~mod_solver.f90&#45;&gt;sourcefile~mod_num_par.f90</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M296.097,-128.142C276.839,-137.169 250.345,-149.588 229.173,-159.513"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="227.433,-156.463 219.864,-163.876 230.404,-162.801 227.433,-156.463"/>
+</g>
+<!-- sourcefile~dmumps_struc.f90 -->
+<g id="sourcefile~~prg.f90~~EfferentGraph_node5" class="node"><title>sourcefile~dmumps_struc.f90</title>
+<g id="a_sourcefile~~prg.f90~~EfferentGraph_node5"><a xlink:href=".././sourcefile/dmumps_struc.f90.html" xlink:title="dmumps_struc.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="243.5,-108 142.5,-108 142.5,-84 243.5,-84 243.5,-108"/>
+<text text-anchor="middle" x="193" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">dmumps_struc.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~mod_solver.f90&#45;&gt;sourcefile~dmumps_struc.f90 -->
+<g id="sourcefile~~prg.f90~~EfferentGraph_edge8" class="edge"><title>sourcefile~mod_solver.f90&#45;&gt;sourcefile~dmumps_struc.f90</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M279.733,-109.396C271.464,-108.104 262.645,-106.726 253.927,-105.364"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="254.199,-101.864 243.779,-103.778 253.119,-108.78 254.199,-101.864"/>
+</g>
+<!-- sourcefile~umfpack.f90 -->
+<g id="sourcefile~~prg.f90~~EfferentGraph_node6" class="node"><title>sourcefile~umfpack.f90</title>
+<g id="a_sourcefile~~prg.f90~~EfferentGraph_node6"><a xlink:href=".././sourcefile/umfpack.f90.html" xlink:title="umfpack.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="228.5,-66 157.5,-66 157.5,-42 228.5,-42 228.5,-66"/>
+<text text-anchor="middle" x="193" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~mod_solver.f90&#45;&gt;sourcefile~umfpack.f90 -->
+<g id="sourcefile~~prg.f90~~EfferentGraph_edge7" class="edge"><title>sourcefile~mod_solver.f90&#45;&gt;sourcefile~umfpack.f90</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M300.067,-103.821C284.575,-95.3805 263.232,-84.0727 244,-75 240.461,-73.3304 236.753,-71.6495 233.024,-70.0048"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="234.366,-66.7718 223.798,-66.0185 231.59,-73.1977 234.366,-66.7718"/>
+</g>
+<!-- sourcefile~superlu.f90 -->
+<g id="sourcefile~~prg.f90~~EfferentGraph_node7" class="node"><title>sourcefile~superlu.f90</title>
+<g id="a_sourcefile~~prg.f90~~EfferentGraph_node7"><a xlink:href=".././sourcefile/superlu.f90.html" xlink:title="superlu.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="226,-24 160,-24 160,-0 226,-0 226,-24"/>
+<text text-anchor="middle" x="193" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">superlu.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~mod_solver.f90&#45;&gt;sourcefile~superlu.f90 -->
+<g id="sourcefile~~prg.f90~~EfferentGraph_edge9" class="edge"><title>sourcefile~mod_solver.f90&#45;&gt;sourcefile~superlu.f90</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M313.188,-103.766C299.92,-86.0893 273.234,-53.3038 244,-33 241.293,-31.1203 238.392,-29.362 235.401,-27.7271"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="236.771,-24.4999 226.257,-23.1944 233.662,-30.7716 236.771,-24.4999"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.36.0 (20140111.2315)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="189pt" height="32pt"
+ viewBox="0.00 0.00 189.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 185,-28 185,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node"><title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="66.25,-24 -0.25,-24 -0.25,-0 66.25,-0 66.25,-24"/>
+<text text-anchor="middle" x="33" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="181.25,-24 84.75,-24 84.75,-0 181.25,-0 181.25,-24"/>
+<text text-anchor="middle" x="133" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a file to a file which it depends on. A file
+    is dependent upon another if the latter must be compiled before the former
+    can be. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+    
+      
+      <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#progs-1">Programs</a></h3></div>
+  <div id="progs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/test_solvers.html">test_solvers</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/prg.f90.html#src">prg.f90</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    <section>
+      <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl"><pre><span></span><a name="ln-1"></a><span class="c">!&lt; author: Arthur Francisco</span>
+<a name="ln-2"></a><span class="c">!  version: 1.0.0</span>
+<a name="ln-3"></a><span class="c">!  date: july, 12 2018</span>
+<a name="ln-4"></a><span class="c">!</span>
+<a name="ln-5"></a><span class="c">!  &lt;span style=&quot;color: #337ab7; font-family: cabin; font-size: 1.5em;&quot;&gt;</span>
+<a name="ln-6"></a><span class="c">!     **MSOLV example of use**</span>
+<a name="ln-7"></a><span class="c">!  &lt;/span&gt;</span>
+<a name="ln-8"></a><span class="c">!</span>
+<a name="ln-9"></a><span class="c">! @note</span>
+<a name="ln-10"></a><span class="c">!</span>
+<a name="ln-11"></a><span class="c">! The program asks first for the matrix size: ```1``` for a very small matrix, and ```0```</span>
+<a name="ln-12"></a><span class="c">! for a bigger one.The systems are CC HB format systems with elemental matrices.</span>
+<a name="ln-13"></a><span class="c">!</span>
+<a name="ln-14"></a><span class="c">! &lt;h3&gt;Small system -- nnz=18&lt;/h3&gt;</span>
+<a name="ln-15"></a><span class="c">!</span>
+<a name="ln-16"></a><span class="c">! The system is (example provided by MUMP):</span>
+<a name="ln-17"></a><span class="c">! $$ A1 = \begin{pmatrix}</span>
+<a name="ln-18"></a><span class="c">!           -1 &amp; 2 &amp; 3 \\</span>
+<a name="ln-19"></a><span class="c">!            2 &amp; 1 &amp; 1 \\</span>
+<a name="ln-20"></a><span class="c">!            1 &amp; 1 &amp; 1</span>
+<a name="ln-21"></a><span class="c">!          \end{pmatrix} ~</span>
+<a name="ln-22"></a><span class="c">!    A2 = \begin{pmatrix}</span>
+<a name="ln-23"></a><span class="c">!            2 &amp; -1 &amp;  3 \\</span>
+<a name="ln-24"></a><span class="c">!            1 &amp;  2 &amp; -1 \\</span>
+<a name="ln-25"></a><span class="c">!            3 &amp;  2 &amp;  1</span>
+<a name="ln-26"></a><span class="c">!         \end{pmatrix}  \\ \text{ } \\</span>
+<a name="ln-27"></a><span class="c">! \rightarrow a\_elt = (-1, 2, 1, 2, 1, 1, 3, 1, 1, 2, 1, 3, -1, 2, 2, 3, -1, 1) \\ \text{ } \\</span>
+<a name="ln-28"></a><span class="c">!  A = \begin{pmatrix}</span>
+<a name="ln-29"></a><span class="c">!           -1 &amp; 2 &amp; 3 &amp; 0 &amp; 0 \\</span>
+<a name="ln-30"></a><span class="c">!            2 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\</span>
+<a name="ln-31"></a><span class="c">!            1 &amp; 1 &amp; 3 &amp;-1 &amp; 3 \\</span>
+<a name="ln-32"></a><span class="c">!            0 &amp; 0 &amp; 1 &amp; 2 &amp;-1 \\</span>
+<a name="ln-33"></a><span class="c">!            0 &amp; 0 &amp; 3 &amp; 2 &amp; 1</span>
+<a name="ln-34"></a><span class="c">!      \end{pmatrix}  \\ \text{ } \\</span>
+<a name="ln-35"></a><span class="c">! \rightarrow eltvar = (1, 2, 3, 3, 4, 5) \text{ and } eltptr = (1, 4, 7)</span>
+<a name="ln-36"></a><span class="c">! $$</span>
+<a name="ln-37"></a><span class="c">!</span>
+<a name="ln-38"></a><span class="c">! + *eltvar* locates the elemental matrix line in the assembled matrix</span>
+<a name="ln-39"></a><span class="c">! + *eltptr* gives the elemental matrix first entry position in *eltvar*</span>
+<a name="ln-40"></a><span class="c">!          (last position being size(*eltvar*)+1) &lt;br/&gt;&lt;br/&gt;</span>
+<a name="ln-41"></a><span class="c">!</span>
+<a name="ln-42"></a><span class="c">! The rhs is (12, 7, 23, 6, 22), and the solution (1, 2, 3, 4, 5)</span>
+<a name="ln-43"></a><span class="c">!</span>
+<a name="ln-44"></a><span class="c">! &lt;h3&gt;Big (well, in fact, medium) system -- nnz=2,097,152&lt;/h3&gt;</span>
+<a name="ln-45"></a><span class="c">!</span>
+<a name="ln-46"></a><span class="c">! The system results from a *MUSST* study case and there is of course no theoretical solution to compare with</span>
+<a name="ln-47"></a><span class="c">!</span>
+<a name="ln-48"></a><span class="c">! @endnote</span>
+<a name="ln-49"></a><span class="c">!</span>
+<a name="ln-50"></a><span class="c">! @warning</span>
+<a name="ln-51"></a><span class="c">!</span>
+<a name="ln-52"></a><span class="c">! Some solver implementation are C written, so the arrays may begin at 0. It explains the variable ```dec``` in [[prod_a_x]]</span>
+<a name="ln-53"></a><span class="c">!</span>
+<a name="ln-54"></a><span class="c">! @endwarning</span>
+<a name="ln-55"></a><span class="k">program </span><span class="n">test_solvers</span>
+<a name="ln-56"></a><span class="k">use </span><span class="n">omp_lib</span><span class="p">,</span>         <span class="n">only</span> <span class="p">:</span> <span class="n">omp_get_wtime</span>
+<a name="ln-57"></a><span class="k">use </span><span class="n">data_arch</span><span class="p">,</span>       <span class="n">only</span> <span class="p">:</span> <span class="n">I4</span><span class="p">,</span> <span class="n">R4</span><span class="p">,</span> <span class="n">R8</span><span class="p">,</span> <span class="n">get_unit</span>
+<a name="ln-58"></a>
+<a name="ln-59"></a><span class="k">use </span><span class="n">num_param</span><span class="p">,</span>       <span class="n">only</span> <span class="p">:</span> <span class="n">OPU</span><span class="p">,</span>          <span class="p">&amp;</span> <span class="c">! *default output unit*</span>
+<a name="ln-60"></a>                            <span class="n">IPU</span><span class="p">,</span>          <span class="p">&amp;</span> <span class="c">! *default input unit*</span>
+<a name="ln-61"></a>                            <span class="n">SOLV_MESS</span><span class="p">,</span>    <span class="p">&amp;</span> <span class="c">! *Solver message: yes=```PRINT_MESS```, no=```NO_MESS```*</span>
+<a name="ln-62"></a>                            <span class="n">NO_MESS</span><span class="p">,</span>      <span class="p">&amp;</span> <span class="c">! *no output message*</span>
+<a name="ln-63"></a>                            <span class="n">PRINT_MESS</span>      <span class="c">! *solver infos output*</span>
+<a name="ln-64"></a>
+<a name="ln-65"></a><span class="k">use </span><span class="n">solver</span><span class="p">,</span>          <span class="n">only</span> <span class="p">:</span> <span class="n">MAT_SOLV</span><span class="p">,</span>     <span class="p">&amp;</span> <span class="c">! *system data type*</span>
+<a name="ln-66"></a>                            <span class="n">solve_syst</span><span class="p">,</span>   <span class="p">&amp;</span> <span class="c">! *subroutine for the system resolution*</span>
+<a name="ln-67"></a>                            <span class="n">MUMP</span><span class="p">,</span>         <span class="p">&amp;</span> <span class="c">! *integer*</span>
+<a name="ln-68"></a>                            <span class="n">UMFP</span><span class="p">,</span>         <span class="p">&amp;</span> <span class="c">! *integer*</span>
+<a name="ln-69"></a>                            <span class="n">SULU</span><span class="p">,</span>         <span class="p">&amp;</span> <span class="c">! *integer*</span>
+<a name="ln-70"></a>                            <span class="n">convert_matrice_format</span> <span class="c">! *various matrix format conversion*</span>
+<a name="ln-71"></a><span class="k">implicit none</span>
+<a name="ln-72"></a>
+<a name="ln-73"></a><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span> <span class="n">ii</span><span class="p">,</span> <span class="n">uu</span><span class="p">,</span> <span class="n">size_a_elt</span><span class="p">,</span> <span class="n">state</span>
+<a name="ln-74"></a><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">time1</span><span class="p">,</span> <span class="n">time2</span><span class="p">,</span> <span class="n">error</span>
+<a name="ln-75"></a><span class="k">type</span><span class="p">(</span><span class="n">MAT_SOLV</span><span class="p">)</span>   <span class="kd">::</span> <span class="n">slv_struct</span>
+<a name="ln-76"></a>
+<a name="ln-77"></a><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span>    <span class="k">dimension</span><span class="p">(:),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">b</span>            <span class="c">!! *system right hand side*</span>
+<a name="ln-78"></a><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span>    <span class="k">dimension</span><span class="p">(:),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">a_elt</span>        <span class="c">!! *matrix non-zero entries in CC*</span>
+<a name="ln-79"></a><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span>    <span class="k">dimension</span><span class="p">(:),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">a_elt_ref</span>    <span class="c">!! *initial ```a_elt```*</span>
+<a name="ln-80"></a><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">eltptr</span>       <span class="c">!! *elemental matrices position in ```eltvar```*</span>
+<a name="ln-81"></a><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">eltvar</span>       <span class="c">!! *elemental matrix global lines*</span>
+<a name="ln-82"></a>
+<a name="ln-83"></a>   <span class="n">SOLV_MESS</span> <span class="o">=</span> <span class="n">NO_MESS</span><span class="c">!PRINT_MESS!</span>
+<a name="ln-84"></a>   
+<a name="ln-85"></a>   <span class="k">write</span><span class="p">(</span><span class="n">OPU</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="s1">&#39;small matrix? 0:n, 1:y&#39;</span>
+<a name="ln-86"></a>   <span class="k">read</span><span class="p">(</span> <span class="n">IPU</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="n">i</span>
+<a name="ln-87"></a>   
+<a name="ln-88"></a>   <span class="c">! ======================== SOLVER TYPE ===========================================</span>
+<a name="ln-89"></a>   <span class="k">do</span>
+<a name="ln-90"></a><span class="k">      write</span><span class="p">(</span><span class="n">OPU</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="s1">&#39;data read, choose solver n° : 0-MA48, 1-SULU, 2-MUMP (ref), 3-UMFP&#39;</span>
+<a name="ln-91"></a>      <span class="k">read</span><span class="p">(</span> <span class="n">IPU</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="n">ii</span>
+<a name="ln-92"></a>      <span class="n">slv_struct</span><span class="p">%</span><span class="n">slv_t</span> <span class="o">=</span> <span class="n">ii</span>
+<a name="ln-93"></a>      <span class="k">if</span> <span class="p">(</span><span class="n">ii</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="n">ii</span><span class="o">&lt;=</span><span class="mi">3</span><span class="p">)</span> <span class="k">exit</span>
+<a name="ln-94"></a><span class="k">   </span><span class="n">enddo</span>
+<a name="ln-95"></a>
+<a name="ln-96"></a>   <span class="c">! ======================== SYST DATA READ ===========================================</span>
+<a name="ln-97"></a>   <span class="k">call </span><span class="n">get_unit</span><span class="p">(</span><span class="n">uu</span><span class="p">)</span>
+<a name="ln-98"></a>   
+<a name="ln-99"></a>   <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-100"></a><span class="k">      open</span><span class="p">(</span><span class="n">uu</span><span class="p">,</span> <span class="k">file</span><span class="o">=</span><span class="s2">&quot;mat/big_syst.sys&quot;</span><span class="p">)</span>
+<a name="ln-101"></a>   <span class="k">else</span>
+<a name="ln-102"></a><span class="k">      open</span><span class="p">(</span><span class="n">uu</span><span class="p">,</span> <span class="k">file</span><span class="o">=</span><span class="s2">&quot;mat/small_syst.sys&quot;</span><span class="p">)</span>
+<a name="ln-103"></a>   <span class="n">endif</span>
+<a name="ln-104"></a>
+<a name="ln-105"></a>   <span class="c">! ======================== SYST INFO ===========================================</span>
+<a name="ln-106"></a>   <span class="k">read</span><span class="p">(</span><span class="n">uu</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">nn</span><span class="p">,</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">ne</span><span class="p">,</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">nvar</span><span class="p">,</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">nt</span>
+<a name="ln-107"></a>   <span class="k">write</span><span class="p">(</span><span class="n">OPU</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="s1">&#39;*************** INFO ********************&#39;</span>
+<a name="ln-108"></a>   <span class="k">write</span><span class="p">(</span><span class="n">OPU</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="s1">&#39;system size:                  &#39;</span><span class="p">,</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">nn</span>
+<a name="ln-109"></a>   <span class="k">write</span><span class="p">(</span><span class="n">OPU</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="s1">&#39;number of elemental matrices: &#39;</span><span class="p">,</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">ne</span>
+<a name="ln-110"></a>   <span class="k">write</span><span class="p">(</span><span class="n">OPU</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="s1">&#39;number of nnz entries:        &#39;</span><span class="p">,</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">nt</span>
+<a name="ln-111"></a>   <span class="k">write</span><span class="p">(</span><span class="n">OPU</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="s1">&#39;*****************************************&#39;</span>
+<a name="ln-112"></a>   <span class="n">slv_struct</span><span class="p">%</span><span class="n">first</span> <span class="o">=</span> <span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<a name="ln-113"></a>
+<a name="ln-114"></a>   <span class="k">allocate</span><span class="p">(</span> <span class="n">eltvar</span><span class="p">(</span><span class="n">slv_struct</span><span class="p">%</span><span class="n">nvar</span>  <span class="p">)</span> <span class="p">)</span>
+<a name="ln-115"></a>   <span class="k">allocate</span><span class="p">(</span> <span class="n">a_elt</span><span class="p">(</span>     <span class="n">slv_struct</span><span class="p">%</span><span class="n">nt</span>    <span class="p">),</span> <span class="nb">stat</span> <span class="o">=</span> <span class="n">state</span> <span class="p">)</span> <span class="p">;</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="o">/=</span><span class="mi">0</span><span class="p">)</span> <span class="k">stop</span> <span class="s1">&#39;Memory allocation problem in PRG&#39;</span>
+<a name="ln-116"></a>   <span class="k">allocate</span><span class="p">(</span> <span class="n">a_elt_ref</span><span class="p">(</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">nt</span>    <span class="p">),</span> <span class="nb">stat</span> <span class="o">=</span> <span class="n">state</span> <span class="p">)</span> <span class="p">;</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="o">/=</span><span class="mi">0</span><span class="p">)</span> <span class="k">stop</span> <span class="s1">&#39;Memory allocation problem in PRG&#39;</span>
+<a name="ln-117"></a>   <span class="k">allocate</span><span class="p">(</span> <span class="n">eltptr</span><span class="p">(</span><span class="n">slv_struct</span><span class="p">%</span><span class="n">ne</span> <span class="o">+</span><span class="mi">1</span> <span class="p">)</span> <span class="p">)</span>
+<a name="ln-118"></a>   <span class="k">allocate</span><span class="p">(</span>      <span class="n">b</span><span class="p">(</span><span class="n">slv_struct</span><span class="p">%</span><span class="n">nn</span>    <span class="p">)</span> <span class="p">)</span>
+<a name="ln-119"></a>
+<a name="ln-120"></a>   <span class="k">allocate</span><span class="p">(</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">eltvar</span><span class="p">(</span><span class="n">slv_struct</span><span class="p">%</span><span class="n">nvar</span>  <span class="p">)</span> <span class="p">)</span>
+<a name="ln-121"></a>   <span class="k">allocate</span><span class="p">(</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">a_elt</span><span class="p">(</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">nt</span>    <span class="p">),</span> <span class="nb">stat</span> <span class="o">=</span> <span class="n">state</span> <span class="p">)</span> <span class="p">;</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="o">/=</span><span class="mi">0</span><span class="p">)</span> <span class="k">stop</span> <span class="s1">&#39;Memory allocation problem in PRG&#39;</span>
+<a name="ln-122"></a>   <span class="k">allocate</span><span class="p">(</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">eltptr</span><span class="p">(</span><span class="n">slv_struct</span><span class="p">%</span><span class="n">ne</span> <span class="o">+</span><span class="mi">1</span> <span class="p">)</span> <span class="p">)</span>
+<a name="ln-123"></a>
+<a name="ln-124"></a>   <span class="k">call </span><span class="n">solve_syst</span><span class="p">(</span><span class="n">mat</span> <span class="o">=</span> <span class="n">slv_struct</span><span class="p">,</span> <span class="n">step</span> <span class="o">=</span> <span class="s1">&#39;ini&#39;</span><span class="p">)</span>
+<a name="ln-125"></a>
+<a name="ln-126"></a>   <span class="k">do </span><span class="n">ii</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">nvar</span>
+<a name="ln-127"></a>      <span class="k">read</span><span class="p">(</span><span class="n">uu</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">eltvar</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
+<a name="ln-128"></a>   <span class="n">enddo</span>
+<a name="ln-129"></a>   <span class="k">do </span><span class="n">ii</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">ne</span> <span class="o">+</span><span class="mi">1</span>
+<a name="ln-130"></a>      <span class="k">read</span><span class="p">(</span><span class="n">uu</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">eltptr</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
+<a name="ln-131"></a>   <span class="n">enddo</span>
+<a name="ln-132"></a>   <span class="k">do </span><span class="n">ii</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">nt</span>
+<a name="ln-133"></a>      <span class="k">read</span><span class="p">(</span><span class="n">uu</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">a_elt</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
+<a name="ln-134"></a>   <span class="n">enddo</span>
+<a name="ln-135"></a>   <span class="k">do </span><span class="n">ii</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">nn</span>
+<a name="ln-136"></a>      <span class="k">read</span><span class="p">(</span><span class="n">uu</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">b</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
+<a name="ln-137"></a>   <span class="n">enddo</span>
+<a name="ln-138"></a>   
+<a name="ln-139"></a>   <span class="k">close</span><span class="p">(</span><span class="n">uu</span><span class="p">)</span>
+<a name="ln-140"></a>
+<a name="ln-141"></a>   <span class="c">! The matrices are in CC HB format. Only MUMPS accepts elemental entries, so the</span>
+<a name="ln-142"></a>   <span class="c">! following subroutine converts elemental marices to assembled vectors.</span>
+<a name="ln-143"></a>   <span class="c">! If MUMPS is chosen, nothing is done.</span>
+<a name="ln-144"></a>   <span class="k">call </span><span class="n">convert_matrice_format</span><span class="p">(</span><span class="n">mat</span> <span class="o">=</span> <span class="n">slv_struct</span><span class="p">)</span>
+<a name="ln-145"></a>   <span class="c">! ======================== backup ============================================</span>
+<a name="ln-146"></a>   <span class="n">eltvar</span>     <span class="o">=</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">eltvar</span>
+<a name="ln-147"></a>   <span class="n">a_elt_ref</span>  <span class="o">=</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">a_elt</span>
+<a name="ln-148"></a>   <span class="n">eltptr</span>     <span class="o">=</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">eltptr</span>
+<a name="ln-149"></a>   <span class="n">b</span>          <span class="o">=</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">b</span>
+<a name="ln-150"></a>
+<a name="ln-151"></a>   <span class="c">! ======================== PROCESS ===========================================</span>
+<a name="ln-152"></a>   <span class="n">time1</span> <span class="o">=</span> <span class="n">omp_get_wtime</span><span class="p">()</span>
+<a name="ln-153"></a>      <span class="k">call </span><span class="n">solve_syst</span><span class="p">(</span><span class="n">mat</span> <span class="o">=</span> <span class="n">slv_struct</span><span class="p">,</span> <span class="n">step</span> <span class="o">=</span> <span class="s1">&#39;ana&#39;</span><span class="p">)</span> <span class="p">;</span> <span class="k">write</span><span class="p">(</span><span class="n">OPU</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="s1">&#39;system analyzed&#39;</span> <span class="p">;</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">first</span> <span class="o">=</span> <span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<a name="ln-154"></a>      <span class="k">call </span><span class="n">solve_syst</span><span class="p">(</span><span class="n">mat</span> <span class="o">=</span> <span class="n">slv_struct</span><span class="p">,</span> <span class="n">step</span> <span class="o">=</span> <span class="s1">&#39;fac&#39;</span><span class="p">)</span> <span class="p">;</span> <span class="k">write</span><span class="p">(</span><span class="n">OPU</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="s1">&#39;system factorized&#39;</span>
+<a name="ln-155"></a>      <span class="k">call </span><span class="n">solve_syst</span><span class="p">(</span><span class="n">mat</span> <span class="o">=</span> <span class="n">slv_struct</span><span class="p">,</span> <span class="n">step</span> <span class="o">=</span> <span class="s1">&#39;sol&#39;</span><span class="p">)</span> <span class="p">;</span> <span class="k">write</span><span class="p">(</span><span class="n">OPU</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="s1">&#39;system solved&#39;</span>
+<a name="ln-156"></a>      <span class="k">call </span><span class="n">solve_syst</span><span class="p">(</span><span class="n">mat</span> <span class="o">=</span> <span class="n">slv_struct</span><span class="p">,</span> <span class="n">step</span> <span class="o">=</span> <span class="s1">&#39;fre&#39;</span><span class="p">)</span> <span class="p">;</span> <span class="k">write</span><span class="p">(</span><span class="n">OPU</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="s1">&#39;system freed&#39;</span>
+<a name="ln-157"></a>   <span class="n">time2</span> <span class="o">=</span> <span class="n">omp_get_wtime</span><span class="p">()</span>
+<a name="ln-158"></a>
+<a name="ln-159"></a>   <span class="k">call </span><span class="n">verif_solution</span><span class="p">(</span><span class="n">slv_struct</span> <span class="o">=</span> <span class="n">slv_struct</span><span class="p">,</span> <span class="n">a_elt</span> <span class="o">=</span> <span class="n">a_elt_ref</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">error</span> <span class="o">=</span> <span class="n">error</span><span class="p">)</span>
+<a name="ln-160"></a>
+<a name="ln-161"></a>   <span class="k">write</span><span class="p">(</span><span class="n">OPU</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="s1">&#39;max error    = &#39;</span><span class="p">,</span> <span class="n">error</span>
+<a name="ln-162"></a>   <span class="k">write</span><span class="p">(</span><span class="n">OPU</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="s1">&#39;elapsed time = &#39;</span><span class="p">,</span> <span class="kt">real</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">time1</span> <span class="o">-</span><span class="n">time2</span><span class="p">),</span> <span class="nb">kind</span><span class="o">=</span><span class="n">R4</span><span class="p">)</span>
+<a name="ln-163"></a>
+<a name="ln-164"></a>   <span class="c">! Here, the matrix coefficients are modified, but the sparsity is conserved. It gives a look to the ability</span>
+<a name="ln-165"></a>   <span class="c">! of the solver to exploit the symbolic calculations performed before.</span>
+<a name="ln-166"></a>   <span class="k">do</span>
+<a name="ln-167"></a>
+<a name="ln-168"></a><span class="k">      if</span> <span class="p">(</span><span class="n">slv_struct</span><span class="p">%</span><span class="n">slv_t</span><span class="o">==</span><span class="n">MUMP</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-169"></a><span class="k">         </span><span class="n">size_a_elt</span>   <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">slv_struct</span><span class="p">%</span><span class="n">a_elt</span><span class="p">)</span>
+<a name="ln-170"></a>      <span class="k">else</span>
+<a name="ln-171"></a><span class="k">         </span><span class="n">size_a_elt</span>   <span class="o">=</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">nt</span>
+<a name="ln-172"></a>      <span class="n">endif</span>
+<a name="ln-173"></a>
+<a name="ln-174"></a>      <span class="c">! the original entries are retrieved, then modified</span>
+<a name="ln-175"></a>      <span class="n">a_elt</span> <span class="o">=</span> <span class="n">a_elt_ref</span>
+<a name="ln-176"></a>      <span class="k">call </span><span class="n">modify_a_elt</span><span class="p">(</span><span class="n">tab</span> <span class="o">=</span> <span class="n">a_elt</span><span class="p">,</span> <span class="n">nz</span> <span class="o">=</span> <span class="n">size_a_elt</span><span class="p">)</span>
+<a name="ln-177"></a>      <span class="n">slv_struct</span><span class="p">%</span><span class="n">a_elt</span>  <span class="o">=</span> <span class="n">a_elt</span>
+<a name="ln-178"></a>      <span class="n">slv_struct</span><span class="p">%</span><span class="n">b</span>      <span class="o">=</span> <span class="n">b</span>
+<a name="ln-179"></a>      <span class="n">slv_struct</span><span class="p">%</span><span class="n">x</span>      <span class="o">=</span> <span class="mf">0._R8</span>
+<a name="ln-180"></a>
+<a name="ln-181"></a>      <span class="n">time1</span> <span class="o">=</span> <span class="n">omp_get_wtime</span><span class="p">()</span>
+<a name="ln-182"></a>         <span class="k">call </span><span class="n">solve_syst</span><span class="p">(</span><span class="n">mat</span> <span class="o">=</span> <span class="n">slv_struct</span><span class="p">,</span> <span class="n">step</span> <span class="o">=</span> <span class="s1">&#39;fac&#39;</span><span class="p">)</span>
+<a name="ln-183"></a>         <span class="k">call </span><span class="n">solve_syst</span><span class="p">(</span><span class="n">mat</span> <span class="o">=</span> <span class="n">slv_struct</span><span class="p">,</span> <span class="n">step</span> <span class="o">=</span> <span class="s1">&#39;sol&#39;</span><span class="p">)</span>
+<a name="ln-184"></a>         <span class="k">call </span><span class="n">solve_syst</span><span class="p">(</span><span class="n">mat</span> <span class="o">=</span> <span class="n">slv_struct</span><span class="p">,</span> <span class="n">step</span> <span class="o">=</span> <span class="s1">&#39;fre&#39;</span><span class="p">)</span>
+<a name="ln-185"></a>      <span class="n">time2</span> <span class="o">=</span> <span class="n">omp_get_wtime</span><span class="p">()</span>
+<a name="ln-186"></a>
+<a name="ln-187"></a>      <span class="k">call </span><span class="n">verif_solution</span><span class="p">(</span><span class="n">slv_struct</span> <span class="o">=</span> <span class="n">slv_struct</span><span class="p">,</span> <span class="n">a_elt</span> <span class="o">=</span> <span class="n">a_elt</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">error</span> <span class="o">=</span> <span class="n">error</span><span class="p">)</span>
+<a name="ln-188"></a>
+<a name="ln-189"></a>      <span class="k">write</span><span class="p">(</span><span class="n">OPU</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="s1">&#39;max error    = &#39;</span><span class="p">,</span> <span class="n">error</span>
+<a name="ln-190"></a>      <span class="k">write</span><span class="p">(</span><span class="n">OPU</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="s1">&#39;elapsed time = &#39;</span><span class="p">,</span> <span class="kt">real</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">time1</span> <span class="o">-</span><span class="n">time2</span><span class="p">),</span> <span class="nb">kind</span><span class="o">=</span><span class="n">R4</span><span class="p">)</span>
+<a name="ln-191"></a>
+<a name="ln-192"></a>      <span class="k">write</span><span class="p">(</span><span class="n">OPU</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="s1">&#39;STOP? (y=1, n=0)&#39;</span>
+<a name="ln-193"></a>      <span class="k">read</span><span class="p">(</span> <span class="n">IPU</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="n">ii</span>
+<a name="ln-194"></a>      <span class="k">if</span> <span class="p">(</span><span class="n">ii</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="k">exit</span>
+<a name="ln-195"></a><span class="k">   </span><span class="n">enddo</span>
+<a name="ln-196"></a>
+<a name="ln-197"></a>   <span class="k">deallocate</span><span class="p">(</span><span class="n">eltvar</span><span class="p">,</span> <span class="n">a_elt</span><span class="p">,</span> <span class="n">a_elt_ref</span><span class="p">,</span> <span class="n">eltptr</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<a name="ln-198"></a>
+<a name="ln-199"></a>   <span class="k">call </span><span class="n">solve_syst</span><span class="p">(</span><span class="n">mat</span> <span class="o">=</span> <span class="n">slv_struct</span><span class="p">,</span> <span class="n">step</span> <span class="o">=</span> <span class="s1">&#39;end&#39;</span><span class="p">)</span>
+<a name="ln-200"></a>   
+<a name="ln-201"></a><span class="k">stop</span>
+<a name="ln-202"></a>
+<a name="ln-203"></a><span class="k">contains</span>
+<a name="ln-204"></a>
+<a name="ln-205"></a>   <span class="c">!=========================================================================================</span>
+<a name="ln-206"></a>   <span class="c">!&lt; @note The product \(\{y\}\) of the system matrix \([A]\) by the solution \(\{x\}\), is</span>
+<a name="ln-207"></a>   <span class="c">!        calculated, and compared to the right hand side \(\{b\}\).</span>
+<a name="ln-208"></a>   <span class="c">!        The calculated error is the absolute error in %.</span>
+<a name="ln-209"></a>   <span class="c">!-----------------------------------------------------------------------------------------</span>
+<a name="ln-210"></a>   <span class="k">subroutine </span><span class="n">verif_solution</span><span class="p">(</span><span class="n">slv_struct</span><span class="p">,</span> <span class="n">a_elt</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+<a name="ln-211"></a>   <span class="k">implicit none</span>
+<a name="ln-212"></a><span class="k">   type</span><span class="p">(</span><span class="n">MAT_SOLV</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">slv_struct</span>
+<a name="ln-213"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">a_elt</span>
+<a name="ln-214"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">b</span>
+<a name="ln-215"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">error</span>
+<a name="ln-216"></a>      <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="n">slv_struct</span><span class="p">%</span><span class="n">nn</span><span class="p">)</span> <span class="kd">::</span> <span class="n">y</span>
+<a name="ln-217"></a>      <span class="c">! to assess the accuracy, the solution is applied to the</span>
+<a name="ln-218"></a>      <span class="c">! system matrix and compared to the rhs.</span>
+<a name="ln-219"></a>      <span class="k">if</span> <span class="p">(</span><span class="n">slv_struct</span><span class="p">%</span><span class="n">slv_t</span><span class="o">==</span><span class="n">MUMP</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-220"></a><span class="k">         call </span><span class="n">prod_elemental_x</span><span class="p">(</span><span class="n">n</span>      <span class="o">=</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">nn</span><span class="p">,</span>      <span class="p">&amp;</span>
+<a name="ln-221"></a>                               <span class="n">nz</span>     <span class="o">=</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">nt</span><span class="p">,</span>      <span class="p">&amp;</span>
+<a name="ln-222"></a>                               <span class="n">nelt</span>   <span class="o">=</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">ne</span><span class="p">,</span>      <span class="p">&amp;</span>
+<a name="ln-223"></a>                               <span class="n">nvar</span>   <span class="o">=</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">nvar</span><span class="p">,</span>    <span class="p">&amp;</span>
+<a name="ln-224"></a>                               <span class="n">x</span>      <span class="o">=</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">x</span><span class="p">,</span>       <span class="p">&amp;</span>
+<a name="ln-225"></a>                               <span class="n">y</span>      <span class="o">=</span> <span class="n">y</span><span class="p">,</span>                  <span class="p">&amp;</span>
+<a name="ln-226"></a>                               <span class="n">a_elt</span>  <span class="o">=</span> <span class="n">a_elt</span><span class="p">,</span>              <span class="p">&amp;</span>
+<a name="ln-227"></a>                               <span class="n">eltptr</span> <span class="o">=</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">eltptr</span><span class="p">,</span>  <span class="p">&amp;</span>
+<a name="ln-228"></a>                               <span class="n">eltvar</span> <span class="o">=</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">eltvar</span><span class="p">)</span>
+<a name="ln-229"></a>      <span class="k">else</span>
+<a name="ln-230"></a><span class="k">         call </span><span class="n">prod_a_x</span><span class="p">(</span><span class="n">n</span>  <span class="o">=</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">nn</span><span class="p">,</span>         <span class="p">&amp;</span>
+<a name="ln-231"></a>                       <span class="n">nz</span> <span class="o">=</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">nz</span><span class="p">,</span>         <span class="p">&amp;</span>
+<a name="ln-232"></a>                       <span class="n">x</span>  <span class="o">=</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">x</span><span class="p">,</span>          <span class="p">&amp;</span>
+<a name="ln-233"></a>                       <span class="n">y</span>  <span class="o">=</span> <span class="n">y</span><span class="p">,</span>                     <span class="p">&amp;</span>
+<a name="ln-234"></a>                       <span class="n">a_elt</span> <span class="o">=</span> <span class="n">a_elt</span><span class="p">,</span>              <span class="p">&amp;</span>
+<a name="ln-235"></a>                       <span class="n">irow</span>  <span class="o">=</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">irow</span><span class="p">,</span>    <span class="p">&amp;</span>
+<a name="ln-236"></a>                       <span class="n">jptr</span>  <span class="o">=</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">jptr</span><span class="p">,</span>    <span class="p">&amp;</span>
+<a name="ln-237"></a>                       <span class="n">slvt</span>  <span class="o">=</span> <span class="n">slv_struct</span><span class="p">%</span><span class="n">slv_t</span><span class="p">)</span>
+<a name="ln-238"></a>      <span class="n">endif</span>
+<a name="ln-239"></a>
+<a name="ln-240"></a>      <span class="n">error</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="nb">maxval</span><span class="p">(</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">slv_struct</span><span class="p">%</span><span class="n">nn</span><span class="p">)</span> <span class="o">-</span><span class="n">b</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">slv_struct</span><span class="p">%</span><span class="n">nn</span><span class="p">))</span> <span class="p">)</span><span class="o">/</span> <span class="p">&amp;</span>
+<a name="ln-241"></a>                  <span class="nb">maxval</span><span class="p">(</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">slv_struct</span><span class="p">%</span><span class="n">nn</span><span class="p">)</span> <span class="o">+</span><span class="n">b</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">slv_struct</span><span class="p">%</span><span class="n">nn</span><span class="p">))</span> <span class="p">)</span>
+<a name="ln-242"></a>   <span class="k">return</span>
+<a name="ln-243"></a><span class="k">   </span><span class="n">endsubroutine</span> <span class="n">verif_solution</span>
+<a name="ln-244"></a>   
+<a name="ln-245"></a>
+<a name="ln-246"></a>   <span class="c">!=========================================================================================</span>
+<a name="ln-247"></a>   <span class="c">!&gt; @note real fast sorting</span>
+<a name="ln-248"></a>   <span class="c">!-----------------------------------------------------------------------------------------</span>
+<a name="ln-249"></a>   <span class="k">recursive subroutine </span><span class="n">sort_reel</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">tab</span><span class="p">,</span> <span class="n">ordre</span><span class="p">)</span>
+<a name="ln-250"></a>      <span class="k">implicit none</span>
+<a name="ln-251"></a>      <span class="c">!---------------------------------</span>
+<a name="ln-252"></a>      <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">g</span><span class="p">,</span> <span class="n">d</span>
+<a name="ln-253"></a>      <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ordre</span><span class="p">(</span><span class="n">g</span><span class="p">:</span><span class="n">d</span><span class="p">)</span>
+<a name="ln-254"></a>      <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">tab</span><span class="p">(</span><span class="n">g</span><span class="p">:</span><span class="n">d</span><span class="p">)</span>
+<a name="ln-255"></a>      <span class="c">!---------------------------------</span>
+<a name="ln-256"></a>      <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">mil</span><span class="p">,</span> <span class="n">itmp</span>
+<a name="ln-257"></a>      <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">tmp</span><span class="p">,</span> <span class="n">cle</span>
+<a name="ln-258"></a>      <span class="n">i</span> <span class="o">=</span> <span class="n">g</span>
+<a name="ln-259"></a>      <span class="n">j</span> <span class="o">=</span> <span class="n">d</span>
+<a name="ln-260"></a>      <span class="n">mil</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span><span class="o">+</span><span class="n">d</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<a name="ln-261"></a>      <span class="n">cle</span> <span class="o">=</span> <span class="n">tab</span><span class="p">(</span><span class="n">mil</span><span class="p">)</span>
+<a name="ln-262"></a>
+<a name="ln-263"></a>      <span class="k">if</span> <span class="p">(</span><span class="n">g</span><span class="o">&gt;=</span><span class="n">d</span><span class="p">)</span> <span class="k">return</span>
+<a name="ln-264"></a>
+<a name="ln-265"></a><span class="k">      do while</span> <span class="p">(</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">j</span><span class="p">)</span>
+<a name="ln-266"></a>         <span class="k">do while</span> <span class="p">(</span><span class="n">tab</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">&lt;</span><span class="n">cle</span><span class="p">)</span>
+<a name="ln-267"></a>            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="ln-268"></a>         <span class="n">enddo</span>
+<a name="ln-269"></a>         <span class="k">do while</span> <span class="p">(</span><span class="n">tab</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">&gt;</span><span class="n">cle</span><span class="p">)</span>
+<a name="ln-270"></a>            <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span>
+<a name="ln-271"></a>         <span class="n">enddo</span>
+<a name="ln-272"></a>         <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">j</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-273"></a>            <span class="c">! échange des éléments du tableau</span>
+<a name="ln-274"></a>            <span class="n">tmp</span> <span class="o">=</span> <span class="n">tab</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a name="ln-275"></a>            <span class="n">tab</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">tab</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<a name="ln-276"></a>            <span class="n">tab</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">tmp</span>
+<a name="ln-277"></a>            <span class="c">! échange des éléments du vecteur position</span>
+<a name="ln-278"></a>            <span class="n">itmp</span> <span class="o">=</span> <span class="n">ordre</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a name="ln-279"></a>            <span class="n">ordre</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">ordre</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<a name="ln-280"></a>            <span class="n">ordre</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">itmp</span>
+<a name="ln-281"></a>            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="ln-282"></a>            <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span>
+<a name="ln-283"></a>         <span class="n">endif</span>
+<a name="ln-284"></a>      <span class="n">enddo</span>
+<a name="ln-285"></a>
+<a name="ln-286"></a>      <span class="k">if</span> <span class="p">(</span><span class="n">g</span><span class="o">&lt;</span><span class="n">j</span><span class="p">)</span> <span class="k">call </span><span class="n">sort_reel</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">tab</span><span class="p">(</span><span class="n">g</span><span class="p">:</span><span class="n">j</span><span class="p">),</span> <span class="n">ordre</span><span class="p">(</span><span class="n">g</span><span class="p">:</span><span class="n">j</span><span class="p">))</span>
+<a name="ln-287"></a>      <span class="k">if</span> <span class="p">(</span><span class="n">d</span><span class="o">&gt;</span><span class="n">i</span><span class="p">)</span> <span class="k">call </span><span class="n">sort_reel</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">tab</span><span class="p">(</span><span class="n">i</span><span class="p">:</span><span class="n">d</span><span class="p">),</span> <span class="n">ordre</span><span class="p">(</span><span class="n">i</span><span class="p">:</span><span class="n">d</span><span class="p">))</span>
+<a name="ln-288"></a>
+<a name="ln-289"></a>   <span class="k">return</span>
+<a name="ln-290"></a><span class="k">   </span><span class="n">endsubroutine</span> <span class="n">sort_reel</span>
+<a name="ln-291"></a>
+<a name="ln-292"></a>   
+<a name="ln-293"></a>   <span class="c">!=========================================================================================</span>
+<a name="ln-294"></a>   <span class="c">!&gt; @note multiplication of the system coefficient by a random factor</span>
+<a name="ln-295"></a>   <span class="c">!-----------------------------------------------------------------------------------------</span>
+<a name="ln-296"></a>   <span class="k">subroutine </span><span class="n">modify_a_elt</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">nz</span><span class="p">)</span>
+<a name="ln-297"></a>   <span class="k">implicit none</span>
+<a name="ln-298"></a><span class="k">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nz</span>
+<a name="ln-299"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">tab</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nz</span><span class="p">)</span>
+<a name="ln-300"></a>      <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">tmp</span><span class="p">(:)</span>
+<a name="ln-301"></a>      <span class="k">allocate</span><span class="p">(</span><span class="n">tmp</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nz</span><span class="p">))</span>
+<a name="ln-302"></a>      <span class="k">call </span><span class="nb">random_number</span><span class="p">(</span><span class="n">harvest</span><span class="o">=</span><span class="n">tmp</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nz</span><span class="p">))</span>
+<a name="ln-303"></a>      <span class="n">tmp</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nz</span><span class="p">)</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">tmp</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nz</span><span class="p">)</span> <span class="o">-</span><span class="mf">1.0_R8</span>
+<a name="ln-304"></a>      <span class="n">tab</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nz</span><span class="p">)</span> <span class="o">=</span> <span class="n">tab</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nz</span><span class="p">)</span><span class="o">*</span><span class="n">tmp</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nz</span><span class="p">)</span>
+<a name="ln-305"></a>      <span class="k">deallocate</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+<a name="ln-306"></a>   <span class="k">return</span>
+<a name="ln-307"></a><span class="k">   </span><span class="n">endsubroutine</span> <span class="n">modify_a_elt</span>
+<a name="ln-308"></a>
+<a name="ln-309"></a>   
+<a name="ln-310"></a>   <span class="c">!=========================================================================================</span>
+<a name="ln-311"></a>   <span class="c">!&gt; @note \([A] \{x\}\), assembled CC format</span>
+<a name="ln-312"></a>   <span class="c">!-----------------------------------------------------------------------------------------</span>
+<a name="ln-313"></a>   <span class="k">subroutine </span><span class="n">prod_a_x</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">nz</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">a_elt</span><span class="p">,</span> <span class="n">irow</span><span class="p">,</span> <span class="n">jptr</span><span class="p">,</span> <span class="n">slvt</span><span class="p">)</span>
+<a name="ln-314"></a>   <span class="k">implicit none</span>
+<a name="ln-315"></a><span class="k">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">n</span><span class="p">,</span> <span class="n">nz</span><span class="p">,</span> <span class="n">slvt</span>
+<a name="ln-316"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="n">nz</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>     <span class="kd">::</span> <span class="n">a_elt</span>
+<a name="ln-317"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="n">nz</span> <span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">irow</span>
+<a name="ln-318"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">jptr</span>
+<a name="ln-319"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>      <span class="kd">::</span> <span class="n">x</span>
+<a name="ln-320"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>     <span class="kd">::</span> <span class="n">y</span>
+<a name="ln-321"></a>      <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">dec</span>
+<a name="ln-322"></a>      <span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0._R8</span>
+<a name="ln-323"></a>      <span class="n">dec</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="ln-324"></a>      <span class="k">if</span> <span class="p">(</span><span class="n">slvt</span><span class="o">==</span><span class="n">UMFP</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="n">slvt</span><span class="o">==</span><span class="n">SULU</span><span class="p">)</span> <span class="n">dec</span> <span class="o">=</span> <span class="mi">1</span>
+<a name="ln-325"></a>      <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span>
+<a name="ln-326"></a>         <span class="k">do </span><span class="n">k</span> <span class="o">=</span> <span class="n">jptr</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">jptr</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+<a name="ln-327"></a>            <span class="n">y</span><span class="p">(</span><span class="n">irow</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span><span class="n">dec</span><span class="p">)</span> <span class="o">+</span><span class="n">dec</span><span class="p">)</span> <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">irow</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span><span class="n">dec</span><span class="p">)</span> <span class="o">+</span><span class="n">dec</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">a_elt</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span><span class="n">dec</span><span class="p">)</span>
+<a name="ln-328"></a>         <span class="n">enddo</span>
+<a name="ln-329"></a>      <span class="n">enddo</span>
+<a name="ln-330"></a>   <span class="k">return</span>
+<a name="ln-331"></a><span class="k">   </span><span class="n">endsubroutine</span> <span class="n">prod_a_x</span>
+<a name="ln-332"></a>
+<a name="ln-333"></a>   
+<a name="ln-334"></a>   <span class="c">!=========================================================================================</span>
+<a name="ln-335"></a>   <span class="c">!&gt; @note \([A] \{x\}\), elemental CC format</span>
+<a name="ln-336"></a>   <span class="c">!-----------------------------------------------------------------------------------------</span>
+<a name="ln-337"></a>   <span class="k">subroutine </span><span class="n">prod_elemental_x</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">nz</span><span class="p">,</span> <span class="n">nelt</span><span class="p">,</span> <span class="n">nvar</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">a_elt</span><span class="p">,</span> <span class="n">eltptr</span><span class="p">,</span> <span class="n">eltvar</span><span class="p">)</span>
+<a name="ln-338"></a>   <span class="k">implicit none</span>
+<a name="ln-339"></a><span class="k">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">n</span><span class="p">,</span> <span class="n">nz</span><span class="p">,</span> <span class="n">nelt</span><span class="p">,</span> <span class="n">nvar</span>
+<a name="ln-340"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span>    <span class="k">dimension</span><span class="p">(</span><span class="n">nz</span>     <span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">a_elt</span>
+<a name="ln-341"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="n">nelt</span> <span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">eltptr</span>
+<a name="ln-342"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="n">nvar</span>   <span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">eltvar</span>
+<a name="ln-343"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>      <span class="kd">::</span> <span class="n">x</span>
+<a name="ln-344"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>     <span class="kd">::</span> <span class="n">y</span>
+<a name="ln-345"></a>      <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">kk</span><span class="p">,</span> <span class="n">inc_nz</span><span class="p">,</span> <span class="n">inc_nn</span><span class="p">,</span> <span class="n">n_elem</span><span class="p">,</span> <span class="n">i_elem</span><span class="p">,</span> <span class="n">max_n_elem</span>
+<a name="ln-346"></a>      <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">a_elt_tmp</span><span class="p">,</span> <span class="n">x_tmp</span><span class="p">,</span> <span class="n">y_tmp</span>
+<a name="ln-347"></a>      <span class="n">inc_nz</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="ln-348"></a>      <span class="n">inc_nn</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="ln-349"></a>      <span class="n">n_elem</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="ln-350"></a>      <span class="n">y</span>      <span class="o">=</span> <span class="mf">0._R8</span>
+<a name="ln-351"></a>      
+<a name="ln-352"></a>      <span class="n">max_n_elem</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="ln-353"></a>      <span class="k">do </span><span class="n">i_elem</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nelt</span>
+<a name="ln-354"></a>         <span class="n">max_n_elem</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_n_elem</span><span class="p">,</span> <span class="n">eltptr</span><span class="p">(</span><span class="n">i_elem</span> <span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span><span class="n">eltptr</span><span class="p">(</span><span class="n">i_elem</span><span class="p">))</span>
+<a name="ln-355"></a>      <span class="n">enddo</span>
+<a name="ln-356"></a>
+<a name="ln-357"></a>      <span class="k">allocate</span><span class="p">(</span> <span class="n">a_elt_tmp</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">max_n_elem</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-358"></a>      <span class="k">allocate</span><span class="p">(</span>     <span class="n">x_tmp</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">max_n_elem</span>   <span class="p">)</span> <span class="p">)</span>
+<a name="ln-359"></a>      <span class="k">allocate</span><span class="p">(</span>     <span class="n">y_tmp</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">max_n_elem</span>   <span class="p">)</span> <span class="p">)</span>
+<a name="ln-360"></a>
+<a name="ln-361"></a>      <span class="k">do </span><span class="n">i_elem</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nelt</span>                                               <span class="c">! browse all elemental matrices</span>
+<a name="ln-362"></a>         <span class="n">inc_nn</span> <span class="o">=</span> <span class="n">inc_nn</span> <span class="o">+</span><span class="n">n_elem</span>                                        <span class="c">! step in eltvar for matrix number i_elem</span>
+<a name="ln-363"></a>         <span class="n">inc_nz</span> <span class="o">=</span> <span class="n">inc_nz</span> <span class="o">+</span><span class="n">n_elem</span><span class="o">**</span><span class="mi">2</span>                                     <span class="c">! step in a_elt for matrix number i_elem</span>
+<a name="ln-364"></a>         <span class="n">n_elem</span> <span class="o">=</span> <span class="n">eltptr</span><span class="p">(</span><span class="n">i_elem</span> <span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span><span class="n">eltptr</span><span class="p">(</span><span class="n">i_elem</span><span class="p">)</span>                     <span class="c">! elemental matrix size</span>
+<a name="ln-365"></a>         <span class="n">a_elt_tmp</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_elem</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="n">a_elt</span><span class="p">(</span><span class="n">inc_nz</span> <span class="o">+</span><span class="mi">1</span> <span class="p">:</span> <span class="n">inc_nz</span> <span class="o">+</span><span class="n">n_elem</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  <span class="c">! elemental matrix coefficients</span>
+<a name="ln-366"></a>         <span class="c">! --- elemental rhs</span>
+<a name="ln-367"></a>         <span class="n">kk</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="ln-368"></a>         <span class="k">do </span><span class="n">k</span> <span class="o">=</span> <span class="n">inc_nn</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">inc_nn</span> <span class="o">+</span><span class="n">n_elem</span>
+<a name="ln-369"></a>            <span class="n">kk</span> <span class="o">=</span> <span class="n">kk</span> <span class="o">+</span><span class="mi">1</span>
+<a name="ln-370"></a>            <span class="n">x_tmp</span><span class="p">(</span><span class="n">kk</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">eltvar</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+<a name="ln-371"></a>         <span class="n">enddo</span>
+<a name="ln-372"></a>         <span class="c">! --- elemental product</span>
+<a name="ln-373"></a>         <span class="n">y_tmp</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_elem</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0._R8</span>
+<a name="ln-374"></a>         <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_elem</span>
+<a name="ln-375"></a>            <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_elem</span>
+<a name="ln-376"></a>               <span class="n">y_tmp</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">y_tmp</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span><span class="n">a_elt_tmp</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span><span class="n">n_elem</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="n">x_tmp</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<a name="ln-377"></a>            <span class="n">enddo</span>
+<a name="ln-378"></a>         <span class="n">enddo</span>
+<a name="ln-379"></a>         <span class="c">! --- elemental product in global vector y</span>
+<a name="ln-380"></a>         <span class="n">kk</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="ln-381"></a>         <span class="k">do </span><span class="n">k</span> <span class="o">=</span> <span class="n">inc_nn</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">inc_nn</span> <span class="o">+</span><span class="n">n_elem</span>
+<a name="ln-382"></a>            <span class="n">kk</span> <span class="o">=</span> <span class="n">kk</span> <span class="o">+</span><span class="mi">1</span>
+<a name="ln-383"></a>            <span class="n">y</span><span class="p">(</span><span class="n">eltvar</span><span class="p">(</span><span class="n">k</span><span class="p">))</span> <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">eltvar</span><span class="p">(</span><span class="n">k</span><span class="p">))</span> <span class="o">+</span><span class="n">y_tmp</span><span class="p">(</span><span class="n">kk</span><span class="p">)</span>
+<a name="ln-384"></a>         <span class="n">enddo</span>
+<a name="ln-385"></a>      <span class="n">enddo</span>
+<a name="ln-386"></a>      <span class="k">deallocate</span><span class="p">(</span><span class="n">a_elt_tmp</span><span class="p">,</span> <span class="n">x_tmp</span><span class="p">,</span> <span class="n">y_tmp</span><span class="p">)</span>
+<a name="ln-387"></a>   <span class="k">return</span>
+<a name="ln-388"></a><span class="k">   </span><span class="n">endsubroutine</span> <span class="n">prod_elemental_x</span>
+<a name="ln-389"></a>
+<a name="ln-390"></a><span class="n">endprogram</span> <span class="n">test_solvers</span>
+</pre></div>
+
+    </section>
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2018 
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2018-07-20 11:50  
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> MSOLV-fortran was developed by Arthur Francisco - Noël Brunetière</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

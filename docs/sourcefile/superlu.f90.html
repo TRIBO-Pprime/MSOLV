@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="MSOLV-fortran – A modern Fortran API for Sparse Direct Solvers, as part of">
+    
+    <meta name="author" content="Arthur Francisco - Noël Brunetière" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>superlu.f90 &ndash; MSOLV-fortran</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">MSOLV-fortran </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../program/test_solvers.html">Program</a></li>
+      
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../program/test_solvers.html">Program</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>superlu.f90
+    <small>Source File</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 9.6% of total for source files.">354 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/superlu.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+  
+     <li class="active">superlu.f90</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-0">Modules</a></h3></div>
+  <div id="mods-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/sulu_wrapper.html">sulu_wrapper</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/superlu.f90.html#src">superlu.f90</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    <div class="col-md-9" id='text'>
+      
+      <br>
+    
+      
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Files dependent on this one</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.36.0 (20140111.2315)
+ -->
+<!-- Title: sourcefile~~superlu.f90~~AfferentGraph Pages: 1 -->
+<svg id="sourcefilesuperluf90AfferentGraph" width="286pt" height="32pt"
+ viewBox="0.00 0.00 286.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~superlu.f90~~AfferentGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>sourcefile~~superlu.f90~~AfferentGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 282,-28 282,4 -4,4"/>
+<!-- sourcefile~superlu.f90 -->
+<g id="sourcefile~~superlu.f90~~AfferentGraph_node1" class="node"><title>sourcefile~superlu.f90</title>
+<polygon fill="none" stroke="black" points="66,-24 0,-24 0,-0 66,-0 66,-24"/>
+<text text-anchor="middle" x="33" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">superlu.f90</text>
+</g>
+<!-- sourcefile~mod_solver.f90 -->
+<g id="sourcefile~~superlu.f90~~AfferentGraph_node2" class="node"><title>sourcefile~mod_solver.f90</title>
+<g id="a_sourcefile~~superlu.f90~~AfferentGraph_node2"><a xlink:href=".././sourcefile/mod_solver.f90.html" xlink:title="mod_solver.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="188,-24 102,-24 102,-0 188,-0 188,-24"/>
+<text text-anchor="middle" x="145" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mod_solver.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~mod_solver.f90&#45;&gt;sourcefile~superlu.f90 -->
+<g id="sourcefile~~superlu.f90~~AfferentGraph_edge1" class="edge"><title>sourcefile~mod_solver.f90&#45;&gt;sourcefile~superlu.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M101.786,-12C93.3433,-12 84.4754,-12 76.0389,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="76.0198,-8.5001 66.0198,-12 76.0197,-15.5001 76.0198,-8.5001"/>
+</g>
+<!-- sourcefile~prg.f90 -->
+<g id="sourcefile~~superlu.f90~~AfferentGraph_node3" class="node"><title>sourcefile~prg.f90</title>
+<g id="a_sourcefile~~superlu.f90~~AfferentGraph_node3"><a xlink:href=".././sourcefile/prg.f90.html" xlink:title="prg.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="278,-24 224,-24 224,-0 278,-0 278,-24"/>
+<text text-anchor="middle" x="251" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">prg.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~prg.f90&#45;&gt;sourcefile~mod_solver.f90 -->
+<g id="sourcefile~~superlu.f90~~AfferentGraph_edge2" class="edge"><title>sourcefile~prg.f90&#45;&gt;sourcefile~mod_solver.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M223.756,-12C215.887,-12 206.964,-12 198.04,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="198.02,-8.5001 188.02,-12 198.02,-15.5001 198.02,-8.5001"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.36.0 (20140111.2315)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="189pt" height="32pt"
+ viewBox="0.00 0.00 189.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 185,-28 185,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node"><title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="66.25,-24 -0.25,-24 -0.25,-0 66.25,-0 66.25,-24"/>
+<text text-anchor="middle" x="33" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="181.25,-24 84.75,-24 84.75,-0 181.25,-0 181.25,-24"/>
+<text text-anchor="middle" x="133" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a file to a file which it depends on. A file
+    is dependent upon another if the latter must be compiled before the former
+    can be. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+      
+      <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-1">Modules</a></h3></div>
+  <div id="mods-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/sulu_wrapper.html">sulu_wrapper</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/superlu.f90.html#src">superlu.f90</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    <section>
+      <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl"><pre><span></span><a name="ln-1"></a><span class="c">!&lt; author: Arthur Francisco</span>
+<a name="ln-2"></a><span class="c">!  version: 1.0.0</span>
+<a name="ln-3"></a><span class="c">!  date: july, 12 2018</span>
+<a name="ln-4"></a><span class="c">!</span>
+<a name="ln-5"></a><span class="c">!  &lt;span style=&quot;color: #337ab7; font-family: cabin; font-size: 1.5em;&quot;&gt;</span>
+<a name="ln-6"></a><span class="c">!     **A SuperLU wrapper**</span>
+<a name="ln-7"></a><span class="c">!  &lt;/span&gt;</span>
+<a name="ln-8"></a><span class="k">module </span><span class="n">sulu_wrapper</span>
+<a name="ln-9"></a><span class="k">use </span><span class="nb">iso_c_binding</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="kt">C_INT</span><span class="p">,</span> <span class="kt">C_FLOAT</span><span class="p">,</span> <span class="kt">C_DOUBLE</span><span class="p">,</span> <span class="kt">C_CHAR</span><span class="p">,</span> <span class="kt">C_PTR</span><span class="p">,</span> <span class="nb">C_F_POINTER</span><span class="p">,</span> <span class="nb">C_NULL_CHAR</span><span class="p">,</span> <span class="nb">C_NULL_PTR</span>
+<a name="ln-10"></a><span class="k">implicit none</span>
+<a name="ln-11"></a>
+<a name="ln-12"></a><span class="k">private</span>
+<a name="ln-13"></a>
+<a name="ln-14"></a><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="n">I4</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">R4</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">R8</span><span class="o">=</span><span class="mi">8</span>
+<a name="ln-15"></a>
+<a name="ln-16"></a><span class="c">!-------------------------------------------------------------------------------</span>
+<a name="ln-17"></a><span class="c">! -------------------   ENUMS --------------------------------------------------</span>
+<a name="ln-18"></a><span class="c">!-------------------------------------------------------------------------------</span>
+<a name="ln-19"></a>
+<a name="ln-20"></a><span class="k">enum</span><span class="p">,</span> <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="c">! trans_t</span>
+<a name="ln-21"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">NOTRANS</span>
+<a name="ln-22"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">TRANS</span>
+<a name="ln-23"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">CONJ</span>
+<a name="ln-24"></a><span class="n">endenum</span>
+<a name="ln-25"></a>
+<a name="ln-26"></a><span class="k">enum</span><span class="p">,</span> <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="c">! fact_t</span>
+<a name="ln-27"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">DOFACT</span>
+<a name="ln-28"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SAMEPATTERN</span>
+<a name="ln-29"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SAMEPATTERN_SAMEROWPERM</span>
+<a name="ln-30"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">FACTORED</span>
+<a name="ln-31"></a><span class="n">endenum</span>
+<a name="ln-32"></a>
+<a name="ln-33"></a><span class="k">enum</span><span class="p">,</span> <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="c">! Stype_t</span>
+<a name="ln-34"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_NC</span>     <span class="c">!! *column-wise, no supernode*</span>
+<a name="ln-35"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_NCP</span>    <span class="c">!! *column-wise, column-permuted, no supernode*</span>
+<a name="ln-36"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_NR</span>     <span class="c">!! *row-wize, no supernode*</span>
+<a name="ln-37"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_SC</span>     <span class="c">!! *column-wise, supernode*</span>
+<a name="ln-38"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_SCP</span>    <span class="c">!! *supernode, column-wise, permuted*</span>
+<a name="ln-39"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_SR</span>     <span class="c">!! *row-wise, supernode*</span>
+<a name="ln-40"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_DN</span>     <span class="c">!! *Fortran style column-wise storage for dense matrix*</span>
+<a name="ln-41"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_NR_loc</span> <span class="c">!! *distributed compressed row format*</span>
+<a name="ln-42"></a><span class="n">endenum</span>
+<a name="ln-43"></a>
+<a name="ln-44"></a><span class="k">enum</span><span class="p">,</span> <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="c">! Dtype_t</span>
+<a name="ln-45"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_S</span>  <span class="c">!! *single*</span>
+<a name="ln-46"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_D</span>  <span class="c">!! *double*</span>
+<a name="ln-47"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_C</span>  <span class="c">!! *single complex*</span>
+<a name="ln-48"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_Z</span>  <span class="c">!! *double complex*</span>
+<a name="ln-49"></a><span class="n">endenum</span>
+<a name="ln-50"></a>
+<a name="ln-51"></a><span class="k">enum</span><span class="p">,</span> <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="c">! Mtype_t</span>
+<a name="ln-52"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_GE</span>   <span class="c">!! *general*</span>
+<a name="ln-53"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_TRLU</span> <span class="c">!! *lower triangular, unit diagonal*</span>
+<a name="ln-54"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_TRUU</span> <span class="c">!! *upper triangular, unit diagonal*</span>
+<a name="ln-55"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_TRL</span>  <span class="c">!! *lower triangular*</span>
+<a name="ln-56"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_TRU</span>  <span class="c">!! *upper triangular*</span>
+<a name="ln-57"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_SYL</span>  <span class="c">!! *symmetric, store lower half*</span>
+<a name="ln-58"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_SYU</span>  <span class="c">!! *symmetric, store upper half*</span>
+<a name="ln-59"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_HEL</span>  <span class="c">!! *Hermitian, store lower half*</span>
+<a name="ln-60"></a>   <span class="k">enumerator</span> <span class="kd">::</span> <span class="n">SLU_HEU</span>  <span class="c">!! *Hermitian, store upper half*</span>
+<a name="ln-61"></a><span class="n">endenum</span>
+<a name="ln-62"></a>
+<a name="ln-63"></a><span class="c">!-------------------------------------------------------------------------------</span>
+<a name="ln-64"></a><span class="c">! -------------------   DERIVED TYPES   ----------------------------------------</span>
+<a name="ln-65"></a><span class="c">!-------------------------------------------------------------------------------</span>
+<a name="ln-66"></a>
+<a name="ln-67"></a><span class="k">type</span><span class="p">,</span> <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="kd">::</span> <span class="n">LU_STACK_T</span>
+<a name="ln-68"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">size</span>
+<a name="ln-69"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">used</span>
+<a name="ln-70"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">top1</span>
+<a name="ln-71"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">top2</span>
+<a name="ln-72"></a>   <span class="k">type</span><span class="p">(</span><span class="kt">C_PTR</span><span class="p">)</span>         <span class="kd">::</span> <span class="k">array</span>
+<a name="ln-73"></a><span class="n">endtype</span> <span class="n">LU_STACK_T</span>
+<a name="ln-74"></a>
+<a name="ln-75"></a><span class="k">type</span><span class="p">,</span> <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="kd">::</span> <span class="n">EXPHEADER</span>
+<a name="ln-76"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">size</span>
+<a name="ln-77"></a>   <span class="k">type</span><span class="p">(</span><span class="kt">C_PTR</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">mem</span>
+<a name="ln-78"></a><span class="n">endtype</span> <span class="n">EXPHEADER</span>
+<a name="ln-79"></a>
+<a name="ln-80"></a><span class="k">type</span><span class="p">,</span> <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="kd">::</span> <span class="n">GLOBALLU_T</span>
+<a name="ln-81"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">xsup</span>
+<a name="ln-82"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">supno</span>
+<a name="ln-83"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">lsub</span>
+<a name="ln-84"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">xlsub</span>
+<a name="ln-85"></a>   <span class="k">type</span><span class="p">(</span><span class="kt">C_PTR</span><span class="p">)</span>         <span class="kd">::</span> <span class="n">lusup</span>
+<a name="ln-86"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">xlusup</span>
+<a name="ln-87"></a>   <span class="k">type</span><span class="p">(</span><span class="kt">C_PTR</span><span class="p">)</span>         <span class="kd">::</span> <span class="n">ucol</span>
+<a name="ln-88"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">usub</span>
+<a name="ln-89"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">xusub</span>
+<a name="ln-90"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nzlmax</span>
+<a name="ln-91"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nzumax</span>
+<a name="ln-92"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nzlumax</span>
+<a name="ln-93"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">MemModel</span><span class="o">=</span><span class="mi">0</span>
+<a name="ln-94"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">num_expansions</span>
+<a name="ln-95"></a>   <span class="k">type</span><span class="p">(</span><span class="n">EXPHEADER</span><span class="p">)</span>     <span class="kd">::</span> <span class="n">expanders</span>
+<a name="ln-96"></a>   <span class="k">type</span><span class="p">(</span><span class="n">LU_STACK_T</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">stack</span>
+<a name="ln-97"></a><span class="n">endtype</span> <span class="n">GLOBALLU_T</span>
+<a name="ln-98"></a>
+<a name="ln-99"></a><span class="k">type</span><span class="p">,</span> <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="kd">::</span> <span class="n">SUPERLUSTAT_T</span>
+<a name="ln-100"></a>   <span class="k">type</span><span class="p">(</span><span class="kt">C_PTR</span><span class="p">)</span>         <span class="kd">::</span> <span class="n">panel_histo</span>    <span class="c">!! *histogram of panel size distribution*</span>
+<a name="ln-101"></a>   <span class="k">type</span><span class="p">(</span><span class="kt">C_PTR</span><span class="p">)</span>         <span class="kd">::</span> <span class="n">utime</span>          <span class="c">!! *running time at various phases*</span>
+<a name="ln-102"></a>   <span class="k">type</span><span class="p">(</span><span class="kt">C_PTR</span><span class="p">)</span>         <span class="kd">::</span> <span class="n">ops</span>            <span class="c">!! *operation count at various phases*</span>
+<a name="ln-103"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">TinyPivots</span>     <span class="c">!! *number of tiny pivots*</span>
+<a name="ln-104"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">RefineSteps</span>    <span class="c">!! *number of iterative refinement steps*</span>
+<a name="ln-105"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">expansions</span>     <span class="c">!! *number of memory expansions*</span>
+<a name="ln-106"></a><span class="n">endtype</span> <span class="n">SUPERLUSTAT_T</span>
+<a name="ln-107"></a>
+<a name="ln-108"></a><span class="k">type</span><span class="p">,</span> <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="kd">::</span> <span class="n">MEM_USAGE_T</span>
+<a name="ln-109"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_FLOAT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">for_lu</span>
+<a name="ln-110"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_FLOAT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">total_needed</span>
+<a name="ln-111"></a><span class="n">endtype</span> <span class="n">MEM_USAGE_T</span>
+<a name="ln-112"></a>
+<a name="ln-113"></a><span class="c">!&lt; @note</span>
+<a name="ln-114"></a><span class="c">! Stype == ```SLU_NC``` (Also known as Harwell-Boeing sparse matrix format)</span>
+<a name="ln-115"></a><span class="c">!</span>
+<a name="ln-116"></a><span class="c">! Zero-based indexing is used; colptr[] has ncol+1 entries, the last one pointing beyond the last column,</span>
+<a name="ln-117"></a><span class="c">! so that colptr[ncol] = nnz.</span>
+<a name="ln-118"></a><span class="c">! @endnote</span>
+<a name="ln-119"></a><span class="k">type</span><span class="p">,</span> <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="kd">::</span> <span class="n">NCFORMAT</span> 
+<a name="ln-120"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nnz</span>    <span class="c">!! *number of nonzeros in the matrix*</span>
+<a name="ln-121"></a>   <span class="k">type</span><span class="p">(</span><span class="kt">C_PTR</span><span class="p">)</span>         <span class="kd">::</span> <span class="n">nzval</span>  <span class="c">!! *pointer to array of nonzero values, packed by column*</span>
+<a name="ln-122"></a>   <span class="k">type</span><span class="p">(</span><span class="kt">C_PTR</span><span class="p">)</span>         <span class="kd">::</span> <span class="n">rowind</span> <span class="c">!! *pointer to array of row indices of the nonzeros*</span>
+<a name="ln-123"></a>   <span class="k">type</span><span class="p">(</span><span class="kt">C_PTR</span><span class="p">)</span>         <span class="kd">::</span> <span class="n">colptr</span> <span class="c">!! *pointer to array of beginning of columns in nzval[] and rowind[]*</span>
+<a name="ln-124"></a><span class="n">endtype</span> <span class="n">NCFORMAT</span>
+<a name="ln-125"></a>
+<a name="ln-126"></a><span class="k">type</span><span class="p">,</span> <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="kd">::</span> <span class="n">SUPERMATRIX</span>
+<a name="ln-127"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Stype</span>    <span class="c">!! *Storage type: interprets the storage structure pointed to by Store*</span>
+<a name="ln-128"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Dtype</span>    <span class="c">!! *Data type*</span>
+<a name="ln-129"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Mtype</span>    <span class="c">!! *Matrix type: describes the mathematical property of the matrix*</span>
+<a name="ln-130"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nrow</span>     <span class="c">!! *number of rows*</span>
+<a name="ln-131"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ncol</span>     <span class="c">!! *number of columns*</span>
+<a name="ln-132"></a>   <span class="k">type</span><span class="p">(</span><span class="kt">C_PTR</span><span class="p">)</span>         <span class="kd">::</span> <span class="n">Store</span>    <span class="c">!! *pointer to the actual storage of the matrix, here, pointer to [[NCformat]]*</span>
+<a name="ln-133"></a><span class="n">endtype</span> <span class="n">SUPERMATRIX</span>
+<a name="ln-134"></a>
+<a name="ln-135"></a><span class="k">type</span><span class="p">,</span> <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="kd">::</span> <span class="n">SUPERLU_OPTIONS_T</span>
+<a name="ln-136"></a>   <span class="c">!/*</span>
+<a name="ln-137"></a>   <span class="c">! *-- This contains the options used to control the solution process.</span>
+<a name="ln-138"></a>   <span class="c">! *</span>
+<a name="ln-139"></a>   <span class="c">! * Fact   (fact_t)</span>
+<a name="ln-140"></a>   <span class="c">! *        Specifies whether or not the factored form of the matrix</span>
+<a name="ln-141"></a>   <span class="c">! *        A is supplied on entry, and if not, how the matrix A should</span>
+<a name="ln-142"></a>   <span class="c">! *        be factorizaed.</span>
+<a name="ln-143"></a>   <span class="c">! *        = DOFACT: The matrix A will be factorized from scratch, and the</span>
+<a name="ln-144"></a>   <span class="c">! *             factors will be stored in L and U.</span>
+<a name="ln-145"></a>   <span class="c">! *        = SamePattern: The matrix A will be factorized assuming</span>
+<a name="ln-146"></a>   <span class="c">! *             that a factorization of a matrix with the same sparsity</span>
+<a name="ln-147"></a>   <span class="c">! *             pattern was performed prior to this one. Therefore, this</span>
+<a name="ln-148"></a>   <span class="c">! *             factorization will reuse column permutation vector</span>
+<a name="ln-149"></a>   <span class="c">! *             ScalePermstruct-&gt;perm_c and the column elimination tree</span>
+<a name="ln-150"></a>   <span class="c">! *             LUstruct-&gt;etree.</span>
+<a name="ln-151"></a>   <span class="c">! *        = SamePattern_SameRowPerm: The matrix A will be factorized</span>
+<a name="ln-152"></a>   <span class="c">! *             assuming that a factorization of a matrix with the same</span>
+<a name="ln-153"></a>   <span class="c">! *             sparsity   pattern and similar numerical values was performed</span>
+<a name="ln-154"></a>   <span class="c">! *             prior to this one. Therefore, this factorization will reuse</span>
+<a name="ln-155"></a>   <span class="c">! *             both row and column scaling factors R and C, both row and</span>
+<a name="ln-156"></a>   <span class="c">! *             column permutation vectors perm_r and perm_c, and the</span>
+<a name="ln-157"></a>   <span class="c">! *             L &amp; U data structures set up from the previous factorization.</span>
+<a name="ln-158"></a>   <span class="c">!! *        = FACTORED: On entry, L, U, perm_r and perm_c contain the</span>
+<a name="ln-159"></a>   <span class="c">! *              factored form of A. If DiagScale is not NOEQUIL, the matrix</span>
+<a name="ln-160"></a>   <span class="c">! *              A has been equilibrated with scaling factors R and C.</span>
+<a name="ln-161"></a>   <span class="c">! *</span>
+<a name="ln-162"></a>   <span class="c">! * Equil  (yes_no_t)</span>
+<a name="ln-163"></a>   <span class="c">! *        Specifies whether to equilibrate the system (scale A&#39;s row and</span>
+<a name="ln-164"></a>   <span class="c">! *        columns to have unit norm).</span>
+<a name="ln-165"></a>   <span class="c">! *</span>
+<a name="ln-166"></a>   <span class="c">! * ColPerm (colperm_t)</span>
+<a name="ln-167"></a>   <span class="c">! *        Specifies what type of column permutation to use to reduce fill.</span>
+<a name="ln-168"></a>   <span class="c">! *        = NATURAL: use the natural ordering</span>
+<a name="ln-169"></a>   <span class="c">! *        = MMD_ATA: use minimum degree ordering on structure of A&#39;*A</span>
+<a name="ln-170"></a>   <span class="c">! *        = MMD_AT_PLUS_A: use minimum degree ordering on structure of A&#39;+A</span>
+<a name="ln-171"></a>   <span class="c">! *        = COLAMD: use approximate minimum degree column ordering</span>
+<a name="ln-172"></a>   <span class="c">! *        = MY_PERMC: use the ordering specified by the user</span>
+<a name="ln-173"></a>   <span class="c">! *</span>
+<a name="ln-174"></a>   <span class="c">! * Trans  (trans_t)</span>
+<a name="ln-175"></a>   <span class="c">! *        Specifies the form of the system of equations:</span>
+<a name="ln-176"></a>   <span class="c">! *        = NOTRANS: A * X = B        (No transpose)</span>
+<a name="ln-177"></a>   <span class="c">! *        = TRANS:   A**T * X = B     (Transpose)</span>
+<a name="ln-178"></a>   <span class="c">! *        = CONJ:    A**H * X = B     (Transpose)</span>
+<a name="ln-179"></a>   <span class="c">! *</span>
+<a name="ln-180"></a>   <span class="c">! * IterRefine (IterRefine_t)</span>
+<a name="ln-181"></a>   <span class="c">! *        Specifies whether to perform iterative refinement.</span>
+<a name="ln-182"></a>   <span class="c">! *        = NO: no iterative refinement</span>
+<a name="ln-183"></a>   <span class="c">! *        = SLU_SINGLE: perform iterative refinement in single precision</span>
+<a name="ln-184"></a>   <span class="c">! *        = SLU_DOUBLE: perform iterative refinement in double precision</span>
+<a name="ln-185"></a>   <span class="c">! *        = SLU_EXTRA: perform iterative refinement in extra precision</span>
+<a name="ln-186"></a>   <span class="c">! *</span>
+<a name="ln-187"></a>   <span class="c">! * DiagPivotThresh (double, in [0.0, 1.0]) (only for sequential SuperLU)</span>
+<a name="ln-188"></a>   <span class="c">! *        Specifies the threshold used for a diagonal entry to be an</span>
+<a name="ln-189"></a>   <span class="c">! *        acceptable pivot.</span>
+<a name="ln-190"></a>   <span class="c">! *</span>
+<a name="ln-191"></a>   <span class="c">! * SymmetricMode (yest_no_t)</span>
+<a name="ln-192"></a>   <span class="c">! *        Specifies whether to use symmetric mode. Symmetric mode gives</span>
+<a name="ln-193"></a>   <span class="c">! *        preference to diagonal pivots, and uses an (A&#39;+A)-based column</span>
+<a name="ln-194"></a>   <span class="c">! *        permutation algorithm.</span>
+<a name="ln-195"></a>   <span class="c">! *</span>
+<a name="ln-196"></a>   <span class="c">! * PivotGrowth (yes_no_t)</span>
+<a name="ln-197"></a>   <span class="c">! *        Specifies whether to compute the reciprocal pivot growth.</span>
+<a name="ln-198"></a>   <span class="c">! *</span>
+<a name="ln-199"></a>   <span class="c">! * ConditionNumber (ues_no_t)</span>
+<a name="ln-200"></a>   <span class="c">! *        Specifies whether to compute the reciprocal condition number.</span>
+<a name="ln-201"></a>   <span class="c">! *</span>
+<a name="ln-202"></a>   <span class="c">! * RowPerm (rowperm_t) (only for SuperLU_DIST or ILU)</span>
+<a name="ln-203"></a>   <span class="c">! *        Specifies whether to permute rows of the original matrix.</span>
+<a name="ln-204"></a>   <span class="c">! *        = NO: not to permute the rows</span>
+<a name="ln-205"></a>   <span class="c">! *        = LargeDiag: make the diagonal large relative to the off-diagonal</span>
+<a name="ln-206"></a>   <span class="c">! *        = MY_PERMR: use the permutation given by the user</span>
+<a name="ln-207"></a>   <span class="c">! *</span>
+<a name="ln-208"></a>   <span class="c">! * ILU_DropRule (int)</span>
+<a name="ln-209"></a>   <span class="c">! *        Specifies the dropping rule:</span>
+<a name="ln-210"></a>   <span class="c">! *     = DROP_BASIC:   Basic dropping rule, supernodal based ILUTP(tau).</span>
+<a name="ln-211"></a>   <span class="c">! *     = DROP_PROWS:   Supernodal based ILUTP(p,tau), p = gamma * nnz(A)/n.</span>
+<a name="ln-212"></a>   <span class="c">! *     = DROP_COLUMN:  Variant of ILUTP(p,tau), for j-th column,</span>
+<a name="ln-213"></a>   <span class="c">! *                     p = gamma * nnz(A(:,j)).</span>
+<a name="ln-214"></a>   <span class="c">! *     = DROP_AREA:    Variation of ILUTP, for j-th column, use</span>
+<a name="ln-215"></a>   <span class="c">! *                     nnz(F(:,1:j)) / nnz(A(:,1:j)) to control memory.</span>
+<a name="ln-216"></a>   <span class="c">! *     = DROP_DYNAMIC: Modify the threshold tau during factorizaion:</span>
+<a name="ln-217"></a>   <span class="c">! *                     If nnz(L(:,1:j)) / nnz(A(:,1:j)) &gt; gamma</span>
+<a name="ln-218"></a>   <span class="c">! *                         tau_L(j) := MIN(tau_0, tau_L(j-1) * 2);</span>
+<a name="ln-219"></a>   <span class="c">! *                     Otherwise</span>
+<a name="ln-220"></a>   <span class="c">! *                         tau_L(j) := MAX(tau_0, tau_L(j-1) / 2);</span>
+<a name="ln-221"></a>   <span class="c">! *                     tau_U(j) uses the similar rule.</span>
+<a name="ln-222"></a>   <span class="c">! *                     NOTE: the thresholds used by L and U are separate.</span>
+<a name="ln-223"></a>   <span class="c">! *     = DROP_INTERP:  Compute the second dropping threshold by</span>
+<a name="ln-224"></a>   <span class="c">! *                     interpolation instead of sorting (default).</span>
+<a name="ln-225"></a>   <span class="c">! *                     In this case, the actual fill ratio is not</span>
+<a name="ln-226"></a>   <span class="c">! *                     guaranteed to be smaller than gamma.</span>
+<a name="ln-227"></a>   <span class="c">! *                     Note: DROP_PROWS, DROP_COLUMN and DROP_AREA are mutually exclusive.</span>
+<a name="ln-228"></a>   <span class="c">! *    ( Default: DROP_BASIC | DROP_AREA )</span>
+<a name="ln-229"></a>   <span class="c">! *</span>
+<a name="ln-230"></a>   <span class="c">! * ILU_DropTol (double)</span>
+<a name="ln-231"></a>   <span class="c">! *        numerical threshold for dropping.</span>
+<a name="ln-232"></a>   <span class="c">! *</span>
+<a name="ln-233"></a>   <span class="c">! * ILU_FillFactor (double)</span>
+<a name="ln-234"></a>   <span class="c">! *        Gamma in the secondary dropping.</span>
+<a name="ln-235"></a>   <span class="c">! *</span>
+<a name="ln-236"></a>   <span class="c">! * ILU_Norm (norm_t)</span>
+<a name="ln-237"></a>   <span class="c">! *        Specify which norm to use to measure the row size in a</span>
+<a name="ln-238"></a>   <span class="c">! *        supernode: infinity-norm, 1-norm, or 2-norm.</span>
+<a name="ln-239"></a>   <span class="c">! *</span>
+<a name="ln-240"></a>   <span class="c">! * ILU_FillTol (double)</span>
+<a name="ln-241"></a>   <span class="c">! *        numerical threshold for zero pivot perturbation.</span>
+<a name="ln-242"></a>   <span class="c">! *</span>
+<a name="ln-243"></a>   <span class="c">! * ILU_MILU (milu_t)</span>
+<a name="ln-244"></a>   <span class="c">! *        Specifies which version of MILU to use.</span>
+<a name="ln-245"></a>   <span class="c">! *</span>
+<a name="ln-246"></a>   <span class="c">! * ILU_MILU_Dim (double)</span>
+<a name="ln-247"></a>   <span class="c">! *        Dimension of the PDE if available.</span>
+<a name="ln-248"></a>   <span class="c">! *</span>
+<a name="ln-249"></a>   <span class="c">! * ReplaceTinyPivot (yes_no_t) (only for SuperLU_DIST)</span>
+<a name="ln-250"></a>   <span class="c">! *        Specifies whether to replace the tiny diagonals by</span>
+<a name="ln-251"></a>   <span class="c">! *        sqrt(epsilon)*||A|| during LU factorization.</span>
+<a name="ln-252"></a>   <span class="c">! *</span>
+<a name="ln-253"></a>   <span class="c">! * SolveInitialized (yes_no_t) (only for SuperLU_DIST)</span>
+<a name="ln-254"></a>   <span class="c">! *        Specifies whether the initialization has been performed to the</span>
+<a name="ln-255"></a>   <span class="c">! *        triangular solve.</span>
+<a name="ln-256"></a>   <span class="c">! *</span>
+<a name="ln-257"></a>   <span class="c">! * RefineInitialized (yes_no_t) (only for SuperLU_DIST)</span>
+<a name="ln-258"></a>   <span class="c">! *        Specifies whether the initialization has been performed to the</span>
+<a name="ln-259"></a>   <span class="c">! *        sparse matrix-vector multiplication routine needed in iterative</span>
+<a name="ln-260"></a>   <span class="c">! *        refinement.</span>
+<a name="ln-261"></a>   <span class="c">! *</span>
+<a name="ln-262"></a>   <span class="c">! * PrintStat (yes_no_t)</span>
+<a name="ln-263"></a>   <span class="c">! *        Specifies whether to print the solver&#39;s statistics.</span>
+<a name="ln-264"></a>   <span class="c">! */</span>
+<a name="ln-265"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Fact</span>
+<a name="ln-266"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Equil</span>
+<a name="ln-267"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ColPerm</span>
+<a name="ln-268"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Trans</span>
+<a name="ln-269"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">IterRefine</span>
+<a name="ln-270"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">)</span> <span class="kd">::</span> <span class="n">DiagPivotThresh</span>
+<a name="ln-271"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">SymmetricMode</span>
+<a name="ln-272"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">PivotGrowth</span>
+<a name="ln-273"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ConditionNumber</span>
+<a name="ln-274"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">RowPerm</span>
+<a name="ln-275"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ILU_DropRule</span>
+<a name="ln-276"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ILU_DropTol</span>
+<a name="ln-277"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ILU_FillFactor</span>
+<a name="ln-278"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ILU_Norm</span>
+<a name="ln-279"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ILU_FillTol</span>
+<a name="ln-280"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ILU_MILU</span>
+<a name="ln-281"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ILU_MILU_Dim</span>
+<a name="ln-282"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ParSymbFact</span>
+<a name="ln-283"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ReplaceTinyPivot</span>
+<a name="ln-284"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">SolveInitialized</span>
+<a name="ln-285"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">RefineInitialized</span>
+<a name="ln-286"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">PrintStat</span>
+<a name="ln-287"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nnzL</span><span class="p">,</span> <span class="n">nnzU</span>      <span class="c">!! *used to store nnzs for now*</span>
+<a name="ln-288"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">num_lookaheads</span>  <span class="c">!! *num of levels in look-ahead*</span>
+<a name="ln-289"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">lookahead_etree</span> <span class="c">!! *use etree computed from the serial symbolic factorization*</span>
+<a name="ln-290"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">SymPattern</span>      <span class="c">!! *symmetric factorization*</span>
+<a name="ln-291"></a><span class="n">endtype</span> <span class="n">SUPERLU_OPTIONS_T</span>
+<a name="ln-292"></a>
+<a name="ln-293"></a><span class="c">!-------------------------------------------------------------------------------</span>
+<a name="ln-294"></a><span class="c">! -------------------   SULU GLOBAL TYPE   -------------------------------------</span>
+<a name="ln-295"></a><span class="c">!-------------------------------------------------------------------------------</span>
+<a name="ln-296"></a>
+<a name="ln-297"></a><span class="k">type </span><span class="n">SULU_ENV</span>
+<a name="ln-298"></a><span class="c">!! &lt;span style=&quot;color:green&quot;&gt;Global type for *SuperLU* which covers all the stuff needed&lt;/span&gt;</span>
+<a name="ln-299"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">n</span>      <span class="c">!! *system size*</span>
+<a name="ln-300"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nrhs</span>   <span class="c">!! *number of right hand sides*</span>
+<a name="ln-301"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nz</span>     <span class="c">!! *number on non-zero entries*</span>
+<a name="ln-302"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">info</span>   <span class="c">!! *info returned by [[dgssvx]]*</span>
+<a name="ln-303"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">lwork</span>  <span class="c">!! *size of workspace, not used here*</span>
+<a name="ln-304"></a>
+<a name="ln-305"></a>   <span class="kt">logical</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">first</span>  <span class="c">!! *if ```false``` the system has been factorized at least once*</span>
+<a name="ln-306"></a>
+<a name="ln-307"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">pointer</span>     <span class="kd">::</span> <span class="n">b</span>   <span class="c">!! *right hand side: points to [[MAT_SOLV:b]]*</span>
+<a name="ln-308"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span> <span class="k">allocatable</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:)</span> <span class="kd">::</span> <span class="n">x</span>   <span class="c">!! *solution*</span>
+<a name="ln-309"></a>
+<a name="ln-310"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span>    <span class="k">dimension</span><span class="p">(:),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">a_elt</span>   <span class="c">!! *CC system matrix: points to [[MAT_SOLV:a_elt]]*</span>
+<a name="ln-311"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">irow</span>    <span class="c">!! *matrix line of an a_elt element: points to [[MAT_SOLV:irow]]*</span>
+<a name="ln-312"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">jptr</span>    <span class="c">!! *matrix column pointers: points to [[MAT_SOLV:jptr]]*</span>
+<a name="ln-313"></a>
+<a name="ln-314"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">),</span> <span class="k">allocatable</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:)</span> <span class="kd">::</span> <span class="n">ferr</span>   <span class="c">!! *estimated forward error bound for each solution vector*</span>
+<a name="ln-315"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">),</span> <span class="k">allocatable</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:)</span> <span class="kd">::</span> <span class="n">berr</span>   <span class="c">!! *componentwise relative backward error of each solution*</span>
+<a name="ln-316"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">),</span> <span class="k">allocatable</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:)</span> <span class="kd">::</span> <span class="n">RR</span>     <span class="c">!! *row scale factors for A *</span>
+<a name="ln-317"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">),</span> <span class="k">allocatable</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:)</span> <span class="kd">::</span> <span class="n">CC</span>     <span class="c">!!*column scale factors for A*</span>
+<a name="ln-318"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">),</span> <span class="k">allocatable</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:)</span> <span class="kd">::</span> <span class="n">rpg</span>    <span class="c">!! *reciprocal pivot growth factor*</span>
+<a name="ln-319"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">),</span> <span class="k">allocatable</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:)</span> <span class="kd">::</span> <span class="n">rcond</span>  <span class="c">!!*estimate of the reciprocal condition number of the matrix A*</span>
+<a name="ln-320"></a>
+<a name="ln-321"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span> <span class="k">allocatable</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:)</span> <span class="kd">::</span> <span class="n">perm_c</span> <span class="c">!!*If A-&gt;Stype = ```SLU_NC```, Column permutation vector of size A-&gt;ncol*</span>
+<a name="ln-322"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span> <span class="k">allocatable</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:)</span> <span class="kd">::</span> <span class="n">perm_r</span> <span class="c">!!*If A-&gt;Stype = ```SLU_NC```, row permutation vector of size A-&gt;nrow*</span>
+<a name="ln-323"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span> <span class="k">allocatable</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:)</span> <span class="kd">::</span> <span class="n">etree</span>  <span class="c">!! *Elimination tree*</span>
+<a name="ln-324"></a>
+<a name="ln-325"></a>   <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">kind</span><span class="o">=</span><span class="kt">C_CHAR</span><span class="p">)</span> <span class="kd">::</span> <span class="n">equed</span> <span class="c">!! *form of equilibration*</span>
+<a name="ln-326"></a>
+<a name="ln-327"></a>   <span class="k">type</span><span class="p">(</span><span class="kt">C_PTR</span><span class="p">)</span> <span class="kd">::</span> <span class="n">work</span>                    <span class="c">!! *User supplied workspace*</span>
+<a name="ln-328"></a>
+<a name="ln-329"></a>   <span class="k">type</span><span class="p">(</span><span class="n">SUPERLU_OPTIONS_T</span><span class="p">)</span> <span class="kd">::</span> <span class="k">options</span>     <span class="c">!! *LU controls*</span>
+<a name="ln-330"></a>
+<a name="ln-331"></a>   <span class="k">type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">)</span> <span class="kd">::</span> <span class="n">sma</span> <span class="c">!! *Matrix A in A*X=B*</span>
+<a name="ln-332"></a>   <span class="k">type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">)</span> <span class="kd">::</span> <span class="n">smb</span> <span class="c">!! *On entry, the right hand side matrix*</span>
+<a name="ln-333"></a>   <span class="k">type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">)</span> <span class="kd">::</span> <span class="n">smx</span> <span class="c">!! *olution matrix to the original system*</span>
+<a name="ln-334"></a>   <span class="k">type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">)</span> <span class="kd">::</span> <span class="n">sml</span> <span class="c">!! *factor L from the factorization*</span>
+<a name="ln-335"></a>   <span class="k">type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">)</span> <span class="kd">::</span> <span class="n">smu</span> <span class="c">!! *factor U from the factorization*</span>
+<a name="ln-336"></a>
+<a name="ln-337"></a>   <span class="k">type</span><span class="p">(</span><span class="n">SUPERLUSTAT_T</span><span class="p">)</span> <span class="kd">::</span> <span class="nb">stat</span> <span class="c">!! *statistics on runtime and floating-point operation count*</span>
+<a name="ln-338"></a>
+<a name="ln-339"></a>   <span class="k">type</span><span class="p">(</span><span class="n">GLOBALLU_T</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">Glu</span>  <span class="c">!! *first, an output with the whole stuff LU; next, an input for other resolutions with same sparsity*</span>
+<a name="ln-340"></a>
+<a name="ln-341"></a>   <span class="k">type</span><span class="p">(</span><span class="n">MEM_USAGE_T</span><span class="p">)</span>   <span class="kd">::</span> <span class="n">mem_usage</span> <span class="c">!! *memory usage statistics*</span>
+<a name="ln-342"></a><span class="n">endtype</span> <span class="n">SULU_ENV</span>
+<a name="ln-343"></a>
+<a name="ln-344"></a><span class="c">!-------------------------------------------------------------------------------</span>
+<a name="ln-345"></a><span class="c">! -------------------   INTERFACES   -------------------------------------------</span>
+<a name="ln-346"></a><span class="c">!-------------------------------------------------------------------------------</span>
+<a name="ln-347"></a>
+<a name="ln-348"></a><span class="k">interface</span>
+<a name="ln-349"></a>
+<a name="ln-350"></a>   <span class="c">!. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+<a name="ln-351"></a>   <span class="k">subroutine </span><span class="n">Destroy_SuperNode_Matrix</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="p">&amp;</span> <span class="c">!</span>
+<a name="ln-352"></a>   <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Destroy_SuperNode_Matrix&quot;</span><span class="p">)</span>
+<a name="ln-353"></a>   <span class="k">import</span> <span class="kd">::</span> <span class="n">SUPERMATRIX</span>
+<a name="ln-354"></a>   <span class="k">implicit none</span>
+<a name="ln-355"></a><span class="k">   type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>
+<a name="ln-356"></a>   <span class="n">endsubroutine</span> <span class="n">Destroy_SuperNode_Matrix</span>
+<a name="ln-357"></a>   <span class="c">!. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+<a name="ln-358"></a>   <span class="k">subroutine </span><span class="n">Destroy_SuperMatrix_Store</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="p">&amp;</span> <span class="c">!</span>
+<a name="ln-359"></a>   <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Destroy_SuperMatrix_Store&quot;</span><span class="p">)</span>
+<a name="ln-360"></a>   <span class="k">import</span> <span class="kd">::</span> <span class="n">SUPERMATRIX</span>
+<a name="ln-361"></a>   <span class="k">implicit none</span>
+<a name="ln-362"></a><span class="k">   type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>
+<a name="ln-363"></a>   <span class="n">endsubroutine</span> <span class="n">Destroy_SuperMatrix_Store</span>
+<a name="ln-364"></a>   <span class="c">!. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+<a name="ln-365"></a>   <span class="k">subroutine </span><span class="n">Destroy_CompCol_Matrix</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="p">&amp;</span> <span class="c">!</span>
+<a name="ln-366"></a>   <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Destroy_CompCol_Matrix&quot;</span><span class="p">)</span>
+<a name="ln-367"></a>   <span class="k">import</span> <span class="kd">::</span> <span class="n">SUPERMATRIX</span>
+<a name="ln-368"></a>   <span class="k">implicit none</span>
+<a name="ln-369"></a><span class="k">   type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>
+<a name="ln-370"></a>   <span class="n">endsubroutine</span> <span class="n">Destroy_CompCol_Matrix</span>
+<a name="ln-371"></a>   <span class="c">!. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+<a name="ln-372"></a>   <span class="k">subroutine </span><span class="n">Destroy_Dense_Matrix</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="p">&amp;</span> <span class="c">!</span>
+<a name="ln-373"></a>   <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Destroy_Dense_Matrix&quot;</span><span class="p">)</span>
+<a name="ln-374"></a>   <span class="k">import</span> <span class="kd">::</span> <span class="n">SUPERMATRIX</span>
+<a name="ln-375"></a>   <span class="k">implicit none</span>
+<a name="ln-376"></a><span class="k">   type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>
+<a name="ln-377"></a>   <span class="n">endsubroutine</span> <span class="n">Destroy_Dense_Matrix</span>
+<a name="ln-378"></a>   <span class="c">!. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+<a name="ln-379"></a>   <span class="k">subroutine </span><span class="n">StatInit</span><span class="p">(</span><span class="nb">stat</span><span class="p">)</span> <span class="p">&amp;</span> <span class="c">!</span>
+<a name="ln-380"></a>   <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;StatInit&quot;</span><span class="p">)</span>
+<a name="ln-381"></a>   <span class="k">import</span> <span class="kd">::</span> <span class="n">SUPERLUSTAT_T</span>
+<a name="ln-382"></a>   <span class="k">implicit none</span>
+<a name="ln-383"></a><span class="k">   type</span><span class="p">(</span><span class="n">SUPERLUSTAT_T</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="nb">stat</span>
+<a name="ln-384"></a><span class="nb">   </span><span class="n">endsubroutine</span> <span class="n">StatInit</span>
+<a name="ln-385"></a>   <span class="c">!. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+<a name="ln-386"></a>   <span class="k">subroutine </span><span class="n">StatFree</span><span class="p">(</span><span class="nb">stat</span><span class="p">)</span> <span class="p">&amp;</span> <span class="c">!</span>
+<a name="ln-387"></a>   <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;StatFree&quot;</span><span class="p">)</span>
+<a name="ln-388"></a>   <span class="k">import</span> <span class="kd">::</span> <span class="n">SUPERLUSTAT_T</span>
+<a name="ln-389"></a>   <span class="k">implicit none</span>
+<a name="ln-390"></a><span class="k">   type</span><span class="p">(</span><span class="n">SUPERLUSTAT_T</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="nb">stat</span>
+<a name="ln-391"></a><span class="nb">   </span><span class="n">endsubroutine</span> <span class="n">StatFree</span>
+<a name="ln-392"></a>   <span class="c">!. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+<a name="ln-393"></a>   <span class="k">subroutine </span><span class="n">dCreate_CompCol_Matrix</span><span class="p">(</span>  <span class="n">A</span><span class="p">,</span>       <span class="p">&amp;</span> <span class="c">! out SuperMatrix</span>
+<a name="ln-394"></a>                                       <span class="n">m</span><span class="p">,</span>       <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-395"></a>                                       <span class="n">n</span><span class="p">,</span>       <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-396"></a>                                       <span class="n">nnz</span><span class="p">,</span>     <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-397"></a>                                       <span class="n">nzval</span><span class="p">,</span>   <span class="p">&amp;</span> <span class="c">! in double dimension()</span>
+<a name="ln-398"></a>                                       <span class="n">rowind</span><span class="p">,</span>  <span class="p">&amp;</span> <span class="c">! in int dimension()</span>
+<a name="ln-399"></a>                                       <span class="n">colptr</span><span class="p">,</span>  <span class="p">&amp;</span> <span class="c">! in int dimension()</span>
+<a name="ln-400"></a>                                       <span class="n">stype</span><span class="p">,</span>   <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-401"></a>                                       <span class="n">dtype</span><span class="p">,</span>   <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-402"></a>                                       <span class="n">mtype</span>    <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-403"></a>                                    <span class="p">)</span> <span class="p">&amp;</span>
+<a name="ln-404"></a>   <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;dCreate_CompCol_Matrix&quot;</span><span class="p">)</span>
+<a name="ln-405"></a>   <span class="k">use</span><span class="p">,</span> <span class="k">intrinsic</span> <span class="kd">::</span> <span class="nb">iso_c_binding</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="kt">C_INT</span><span class="p">,</span> <span class="kt">C_DOUBLE</span>
+<a name="ln-406"></a><span class="kt">   </span><span class="k">import</span>         <span class="kd">::</span> <span class="n">SUPERMATRIX</span>
+<a name="ln-407"></a>   <span class="k">implicit none</span>
+<a name="ln-408"></a><span class="k">   type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">),</span>             <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>
+<a name="ln-409"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span>    <span class="k">value</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">m</span>
+<a name="ln-410"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span>    <span class="k">value</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">n</span>
+<a name="ln-411"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span>    <span class="k">value</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">nnz</span>
+<a name="ln-412"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">),</span>           <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">nzval</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<a name="ln-413"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span>           <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">rowind</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<a name="ln-414"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span>           <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">colptr</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<a name="ln-415"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span>    <span class="k">value</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">stype</span>
+<a name="ln-416"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span>    <span class="k">value</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">dtype</span>
+<a name="ln-417"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span>    <span class="k">value</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">mtype</span>
+<a name="ln-418"></a>   <span class="n">endsubroutine</span> <span class="n">dCreate_CompCol_Matrix</span>
+<a name="ln-419"></a>   <span class="c">!. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+<a name="ln-420"></a>   <span class="k">subroutine </span><span class="n">dCreate_Dense_Matrix</span><span class="p">(</span> <span class="n">BX</span><span class="p">,</span>      <span class="p">&amp;</span> <span class="c">! out SuperMatrix</span>
+<a name="ln-421"></a>                                    <span class="n">m</span><span class="p">,</span>       <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-422"></a>                                    <span class="n">n</span><span class="p">,</span>       <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-423"></a>                                    <span class="n">x</span><span class="p">,</span>       <span class="p">&amp;</span> <span class="c">! in double dimension()</span>
+<a name="ln-424"></a>                                    <span class="n">ldx</span><span class="p">,</span>     <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-425"></a>                                    <span class="n">stype</span><span class="p">,</span>   <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-426"></a>                                    <span class="n">dtype</span><span class="p">,</span>   <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-427"></a>                                    <span class="n">mtype</span>    <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-428"></a>                                    <span class="p">)</span> <span class="p">&amp;</span>
+<a name="ln-429"></a>   <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;dCreate_Dense_Matrix&#39;</span><span class="p">)</span>
+<a name="ln-430"></a>   <span class="k">use</span><span class="p">,</span> <span class="k">intrinsic</span> <span class="kd">::</span> <span class="nb">iso_c_binding</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="kt">C_INT</span><span class="p">,</span> <span class="kt">C_DOUBLE</span>
+<a name="ln-431"></a><span class="kt">   </span><span class="k">import </span><span class="n">SUPERMATRIX</span>
+<a name="ln-432"></a>   <span class="k">implicit none</span>
+<a name="ln-433"></a><span class="k">   type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">),</span>              <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">BX</span>
+<a name="ln-434"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span>    <span class="k">value</span><span class="p">,</span>  <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">m</span>
+<a name="ln-435"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span>    <span class="k">value</span><span class="p">,</span>  <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">n</span>
+<a name="ln-436"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">),</span>            <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">x</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<a name="ln-437"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span>    <span class="k">value</span><span class="p">,</span>  <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">ldx</span>
+<a name="ln-438"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span>    <span class="k">value</span><span class="p">,</span>  <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">stype</span>
+<a name="ln-439"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span>    <span class="k">value</span><span class="p">,</span>  <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">dtype</span>
+<a name="ln-440"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span>    <span class="k">value</span><span class="p">,</span>  <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">mtype</span>
+<a name="ln-441"></a>   <span class="n">endsubroutine</span> <span class="n">dCreate_Dense_Matrix</span>
+<a name="ln-442"></a>   <span class="c">!. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+<a name="ln-443"></a>   <span class="k">subroutine </span><span class="n">set_default_options</span><span class="p">(</span><span class="k">options</span><span class="p">)</span> <span class="p">&amp;</span> <span class="c">!</span>
+<a name="ln-444"></a>   <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;set_default_options&#39;</span><span class="p">)</span>
+<a name="ln-445"></a>   <span class="k">use</span><span class="p">,</span> <span class="k">intrinsic</span> <span class="kd">::</span> <span class="nb">iso_c_binding</span>
+<a name="ln-446"></a><span class="nb">   </span><span class="k">import </span><span class="n">SUPERLU_OPTIONS_T</span>
+<a name="ln-447"></a>   <span class="k">implicit none</span>
+<a name="ln-448"></a><span class="k">   type</span><span class="p">(</span><span class="n">SUPERLU_OPTIONS_T</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="k">options</span>
+<a name="ln-449"></a><span class="k">   </span><span class="n">endsubroutine</span> <span class="n">set_default_options</span>
+<a name="ln-450"></a>   <span class="c">!. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+<a name="ln-451"></a>
+<a name="ln-452"></a>   <span class="c">!/*! Arguments</span>
+<a name="ln-453"></a>   <span class="c">! *</span>
+<a name="ln-454"></a>   <span class="c">! * &lt;pre&gt;</span>
+<a name="ln-455"></a>   <span class="c">! * Purpose</span>
+<a name="ln-456"></a>   <span class="c">! * =======</span>
+<a name="ln-457"></a>   <span class="c">! *</span>
+<a name="ln-458"></a>   <span class="c">! * DGSSVX solves the system of linear equations A*X=B or A&#39;*X=B, using</span>
+<a name="ln-459"></a>   <span class="c">! * the LU factorization from dgstrf(). Error bounds on the solution and</span>
+<a name="ln-460"></a>   <span class="c">! * a condition estimate are also provided. It performs the following steps:</span>
+<a name="ln-461"></a>   <span class="c">! *</span>
+<a name="ln-462"></a>   <span class="c">! *   1. If A is stored column-wise (A-&gt;Stype = SLU_NC):</span>
+<a name="ln-463"></a>   <span class="c">! *</span>
+<a name="ln-464"></a>   <span class="c">! *      1.1. If options-&gt;Equil = YES, scaling factors are computed to</span>
+<a name="ln-465"></a>   <span class="c">! *           equilibrate the system:</span>
+<a name="ln-466"></a>   <span class="c">! *           options-&gt;Trans = NOTRANS:</span>
+<a name="ln-467"></a>   <span class="c">! *               diag(R)*A*diag(C) *inv(diag(C))*X = diag(R)*B</span>
+<a name="ln-468"></a>   <span class="c">! *           options-&gt;Trans = TRANS:</span>
+<a name="ln-469"></a>   <span class="c">! *               (diag(R)*A*diag(C))**T *inv(diag(R))*X = diag(C)*B</span>
+<a name="ln-470"></a>   <span class="c">! *           options-&gt;Trans = CONJ:</span>
+<a name="ln-471"></a>   <span class="c">! *               (diag(R)*A*diag(C))**H *inv(diag(R))*X = diag(C)*B</span>
+<a name="ln-472"></a>   <span class="c">! *           Whether or not the system will be equilibrated depends on the</span>
+<a name="ln-473"></a>   <span class="c">! *           scaling of the matrix A, but if equilibration is used, A is</span>
+<a name="ln-474"></a>   <span class="c">! *           overwritten by diag(R)*A*diag(C) and B by diag(R)*B</span>
+<a name="ln-475"></a>   <span class="c">! *           (if options-&gt;Trans=NOTRANS) or diag(C)*B (if options-&gt;Trans</span>
+<a name="ln-476"></a>   <span class="c">! *           = TRANS or CONJ).</span>
+<a name="ln-477"></a>   <span class="c">! *</span>
+<a name="ln-478"></a>   <span class="c">! *      1.2. Permute columns of A, forming A*Pc, where Pc is a permutation</span>
+<a name="ln-479"></a>   <span class="c">! *           matrix that usually preserves sparsity.</span>
+<a name="ln-480"></a>   <span class="c">! *           For more details of this step, see sp_preorder.c.</span>
+<a name="ln-481"></a>   <span class="c">! *</span>
+<a name="ln-482"></a>   <span class="c">! *      1.3. If options-&gt;Fact != FACTORED, the LU decomposition is used to</span>
+<a name="ln-483"></a>   <span class="c">! *           factor the matrix A (after equilibration if options-&gt;Equil = YES)</span>
+<a name="ln-484"></a>   <span class="c">! *           as Pr*A*Pc = L*U, with Pr determined by partial pivoting.</span>
+<a name="ln-485"></a>   <span class="c">! *</span>
+<a name="ln-486"></a>   <span class="c">! *      1.4. Compute the reciprocal pivot growth factor.</span>
+<a name="ln-487"></a>   <span class="c">! *</span>
+<a name="ln-488"></a>   <span class="c">! *      1.5. If some U(i,i) = 0, so that U is exactly singular, then the</span>
+<a name="ln-489"></a>   <span class="c">! *           routine returns with info = i. Otherwise, the factored form of</span>
+<a name="ln-490"></a>   <span class="c">! *           A is used to estimate the condition number of the matrix A. If</span>
+<a name="ln-491"></a>   <span class="c">! *           the reciprocal of the condition number is less than machine</span>
+<a name="ln-492"></a>   <span class="c">! *           precision, info = A-&gt;ncol+1 is returned as a warning, but the</span>
+<a name="ln-493"></a>   <span class="c">! *           routine still goes on to solve for X and computes error bounds</span>
+<a name="ln-494"></a>   <span class="c">! *           as described below.</span>
+<a name="ln-495"></a>   <span class="c">! *</span>
+<a name="ln-496"></a>   <span class="c">! *      1.6. The system of equations is solved for X using the factored form</span>
+<a name="ln-497"></a>   <span class="c">! *           of A.</span>
+<a name="ln-498"></a>   <span class="c">! *</span>
+<a name="ln-499"></a>   <span class="c">! *      1.7. If options-&gt;IterRefine != NOREFINE, iterative refinement is</span>
+<a name="ln-500"></a>   <span class="c">! *           applied to improve the computed solution matrix and calculate</span>
+<a name="ln-501"></a>   <span class="c">! *           error bounds and backward error estimates for it.</span>
+<a name="ln-502"></a>   <span class="c">! *</span>
+<a name="ln-503"></a>   <span class="c">! *      1.8. If equilibration was used, the matrix X is premultiplied by</span>
+<a name="ln-504"></a>   <span class="c">! *           diag(C) (if options-&gt;Trans = NOTRANS) or diag(R)</span>
+<a name="ln-505"></a>   <span class="c">! *           (if options-&gt;Trans = TRANS or CONJ) so that it solves the</span>
+<a name="ln-506"></a>   <span class="c">! *           original system before equilibration.</span>
+<a name="ln-507"></a>   <span class="c">! *</span>
+<a name="ln-508"></a>   <span class="c">! *   2. If A is stored row-wise (A-&gt;Stype = SLU_NR), apply the above algorithm</span>
+<a name="ln-509"></a>   <span class="c">! *      to the transpose of A:</span>
+<a name="ln-510"></a>   <span class="c">! *</span>
+<a name="ln-511"></a>   <span class="c">! *      2.1. If options-&gt;Equil = YES, scaling factors are computed to</span>
+<a name="ln-512"></a>   <span class="c">! *           equilibrate the system:</span>
+<a name="ln-513"></a>   <span class="c">! *           options-&gt;Trans = NOTRANS:</span>
+<a name="ln-514"></a>   <span class="c">! *               diag(R)*A*diag(C) *inv(diag(C))*X = diag(R)*B</span>
+<a name="ln-515"></a>   <span class="c">! *           options-&gt;Trans = TRANS:</span>
+<a name="ln-516"></a>   <span class="c">! *               (diag(R)*A*diag(C))**T *inv(diag(R))*X = diag(C)*B</span>
+<a name="ln-517"></a>   <span class="c">! *           options-&gt;Trans = CONJ:</span>
+<a name="ln-518"></a>   <span class="c">! *               (diag(R)*A*diag(C))**H *inv(diag(R))*X = diag(C)*B</span>
+<a name="ln-519"></a>   <span class="c">! *           Whether or not the system will be equilibrated depends on the</span>
+<a name="ln-520"></a>   <span class="c">! *           scaling of the matrix A, but if equilibration is used, A&#39; is</span>
+<a name="ln-521"></a>   <span class="c">! *           overwritten by diag(R)*A&#39;*diag(C) and B by diag(R)*B</span>
+<a name="ln-522"></a>   <span class="c">! *           (if trans=&#39;N&#39;) or diag(C)*B (if trans = &#39;T&#39; or &#39;C&#39;).</span>
+<a name="ln-523"></a>   <span class="c">! *</span>
+<a name="ln-524"></a>   <span class="c">! *      2.2. Permute columns of transpose(A) (rows of A),</span>
+<a name="ln-525"></a>   <span class="c">! *           forming transpose(A)*Pc, where Pc is a permutation matrix that</span>
+<a name="ln-526"></a>   <span class="c">! *           usually preserves sparsity.</span>
+<a name="ln-527"></a>   <span class="c">! *           For more details of this step, see sp_preorder.c.</span>
+<a name="ln-528"></a>   <span class="c">! *</span>
+<a name="ln-529"></a>   <span class="c">! *      2.3. If options-&gt;Fact != FACTORED, the LU decomposition is used to</span>
+<a name="ln-530"></a>   <span class="c">! *           factor the transpose(A) (after equilibration if</span>
+<a name="ln-531"></a>   <span class="c">! *           options-&gt;Fact = YES) as Pr*transpose(A)*Pc = L*U with the</span>
+<a name="ln-532"></a>   <span class="c">! *           permutation Pr determined by partial pivoting.</span>
+<a name="ln-533"></a>   <span class="c">! *</span>
+<a name="ln-534"></a>   <span class="c">! *      2.4. Compute the reciprocal pivot growth factor.</span>
+<a name="ln-535"></a>   <span class="c">! *</span>
+<a name="ln-536"></a>   <span class="c">! *      2.5. If some U(i,i) = 0, so that U is exactly singular, then the</span>
+<a name="ln-537"></a>   <span class="c">! *           routine returns with info = i. Otherwise, the factored form</span>
+<a name="ln-538"></a>   <span class="c">! *           of transpose(A) is used to estimate the condition number of the</span>
+<a name="ln-539"></a>   <span class="c">! *           matrix A. If the reciprocal of the condition number</span>
+<a name="ln-540"></a>   <span class="c">! *           is less than machine precision, info = A-&gt;nrow+1 is returned as</span>
+<a name="ln-541"></a>   <span class="c">! *           a warning, but the routine still goes on to solve for X and</span>
+<a name="ln-542"></a>   <span class="c">! *           computes error bounds as described below.</span>
+<a name="ln-543"></a>   <span class="c">! *</span>
+<a name="ln-544"></a>   <span class="c">! *      2.6. The system of equations is solved for X using the factored form</span>
+<a name="ln-545"></a>   <span class="c">! *           of transpose(A).</span>
+<a name="ln-546"></a>   <span class="c">! *</span>
+<a name="ln-547"></a>   <span class="c">! *      2.7. If options-&gt;IterRefine != NOREFINE, iterative refinement is</span>
+<a name="ln-548"></a>   <span class="c">! *           applied to improve the computed solution matrix and calculate</span>
+<a name="ln-549"></a>   <span class="c">! *           error bounds and backward error estimates for it.</span>
+<a name="ln-550"></a>   <span class="c">! *</span>
+<a name="ln-551"></a>   <span class="c">! *      2.8. If equilibration was used, the matrix X is premultiplied by</span>
+<a name="ln-552"></a>   <span class="c">! *           diag(C) (if options-&gt;Trans = NOTRANS) or diag(R)</span>
+<a name="ln-553"></a>   <span class="c">! *           (if options-&gt;Trans = TRANS or CONJ) so that it solves the</span>
+<a name="ln-554"></a>   <span class="c">! *           original system before equilibration.</span>
+<a name="ln-555"></a>   <span class="c">! *</span>
+<a name="ln-556"></a>   <span class="c">! *   See supermatrix.h for the definition of &#39;SuperMatrix&#39; structure.</span>
+<a name="ln-557"></a>   <span class="c">! *</span>
+<a name="ln-558"></a>   <span class="c">! * Arguments</span>
+<a name="ln-559"></a>   <span class="c">! * =========</span>
+<a name="ln-560"></a>   <span class="c">! *</span>
+<a name="ln-561"></a>   <span class="c">! * options (input) superlu_options_t*</span>
+<a name="ln-562"></a>   <span class="c">! *         The structure defines the input parameters to control</span>
+<a name="ln-563"></a>   <span class="c">! *         how the LU decomposition will be performed and how the</span>
+<a name="ln-564"></a>   <span class="c">! *         system will be solved.</span>
+<a name="ln-565"></a>   <span class="c">! *</span>
+<a name="ln-566"></a>   <span class="c">! * A       (input/output) SuperMatrix*</span>
+<a name="ln-567"></a>   <span class="c">! *         Matrix A in A*X=B, of dimension (A-&gt;nrow, A-&gt;ncol). The number</span>
+<a name="ln-568"></a>   <span class="c">! *         of the linear equations is A-&gt;nrow. Currently, the type of A can be:</span>
+<a name="ln-569"></a>   <span class="c">! *         Stype = SLU_NC or SLU_NR, Dtype = SLU_D, Mtype = SLU_GE.</span>
+<a name="ln-570"></a>   <span class="c">! *         In the future, more general A may be handled.</span>
+<a name="ln-571"></a>   <span class="c">! *</span>
+<a name="ln-572"></a>   <span class="c">! *         On entry, If options-&gt;Fact = FACTORED and equed is not &#39;N&#39;,</span>
+<a name="ln-573"></a>   <span class="c">! *         then A must have been equilibrated by the scaling factors in</span>
+<a name="ln-574"></a>   <span class="c">! *         R and/or C.</span>
+<a name="ln-575"></a>   <span class="c">! *         On exit, A is not modified if options-&gt;Equil = NO, or if</span>
+<a name="ln-576"></a>   <span class="c">! *         options-&gt;Equil = YES but equed = &#39;N&#39; on exit.</span>
+<a name="ln-577"></a>   <span class="c">! *         Otherwise, if options-&gt;Equil = YES and equed is not &#39;N&#39;,</span>
+<a name="ln-578"></a>   <span class="c">! *         A is scaled as follows:</span>
+<a name="ln-579"></a>   <span class="c">! *         If A-&gt;Stype = SLU_NC:</span>
+<a name="ln-580"></a>   <span class="c">! *           equed = &#39;R&#39;:  A := diag(R) * A</span>
+<a name="ln-581"></a>   <span class="c">! *           equed = &#39;C&#39;:  A := A * diag(C)</span>
+<a name="ln-582"></a>   <span class="c">! *           equed = &#39;B&#39;:  A := diag(R) * A * diag(C).</span>
+<a name="ln-583"></a>   <span class="c">! *         If A-&gt;Stype = SLU_NR:</span>
+<a name="ln-584"></a>   <span class="c">! *           equed = &#39;R&#39;:  transpose(A) := diag(R) * transpose(A)</span>
+<a name="ln-585"></a>   <span class="c">! *           equed = &#39;C&#39;:  transpose(A) := transpose(A) * diag(C)</span>
+<a name="ln-586"></a>   <span class="c">! *           equed = &#39;B&#39;:  transpose(A) := diag(R) * transpose(A) * diag(C).</span>
+<a name="ln-587"></a>   <span class="c">! *</span>
+<a name="ln-588"></a>   <span class="c">! * perm_c  (input/output) int*</span>
+<a name="ln-589"></a>   <span class="c">! *         If A-&gt;Stype = SLU_NC, Column permutation vector of size A-&gt;ncol,</span>
+<a name="ln-590"></a>   <span class="c">! *         which defines the permutation matrix Pc; perm_c[i] = j means</span>
+<a name="ln-591"></a>   <span class="c">! *         column i of A is in position j in A*Pc.</span>
+<a name="ln-592"></a>   <span class="c">! *         On exit, perm_c may be overwritten by the product of the input</span>
+<a name="ln-593"></a>   <span class="c">! *         perm_c and a permutation that postorders the elimination tree</span>
+<a name="ln-594"></a>   <span class="c">! *         of Pc&#39;*A&#39;*A*Pc; perm_c is not changed if the elimination tree</span>
+<a name="ln-595"></a>   <span class="c">! *         is already in postorder.</span>
+<a name="ln-596"></a>   <span class="c">! *</span>
+<a name="ln-597"></a>   <span class="c">! *         If A-&gt;Stype = SLU_NR, column permutation vector of size A-&gt;nrow,</span>
+<a name="ln-598"></a>   <span class="c">! *         which describes permutation of columns of transpose(A)</span>
+<a name="ln-599"></a>   <span class="c">! *         (rows of A) as described above.</span>
+<a name="ln-600"></a>   <span class="c">! *</span>
+<a name="ln-601"></a>   <span class="c">! * perm_r  (input/output) int*</span>
+<a name="ln-602"></a>   <span class="c">! *         If A-&gt;Stype = SLU_NC, row permutation vector of size A-&gt;nrow,</span>
+<a name="ln-603"></a>   <span class="c">! *         which defines the permutation matrix Pr, and is determined</span>
+<a name="ln-604"></a>   <span class="c">! *         by partial pivoting.  perm_r[i] = j means row i of A is in</span>
+<a name="ln-605"></a>   <span class="c">! *         position j in Pr*A.</span>
+<a name="ln-606"></a>   <span class="c">! *</span>
+<a name="ln-607"></a>   <span class="c">! *         If A-&gt;Stype = SLU_NR, permutation vector of size A-&gt;ncol, which</span>
+<a name="ln-608"></a>   <span class="c">! *         determines permutation of rows of transpose(A)</span>
+<a name="ln-609"></a>   <span class="c">! *         (columns of A) as described above.</span>
+<a name="ln-610"></a>   <span class="c">! *</span>
+<a name="ln-611"></a>   <span class="c">! *         If options-&gt;Fact = SamePattern_SameRowPerm, the pivoting routine</span>
+<a name="ln-612"></a>   <span class="c">! *         will try to use the input perm_r, unless a certain threshold</span>
+<a name="ln-613"></a>   <span class="c">! *         criterion is violated. In that case, perm_r is overwritten by a</span>
+<a name="ln-614"></a>   <span class="c">! *         new permutation determined by partial pivoting or diagonal</span>
+<a name="ln-615"></a>   <span class="c">! *         threshold pivoting.</span>
+<a name="ln-616"></a>   <span class="c">! *         Otherwise, perm_r is output argument.</span>
+<a name="ln-617"></a>   <span class="c">! *</span>
+<a name="ln-618"></a>   <span class="c">! * etree   (input/output) int*,  dimension (A-&gt;ncol)</span>
+<a name="ln-619"></a>   <span class="c">! *         Elimination tree of Pc&#39;*A&#39;*A*Pc.</span>
+<a name="ln-620"></a>   <span class="c">! *         If options-&gt;Fact != FACTORED and options-&gt;Fact != DOFACT,</span>
+<a name="ln-621"></a>   <span class="c">! *         etree is an input argument, otherwise it is an output argument.</span>
+<a name="ln-622"></a>   <span class="c">! *         Note: etree is a vector of parent pointers for a forest whose</span>
+<a name="ln-623"></a>   <span class="c">! *         vertices are the integers 0 to A-&gt;ncol-1; etree[root]==A-&gt;ncol.</span>
+<a name="ln-624"></a>   <span class="c">! *</span>
+<a name="ln-625"></a>   <span class="c">! * equed   (input/output) char*</span>
+<a name="ln-626"></a>   <span class="c">! *         Specifies the form of equilibration that was done.</span>
+<a name="ln-627"></a>   <span class="c">! *         = &#39;N&#39;: No equilibration.</span>
+<a name="ln-628"></a>   <span class="c">! *         = &#39;R&#39;: Row equilibration, i.e., A was premultiplied by diag(R).</span>
+<a name="ln-629"></a>   <span class="c">! *         = &#39;C&#39;: Column equilibration, i.e., A was postmultiplied by diag(C).</span>
+<a name="ln-630"></a>   <span class="c">! *         = &#39;B&#39;: Both row and column equilibration, i.e., A was replaced</span>
+<a name="ln-631"></a>   <span class="c">! *                by diag(R)*A*diag(C).</span>
+<a name="ln-632"></a>   <span class="c">! *         If options-&gt;Fact = FACTORED, equed is an input argument,</span>
+<a name="ln-633"></a>   <span class="c">! *         otherwise it is an output argument.</span>
+<a name="ln-634"></a>   <span class="c">! *</span>
+<a name="ln-635"></a>   <span class="c">! * R       (input/output) double*, dimension (A-&gt;nrow)</span>
+<a name="ln-636"></a>   <span class="c">! *         The row scale factors for A or transpose(A).</span>
+<a name="ln-637"></a>   <span class="c">! *         If equed = &#39;R&#39; or &#39;B&#39;, A (if A-&gt;Stype = SLU_NC) or transpose(A)</span>
+<a name="ln-638"></a>   <span class="c">! *             (if A-&gt;Stype = SLU_NR) is multiplied on the left by diag(R).</span>
+<a name="ln-639"></a>   <span class="c">! *         If equed = &#39;N&#39; or &#39;C&#39;, R is not accessed.</span>
+<a name="ln-640"></a>   <span class="c">! *         If options-&gt;Fact = FACTORED, R is an input argument,</span>
+<a name="ln-641"></a>   <span class="c">! *             otherwise, R is output.</span>
+<a name="ln-642"></a>   <span class="c">! *         If options-&gt;zFact = FACTORED and equed = &#39;R&#39; or &#39;B&#39;, each element</span>
+<a name="ln-643"></a>   <span class="c">! *             of R must be positive.</span>
+<a name="ln-644"></a>   <span class="c">! *</span>
+<a name="ln-645"></a>   <span class="c">! * C       (input/output) double*, dimension (A-&gt;ncol)</span>
+<a name="ln-646"></a>   <span class="c">! *         The column scale factors for A or transpose(A).</span>
+<a name="ln-647"></a>   <span class="c">! *         If equed = &#39;C&#39; or &#39;B&#39;, A (if A-&gt;Stype = SLU_NC) or transpose(A)</span>
+<a name="ln-648"></a>   <span class="c">! *             (if A-&gt;Stype = SLU_NR) is multiplied on the right by diag(C).</span>
+<a name="ln-649"></a>   <span class="c">! *         If equed = &#39;N&#39; or &#39;R&#39;, C is not accessed.</span>
+<a name="ln-650"></a>   <span class="c">! *         If options-&gt;Fact = FACTORED, C is an input argument,</span>
+<a name="ln-651"></a>   <span class="c">! *             otherwise, C is output.</span>
+<a name="ln-652"></a>   <span class="c">! *         If options-&gt;Fact = FACTORED and equed = &#39;C&#39; or &#39;B&#39;, each element</span>
+<a name="ln-653"></a>   <span class="c">! *             of C must be positive.</span>
+<a name="ln-654"></a>   <span class="c">! *</span>
+<a name="ln-655"></a>   <span class="c">! * L       (output) SuperMatrix*</span>
+<a name="ln-656"></a>   <span class="c">! *         The factor L from the factorization</span>
+<a name="ln-657"></a>   <span class="c">! *             Pr*A*Pc=L*U              (if A-&gt;Stype SLU_= NC) or</span>
+<a name="ln-658"></a>   <span class="c">! *             Pr*transpose(A)*Pc=L*U   (if A-&gt;Stype = SLU_NR).</span>
+<a name="ln-659"></a>   <span class="c">! *         Uses compressed row subscripts storage for supernodes, i.e.,</span>
+<a name="ln-660"></a>   <span class="c">! *         L has types: Stype = SLU_SC, Dtype = SLU_D, Mtype = SLU_TRLU.</span>
+<a name="ln-661"></a>   <span class="c">! *</span>
+<a name="ln-662"></a>   <span class="c">! * U       (output) SuperMatrix*</span>
+<a name="ln-663"></a>   <span class="c">! *         The factor U from the factorization</span>
+<a name="ln-664"></a>   <span class="c">! *             Pr*A*Pc=L*U              (if A-&gt;Stype = SLU_NC) or</span>
+<a name="ln-665"></a>   <span class="c">! *             Pr*transpose(A)*Pc=L*U   (if A-&gt;Stype = SLU_NR).</span>
+<a name="ln-666"></a>   <span class="c">! *         Uses column-wise storage scheme, i.e., U has types:</span>
+<a name="ln-667"></a>   <span class="c">! *         Stype = SLU_NC, Dtype = SLU_D, Mtype = SLU_TRU.</span>
+<a name="ln-668"></a>   <span class="c">! *</span>
+<a name="ln-669"></a>   <span class="c">! * work    (workspace/output) void*, size (lwork) (in bytes)</span>
+<a name="ln-670"></a>   <span class="c">! *         User supplied workspace, should be large enough</span>
+<a name="ln-671"></a>   <span class="c">! *         to hold data structures for factors L and U.</span>
+<a name="ln-672"></a>   <span class="c">! *         On exit, if fact is not &#39;F&#39;, L and U point to this array.</span>
+<a name="ln-673"></a>   <span class="c">! *</span>
+<a name="ln-674"></a>   <span class="c">! * lwork   (input) int</span>
+<a name="ln-675"></a>   <span class="c">! *         Specifies the size of work array in bytes.</span>
+<a name="ln-676"></a>   <span class="c">! *         = 0:  allocate space internally by system malloc;</span>
+<a name="ln-677"></a>   <span class="c">! *         &gt; 0:  use user-supplied work array of length lwork in bytes,</span>
+<a name="ln-678"></a>   <span class="c">! *               returns error if space runs out.</span>
+<a name="ln-679"></a>   <span class="c">! *         = -1: the routine guesses the amount of space needed without</span>
+<a name="ln-680"></a>   <span class="c">! *               performing the factorization, and returns it in</span>
+<a name="ln-681"></a>   <span class="c">! *               mem_usage-&gt;total_needed; no other side effects.</span>
+<a name="ln-682"></a>   <span class="c">! *</span>
+<a name="ln-683"></a>   <span class="c">! *         See argument &#39;mem_usage&#39; for memory usage statistics.</span>
+<a name="ln-684"></a>   <span class="c">! *</span>
+<a name="ln-685"></a>   <span class="c">! * B       (input/output) SuperMatrix*</span>
+<a name="ln-686"></a>   <span class="c">! *         B has types: Stype = SLU_DN, Dtype = SLU_D, Mtype = SLU_GE.</span>
+<a name="ln-687"></a>   <span class="c">! *         On entry, the right hand side matrix.</span>
+<a name="ln-688"></a>   <span class="c">! *         If B-&gt;ncol = 0, only LU decomposition is performed, the triangular</span>
+<a name="ln-689"></a>   <span class="c">! *                         solve is skipped.</span>
+<a name="ln-690"></a>   <span class="c">! *         On exit,</span>
+<a name="ln-691"></a>   <span class="c">! *            if equed = &#39;N&#39;, B is not modified; otherwise</span>
+<a name="ln-692"></a>   <span class="c">! *            if A-&gt;Stype = SLU_NC:</span>
+<a name="ln-693"></a>   <span class="c">! *               if options-&gt;Trans = NOTRANS and equed = &#39;R&#39; or &#39;B&#39;,</span>
+<a name="ln-694"></a>   <span class="c">! *                  B is overwritten by diag(R)*B;</span>
+<a name="ln-695"></a>   <span class="c">! *               if options-&gt;Trans = TRANS or CONJ and equed = &#39;C&#39; of &#39;B&#39;,</span>
+<a name="ln-696"></a>   <span class="c">! *                  B is overwritten by diag(C)*B;</span>
+<a name="ln-697"></a>   <span class="c">! *            if A-&gt;Stype = SLU_NR:</span>
+<a name="ln-698"></a>   <span class="c">! *               if options-&gt;Trans = NOTRANS and equed = &#39;C&#39; or &#39;B&#39;,</span>
+<a name="ln-699"></a>   <span class="c">! *                  B is overwritten by diag(C)*B;</span>
+<a name="ln-700"></a>   <span class="c">! *               if options-&gt;Trans = TRANS or CONJ and equed = &#39;R&#39; of &#39;B&#39;,</span>
+<a name="ln-701"></a>   <span class="c">! *                  B is overwritten by diag(R)*B.</span>
+<a name="ln-702"></a>   <span class="c">! *</span>
+<a name="ln-703"></a>   <span class="c">! * X       (output) SuperMatrix*</span>
+<a name="ln-704"></a>   <span class="c">! *         X has types: Stype = SLU_DN, Dtype = SLU_D, Mtype = SLU_GE.</span>
+<a name="ln-705"></a>   <span class="c">! *         If info = 0 or info = A-&gt;ncol+1, X contains the solution matrix</span>
+<a name="ln-706"></a>   <span class="c">! *         to the original system of equations. Note that A and B are modified</span>
+<a name="ln-707"></a>   <span class="c">! *         on exit if equed is not &#39;N&#39;, and the solution to the equilibrated</span>
+<a name="ln-708"></a>   <span class="c">! *         system is inv(diag(C))*X if options-&gt;Trans = NOTRANS and</span>
+<a name="ln-709"></a>   <span class="c">! *         equed = &#39;C&#39; or &#39;B&#39;, or inv(diag(R))*X if options-&gt;Trans = &#39;T&#39; or &#39;C&#39;</span>
+<a name="ln-710"></a>   <span class="c">! *         and equed = &#39;R&#39; or &#39;B&#39;.</span>
+<a name="ln-711"></a>   <span class="c">! *</span>
+<a name="ln-712"></a>   <span class="c">! * recip_pivot_growth (output) double*</span>
+<a name="ln-713"></a>   <span class="c">! *         The reciprocal pivot growth factor max_j( norm(A_j)/norm(U_j) ).</span>
+<a name="ln-714"></a>   <span class="c">! *         The infinity norm is used. If recip_pivot_growth is much less</span>
+<a name="ln-715"></a>   <span class="c">! *         than 1, the stability of the LU factorization could be poor.</span>
+<a name="ln-716"></a>   <span class="c">! *</span>
+<a name="ln-717"></a>   <span class="c">! * rcond   (output) double*</span>
+<a name="ln-718"></a>   <span class="c">! *         The estimate of the reciprocal condition number of the matrix A</span>
+<a name="ln-719"></a>   <span class="c">! *         after equilibration (if done). If rcond is less than the machine</span>
+<a name="ln-720"></a>   <span class="c">! *         precision (in particular, if rcond = 0), the matrix is singular</span>
+<a name="ln-721"></a>   <span class="c">! *         to working precision. This condition is indicated by a return</span>
+<a name="ln-722"></a>   <span class="c">! *         code of info &gt; 0.</span>
+<a name="ln-723"></a>   <span class="c">! *</span>
+<a name="ln-724"></a>   <span class="c">! * FERR    (output) double*, dimension (B-&gt;ncol)</span>
+<a name="ln-725"></a>   <span class="c">! *         The estimated forward error bound for each solution vector</span>
+<a name="ln-726"></a>   <span class="c">! *         X(j) (the j-th column of the solution matrix X).</span>
+<a name="ln-727"></a>   <span class="c">! *         If XTRUE is the true solution corresponding to X(j), FERR(j)</span>
+<a name="ln-728"></a>   <span class="c">! *         is an estimated upper bound for the magnitude of the largest</span>
+<a name="ln-729"></a>   <span class="c">! *         element in (X(j) - XTRUE) divided by the magnitude of the</span>
+<a name="ln-730"></a>   <span class="c">! *         largest element in X(j).  The estimate is as reliable as</span>
+<a name="ln-731"></a>   <span class="c">! *         the estimate for RCOND, and is almost always a slight</span>
+<a name="ln-732"></a>   <span class="c">! *         overestimate of the true error.</span>
+<a name="ln-733"></a>   <span class="c">! *         If options-&gt;IterRefine = NOREFINE, ferr = 1.0.</span>
+<a name="ln-734"></a>   <span class="c">! *</span>
+<a name="ln-735"></a>   <span class="c">! * BERR    (output) double*, dimension (B-&gt;ncol)</span>
+<a name="ln-736"></a>   <span class="c">! *         The componentwise relative backward error of each solution</span>
+<a name="ln-737"></a>   <span class="c">! *         vector X(j) (i.e., the smallest relative change in</span>
+<a name="ln-738"></a>   <span class="c">! *         any element of A or B that makes X(j) an exact solution).</span>
+<a name="ln-739"></a>   <span class="c">! *         If options-&gt;IterRefine = NOREFINE, berr = 1.0.</span>
+<a name="ln-740"></a>   <span class="c">! *</span>
+<a name="ln-741"></a>   <span class="c">! * Glu      (input/output) GlobalLU_t *</span>
+<a name="ln-742"></a>   <span class="c">! *          If options-&gt;Fact == SamePattern_SameRowPerm, it is an input;</span>
+<a name="ln-743"></a>   <span class="c">! *              The matrix A will be factorized assuming that a</span>
+<a name="ln-744"></a>   <span class="c">! *              factorization of a matrix with the same sparsity pattern</span>
+<a name="ln-745"></a>   <span class="c">! *              and similar numerical values was performed prior to this one.</span>
+<a name="ln-746"></a>   <span class="c">! *              Therefore, this factorization will reuse both row and column</span>
+<a name="ln-747"></a>   <span class="c">! *              scaling factors R and C, both row and column permutation</span>
+<a name="ln-748"></a>   <span class="c">! *              vectors perm_r and perm_c, and the L &amp; U data structures</span>
+<a name="ln-749"></a>   <span class="c">! *              set up from the previous factorization.</span>
+<a name="ln-750"></a>   <span class="c">! *          Otherwise, it is an output.</span>
+<a name="ln-751"></a>   <span class="c">! *</span>
+<a name="ln-752"></a>   <span class="c">! * mem_usage (output) mem_usage_t*</span>
+<a name="ln-753"></a>   <span class="c">! *         Record the memory usage statistics, consisting of following fields:</span>
+<a name="ln-754"></a>   <span class="c">! *         - for_lu (float)</span>
+<a name="ln-755"></a>   <span class="c">! *           The amount of space used in bytes for L\U data structures.</span>
+<a name="ln-756"></a>   <span class="c">! *         - total_needed (float)</span>
+<a name="ln-757"></a>   <span class="c">! *           The amount of space needed in bytes to perform factorization.</span>
+<a name="ln-758"></a>   <span class="c">! *         - expansions (int)</span>
+<a name="ln-759"></a>   <span class="c">! *           The number of memory expansions during the LU factorization.</span>
+<a name="ln-760"></a>   <span class="c">! *</span>
+<a name="ln-761"></a>   <span class="c">! * stat   (output) SuperLUStat_t*</span>
+<a name="ln-762"></a>   <span class="c">! *        Record the statistics on runtime and floating-point operation count.</span>
+<a name="ln-763"></a>   <span class="c">! *        See slu_util.h for the definition of &#39;SuperLUStat_t&#39;.</span>
+<a name="ln-764"></a>   <span class="c">! *</span>
+<a name="ln-765"></a>   <span class="c">! * info    (output) int*</span>
+<a name="ln-766"></a>   <span class="c">! *         = 0: successful exit</span>
+<a name="ln-767"></a>   <span class="c">! *         &lt; 0: if info = -i, the i-th argument had an illegal value</span>
+<a name="ln-768"></a>   <span class="c">! *         &gt; 0: if info = i, and i is</span>
+<a name="ln-769"></a>   <span class="c">! *              &lt;= A-&gt;ncol: U(i,i) is exactly zero. The factorization has</span>
+<a name="ln-770"></a>   <span class="c">! *                    been completed, but the factor U is exactly</span>
+<a name="ln-771"></a>   <span class="c">! *                    singular, so the solution and error bounds</span>
+<a name="ln-772"></a>   <span class="c">! *                    could not be computed.</span>
+<a name="ln-773"></a>   <span class="c">! *              = A-&gt;ncol+1: U is nonsingular, but RCOND is less than machine</span>
+<a name="ln-774"></a>   <span class="c">! *                    precision, meaning that the matrix is singular to</span>
+<a name="ln-775"></a>   <span class="c">! *                    working precision. Nevertheless, the solution and</span>
+<a name="ln-776"></a>   <span class="c">! *                    error bounds are computed because there are a number</span>
+<a name="ln-777"></a>   <span class="c">! *                    of situations where the computed solution can be more</span>
+<a name="ln-778"></a>   <span class="c">! *                    accurate than the value of RCOND would suggest.</span>
+<a name="ln-779"></a>   <span class="c">! *              &gt; A-&gt;ncol+1: number of bytes allocated when memory allocation</span>
+<a name="ln-780"></a>   <span class="c">! *                    failure occurred, plus A-&gt;ncol.</span>
+<a name="ln-781"></a>   <span class="c">! * &lt;/pre&gt;</span>
+<a name="ln-782"></a>   <span class="c">! */</span>
+<a name="ln-783"></a>   <span class="k">subroutine </span><span class="n">dgssvx</span><span class="p">(&amp;</span> <span class="c">! argument                 |     type           |   C def           |  C call</span>
+<a name="ln-784"></a>                        <span class="k">options</span><span class="p">,</span>                <span class="p">&amp;</span> <span class="c">! superlu_options_t   *options             &amp;options</span>
+<a name="ln-785"></a>                        <span class="n">A</span><span class="p">,</span>                      <span class="p">&amp;</span> <span class="c">! SuperMatrix         *A                   &amp;A1</span>
+<a name="ln-786"></a>                        <span class="n">perm_c</span><span class="p">,</span>                 <span class="p">&amp;</span> <span class="c">! int                 *perm_c               perm_c</span>
+<a name="ln-787"></a>                        <span class="n">perm_r</span><span class="p">,</span>                 <span class="p">&amp;</span> <span class="c">! int                 *perm_r               perm_r</span>
+<a name="ln-788"></a>                        <span class="n">etree</span><span class="p">,</span>                  <span class="p">&amp;</span> <span class="c">! int                 *etree                etree</span>
+<a name="ln-789"></a>                        <span class="n">equed</span><span class="p">,</span>                  <span class="p">&amp;</span> <span class="c">! char                *equed                equed</span>
+<a name="ln-790"></a>                        <span class="n">R</span><span class="p">,</span>                      <span class="p">&amp;</span> <span class="c">! double              *R                    R</span>
+<a name="ln-791"></a>                        <span class="n">C</span><span class="p">,</span>                      <span class="p">&amp;</span> <span class="c">! double              *C                    C</span>
+<a name="ln-792"></a>                        <span class="n">L</span><span class="p">,</span>                      <span class="p">&amp;</span> <span class="c">! SuperMatrix         *L                   &amp;L</span>
+<a name="ln-793"></a>                        <span class="n">U</span><span class="p">,</span>                      <span class="p">&amp;</span> <span class="c">! SuperMatrix         *U                   &amp;U</span>
+<a name="ln-794"></a>                        <span class="n">work</span><span class="p">,</span>                   <span class="p">&amp;</span> <span class="c">! void                *work                 work</span>
+<a name="ln-795"></a>                        <span class="n">lwork</span><span class="p">,</span>                  <span class="p">&amp;</span> <span class="c">! int                  lwork                lwork</span>
+<a name="ln-796"></a>                        <span class="n">B</span><span class="p">,</span>                      <span class="p">&amp;</span> <span class="c">! SuperMatrix         *B                   &amp;B1</span>
+<a name="ln-797"></a>                        <span class="n">X</span><span class="p">,</span>                      <span class="p">&amp;</span> <span class="c">! SuperMatrix         *X                   &amp;X</span>
+<a name="ln-798"></a>                        <span class="n">recip_pivot_growth</span><span class="p">,</span>     <span class="p">&amp;</span> <span class="c">! double              *recip_pivot_growth  &amp;rpg</span>
+<a name="ln-799"></a>                        <span class="n">rcond</span><span class="p">,</span>                  <span class="p">&amp;</span> <span class="c">! double              *rcond               &amp;rcond</span>
+<a name="ln-800"></a>                        <span class="n">ferr</span><span class="p">,</span>                   <span class="p">&amp;</span> <span class="c">! double              *ferr                 ferr</span>
+<a name="ln-801"></a>                        <span class="n">berr</span><span class="p">,</span>                   <span class="p">&amp;</span> <span class="c">! double              *berr                 berr</span>
+<a name="ln-802"></a>                        <span class="n">Glu</span><span class="p">,</span>                    <span class="p">&amp;</span> <span class="c">! GlobalLU_t          *Glu                 &amp;Glu</span>
+<a name="ln-803"></a>                        <span class="n">mem_usage</span><span class="p">,</span>              <span class="p">&amp;</span> <span class="c">! mem_usage_t         *mem_usage           &amp;smem_usage</span>
+<a name="ln-804"></a>                        <span class="nb">stat</span><span class="p">,</span>                   <span class="p">&amp;</span> <span class="c">! SuperLUStat_t       *stat                &amp;stat</span>
+<a name="ln-805"></a>                        <span class="n">info</span>                    <span class="p">&amp;</span> <span class="c">! int                 *info                &amp;info</span>
+<a name="ln-806"></a>                     <span class="p">)</span> <span class="p">&amp;</span>
+<a name="ln-807"></a>   <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;dgssvx&#39;</span><span class="p">)</span>
+<a name="ln-808"></a>   <span class="k">use</span><span class="p">,</span> <span class="k">intrinsic</span> <span class="kd">::</span> <span class="nb">iso_c_binding</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="kt">C_INT</span><span class="p">,</span> <span class="kt">C_CHAR</span><span class="p">,</span> <span class="kt">C_DOUBLE</span><span class="p">,</span> <span class="kt">C_PTR</span>
+<a name="ln-809"></a><span class="kt">   </span><span class="k">import</span> <span class="kd">::</span> <span class="n">SUPERLU_OPTIONS_T</span><span class="p">,</span> <span class="n">SUPERMATRIX</span><span class="p">,</span> <span class="n">SUPERLUSTAT_T</span><span class="p">,</span> <span class="n">MEM_USAGE_T</span><span class="p">,</span> <span class="n">GLOBALLU_T</span>
+<a name="ln-810"></a>   <span class="k">implicit none</span>
+<a name="ln-811"></a><span class="k">   type</span><span class="p">(</span><span class="n">SUPERLU_OPTIONS_T</span><span class="p">),</span>        <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>     <span class="kd">::</span> <span class="k">options</span>
+<a name="ln-812"></a><span class="k">   type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">),</span>              <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">A</span>
+<a name="ln-813"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span>            <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">perm_c</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<a name="ln-814"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span>            <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">perm_r</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<a name="ln-815"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span>            <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">etree</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<a name="ln-816"></a>   <span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_CHAR</span><span class="p">),</span>         <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">equed</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<a name="ln-817"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">),</span>            <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">R</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<a name="ln-818"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">),</span>            <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">C</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<a name="ln-819"></a>   <span class="k">type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">),</span>              <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">L</span>
+<a name="ln-820"></a>   <span class="k">type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">),</span>              <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">U</span>
+<a name="ln-821"></a>   <span class="k">type</span><span class="p">(</span><span class="kt">C_PTR</span><span class="p">),</span>                    <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">work</span>
+<a name="ln-822"></a>   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span>    <span class="k">value</span><span class="p">,</span>  <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>     <span class="kd">::</span> <span class="n">lwork</span>
+<a name="ln-823"></a>   <span class="k">type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">),</span>              <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">B</span>
+<a name="ln-824"></a>   <span class="k">type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">),</span>              <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">X</span>
+<a name="ln-825"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">),</span>            <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">recip_pivot_growth</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<a name="ln-826"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">),</span>            <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">rcond</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<a name="ln-827"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">),</span>            <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">ferr</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<a name="ln-828"></a>   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">),</span>            <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">berr</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<a name="ln-829"></a>   <span class="k">type</span><span class="p">(</span><span class="n">GLOBALLU_T</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">Glu</span>
+<a name="ln-830"></a>   <span class="k">type</span><span class="p">(</span><span class="n">MEM_USAGE_T</span><span class="p">),</span>              <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">mem_usage</span>
+<a name="ln-831"></a>   <span class="k">type</span><span class="p">(</span><span class="n">SUPERLUSTAT_T</span><span class="p">),</span>            <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>    <span class="kd">::</span> <span class="nb">stat</span>
+<a name="ln-832"></a><span class="nb">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span>            <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">info</span>
+<a name="ln-833"></a>   <span class="n">endsubroutine</span> <span class="n">dgssvx</span>
+<a name="ln-834"></a>   <span class="c">!. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+<a name="ln-835"></a>   <span class="k">subroutine </span><span class="n">StatPrint</span><span class="p">(</span><span class="nb">stat</span><span class="p">)</span> <span class="p">&amp;</span> <span class="c">!</span>
+<a name="ln-836"></a>   <span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;StatPrint&quot;</span><span class="p">)</span>
+<a name="ln-837"></a>   <span class="k">import</span> <span class="kd">::</span> <span class="n">SUPERLUSTAT_T</span>
+<a name="ln-838"></a>   <span class="k">implicit none</span>
+<a name="ln-839"></a><span class="k">   type</span><span class="p">(</span><span class="n">SUPERLUSTAT_T</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="nb">stat</span>
+<a name="ln-840"></a><span class="nb">   </span><span class="n">endsubroutine</span> <span class="n">StatPrint</span>
+<a name="ln-841"></a>   <span class="c">!. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+<a name="ln-842"></a>
+<a name="ln-843"></a><span class="n">endinterface</span>
+<a name="ln-844"></a>
+<a name="ln-845"></a><span class="k">public</span> <span class="kd">::</span>   <span class="n">sulu_env</span><span class="p">,</span> <span class="n">init_superlu</span><span class="p">,</span> <span class="n">prep_superlu</span><span class="p">,</span> <span class="n">fact_superlu</span><span class="p">,</span> <span class="n">solv_superlu</span><span class="p">,</span> <span class="n">free_superlu</span><span class="p">,</span> <span class="n">close_superlu</span><span class="p">,</span> <span class="n">Destroy_CompCol_Matrix</span><span class="p">,</span> <span class="n">Destroy_SuperNode_Matrix</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-846"></a>            <span class="n">SAMEPATTERN</span><span class="p">,</span> <span class="n">FACTORED</span><span class="p">,</span> <span class="n">DOFACT</span>
+<a name="ln-847"></a>
+<a name="ln-848"></a><span class="k">contains</span>
+<a name="ln-849"></a>   <span class="c">!=========================================================================================</span>
+<a name="ln-850"></a>   <span class="c">!&lt; @note</span>
+<a name="ln-851"></a>   <span class="c">! **Subroutine to set the default LU behaviour**</span>
+<a name="ln-852"></a>   <span class="c">!</span>
+<a name="ln-853"></a>   <span class="c">! + sulu%options%Fact               = ```DOFACT```</span>
+<a name="ln-854"></a>   <span class="c">! + sulu%options%Equil              = ```YES```</span>
+<a name="ln-855"></a>   <span class="c">! + sulu%options%ColPerm            = ```COLAMD```</span>
+<a name="ln-856"></a>   <span class="c">! + sulu%options%DiagPivotThresh    = ```1.0```</span>
+<a name="ln-857"></a>   <span class="c">! + sulu%options%Trans              = ```NOTRANS```</span>
+<a name="ln-858"></a>   <span class="c">! + sulu%options%IterRefine         = ```NOREFINE```</span>
+<a name="ln-859"></a>   <span class="c">! + sulu%options%SymmetricMode      = ```NO```</span>
+<a name="ln-860"></a>   <span class="c">! + sulu%options%PivotGrowth        = ```NO```</span>
+<a name="ln-861"></a>   <span class="c">! + sulu%options%ConditionNumber    = ```NO```</span>
+<a name="ln-862"></a>   <span class="c">! + sulu%options%PrintStat          = ```YES```</span>
+<a name="ln-863"></a>   <span class="c">!</span>
+<a name="ln-864"></a>   <span class="c">! @endnote</span>
+<a name="ln-865"></a>   <span class="c">!-----------------------------------------------------------------------------------------</span>
+<a name="ln-866"></a>   <span class="k">subroutine </span><span class="n">init_superlu</span><span class="p">(</span><span class="n">sulu</span><span class="p">)</span>
+<a name="ln-867"></a>   <span class="k">implicit none</span>
+<a name="ln-868"></a><span class="k">   type</span><span class="p">(</span><span class="n">SULU_ENV</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">sulu</span>
+<a name="ln-869"></a>
+<a name="ln-870"></a>      <span class="k">call </span><span class="n">set_default_options</span><span class="p">(</span><span class="n">sulu</span><span class="p">%</span><span class="k">options</span><span class="p">)</span>
+<a name="ln-871"></a>
+<a name="ln-872"></a>   <span class="k">return</span>
+<a name="ln-873"></a><span class="k">   </span><span class="n">endsubroutine</span> <span class="n">init_superlu</span>
+<a name="ln-874"></a>
+<a name="ln-875"></a>
+<a name="ln-876"></a>   <span class="c">!=========================================================================================</span>
+<a name="ln-877"></a>   <span class="c">!&gt; @note **Subroutine to prepare the [[SULU_ENV]] components**</span>
+<a name="ln-878"></a>   <span class="c">!-----------------------------------------------------------------------------------------</span>
+<a name="ln-879"></a>   <span class="k">subroutine </span><span class="n">prep_superlu</span><span class="p">(</span><span class="n">sulu</span><span class="p">)</span>
+<a name="ln-880"></a>   <span class="k">implicit none</span>
+<a name="ln-881"></a><span class="k">   type</span><span class="p">(</span><span class="n">sulu_env</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">sulu</span>
+<a name="ln-882"></a>      <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nn</span><span class="p">,</span> <span class="n">nz</span><span class="p">,</span> <span class="n">nb</span>
+<a name="ln-883"></a>
+<a name="ln-884"></a>      <span class="n">nn</span> <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">n</span>
+<a name="ln-885"></a>      <span class="n">nz</span> <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">nz</span>
+<a name="ln-886"></a>      <span class="n">nb</span> <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">nrhs</span>
+<a name="ln-887"></a>
+<a name="ln-888"></a>      <span class="k">if</span> <span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="nb">allocated</span><span class="p">(</span> <span class="n">sulu</span><span class="p">%</span><span class="n">perm_c</span> <span class="p">))</span> <span class="k">then</span>
+<a name="ln-889"></a><span class="k">         allocate</span><span class="p">(</span> <span class="n">sulu</span><span class="p">%</span><span class="n">perm_c</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nn</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-890"></a>         <span class="k">allocate</span><span class="p">(</span> <span class="n">sulu</span><span class="p">%</span><span class="n">perm_r</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nn</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-891"></a>         <span class="k">allocate</span><span class="p">(</span> <span class="n">sulu</span><span class="p">%</span><span class="n">etree</span><span class="p">(</span> <span class="mi">1</span><span class="p">:</span><span class="n">nn</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-892"></a>
+<a name="ln-893"></a>         <span class="k">allocate</span><span class="p">(</span> <span class="n">sulu</span><span class="p">%</span><span class="n">RR</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nn</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-894"></a>         <span class="k">allocate</span><span class="p">(</span> <span class="n">sulu</span><span class="p">%</span><span class="n">CC</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nn</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-895"></a>
+<a name="ln-896"></a>         <span class="k">allocate</span><span class="p">(</span> <span class="n">sulu</span><span class="p">%</span><span class="n">ferr</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nb</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-897"></a>         <span class="k">allocate</span><span class="p">(</span> <span class="n">sulu</span><span class="p">%</span><span class="n">berr</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nb</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-898"></a>
+<a name="ln-899"></a>         <span class="k">allocate</span><span class="p">(</span>   <span class="n">sulu</span><span class="p">%</span><span class="n">rpg</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nb</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-900"></a>         <span class="k">allocate</span><span class="p">(</span> <span class="n">sulu</span><span class="p">%</span><span class="n">rcond</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nb</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-901"></a>
+<a name="ln-902"></a>         <span class="k">allocate</span><span class="p">(</span> <span class="n">sulu</span><span class="p">%</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nn</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-903"></a>      <span class="n">endif</span>
+<a name="ln-904"></a>
+<a name="ln-905"></a>      <span class="n">sulu</span><span class="p">%</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nn</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="ln-906"></a>
+<a name="ln-907"></a>      <span class="k">call </span><span class="n">dCreate_CompCol_Matrix</span><span class="p">(</span>  <span class="n">A</span>      <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">SMA</span><span class="p">,</span>     <span class="p">&amp;</span> <span class="c">! out SuperMatrix</span>
+<a name="ln-908"></a>                                    <span class="n">m</span>      <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">n</span><span class="p">,</span>       <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-909"></a>                                    <span class="n">n</span>      <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">n</span><span class="p">,</span>       <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-910"></a>                                    <span class="n">nnz</span>    <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">nz</span><span class="p">,</span>      <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-911"></a>                                    <span class="n">nzval</span>  <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">a_elt</span><span class="p">,</span>   <span class="p">&amp;</span> <span class="c">! in double dimension()</span>
+<a name="ln-912"></a>                                    <span class="n">rowind</span> <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">irow</span><span class="p">,</span>    <span class="p">&amp;</span> <span class="c">! in int dimension()</span>
+<a name="ln-913"></a>                                    <span class="n">colptr</span> <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">jptr</span><span class="p">,</span>    <span class="p">&amp;</span> <span class="c">! in int dimension()</span>
+<a name="ln-914"></a>                                    <span class="n">stype</span>  <span class="o">=</span> <span class="n">SLU_NC</span><span class="p">,</span>       <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-915"></a>                                    <span class="n">dtype</span>  <span class="o">=</span> <span class="n">SLU_D</span><span class="p">,</span>        <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-916"></a>                                    <span class="n">mtype</span>  <span class="o">=</span> <span class="n">SLU_GE</span>        <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-917"></a>                                 <span class="p">)</span>
+<a name="ln-918"></a>
+<a name="ln-919"></a>      <span class="k">call </span><span class="n">dCreate_Dense_Matrix</span><span class="p">(</span> <span class="n">BX</span>    <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">smb</span><span class="p">,</span>  <span class="p">&amp;</span> <span class="c">! out SuperMatrix</span>
+<a name="ln-920"></a>                                 <span class="n">m</span>     <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">n</span><span class="p">,</span>    <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-921"></a>                                 <span class="n">n</span>     <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">nrhs</span><span class="p">,</span> <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-922"></a>                                 <span class="n">x</span>     <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">b</span><span class="p">,</span>    <span class="p">&amp;</span> <span class="c">! in double dimension()</span>
+<a name="ln-923"></a>                                 <span class="n">ldx</span>   <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">n</span><span class="p">,</span>    <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-924"></a>                                 <span class="n">stype</span> <span class="o">=</span> <span class="n">SLU_DN</span><span class="p">,</span>    <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-925"></a>                                 <span class="n">dtype</span> <span class="o">=</span> <span class="n">SLU_D</span><span class="p">,</span>     <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-926"></a>                                 <span class="n">mtype</span> <span class="o">=</span> <span class="n">SLU_GE</span>     <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-927"></a>                               <span class="p">)</span>
+<a name="ln-928"></a>
+<a name="ln-929"></a>      <span class="k">call </span><span class="n">dCreate_Dense_Matrix</span><span class="p">(</span> <span class="n">BX</span>    <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">smx</span><span class="p">,</span>  <span class="p">&amp;</span> <span class="c">! out SuperMatrix</span>
+<a name="ln-930"></a>                                 <span class="n">m</span>     <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">n</span><span class="p">,</span>    <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-931"></a>                                 <span class="n">n</span>     <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">nrhs</span><span class="p">,</span> <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-932"></a>                                 <span class="n">x</span>     <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">x</span><span class="p">,</span>    <span class="p">&amp;</span> <span class="c">! in double dimension()</span>
+<a name="ln-933"></a>                                 <span class="n">ldx</span>   <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">n</span><span class="p">,</span>    <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-934"></a>                                 <span class="n">stype</span> <span class="o">=</span> <span class="n">SLU_DN</span><span class="p">,</span>    <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-935"></a>                                 <span class="n">dtype</span> <span class="o">=</span> <span class="n">SLU_D</span><span class="p">,</span>     <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-936"></a>                                 <span class="n">mtype</span> <span class="o">=</span> <span class="n">SLU_GE</span>     <span class="p">&amp;</span> <span class="c">! in int</span>
+<a name="ln-937"></a>                               <span class="p">)</span>
+<a name="ln-938"></a>
+<a name="ln-939"></a>   <span class="k">return</span>
+<a name="ln-940"></a><span class="k">   </span><span class="n">endsubroutine</span> <span class="n">prep_superlu</span>
+<a name="ln-941"></a>
+<a name="ln-942"></a>
+<a name="ln-943"></a>   <span class="c">!=========================================================================================</span>
+<a name="ln-944"></a>   <span class="c">!&lt; @note</span>
+<a name="ln-945"></a>   <span class="c">! **Subroutine to factorize the system**</span>
+<a name="ln-946"></a>   <span class="c">!</span>
+<a name="ln-947"></a>   <span class="c">! note the directives:</span>
+<a name="ln-948"></a>   <span class="c">!</span>
+<a name="ln-949"></a>   <span class="c">! + sulu%options%Fact = ```DOFACT```</span>
+<a name="ln-950"></a>   <span class="c">! + sulu%SMB%ncol     = ```0```</span>
+<a name="ln-951"></a>   <span class="c">!</span>
+<a name="ln-952"></a>   <span class="c">! @endnote</span>
+<a name="ln-953"></a>   <span class="c">!-----------------------------------------------------------------------------------------</span>
+<a name="ln-954"></a>   <span class="k">subroutine </span><span class="n">fact_superlu</span><span class="p">(</span><span class="n">sulu</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+<a name="ln-955"></a>   <span class="k">implicit none</span>
+<a name="ln-956"></a><span class="k">   type</span><span class="p">(</span><span class="n">SULU_ENV</span><span class="p">),</span>   <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">sulu</span>
+<a name="ln-957"></a>   <span class="kt">logical</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">verbose</span>
+<a name="ln-958"></a>
+<a name="ln-959"></a>      <span class="n">sulu</span><span class="p">%</span><span class="n">lwork</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="ln-960"></a>      <span class="k">call </span><span class="n">StatInit</span><span class="p">(</span><span class="n">sulu</span><span class="p">%</span><span class="nb">stat</span><span class="p">)</span>
+<a name="ln-961"></a>
+<a name="ln-962"></a>      <span class="n">sulu</span><span class="p">%</span><span class="k">options</span><span class="p">%</span><span class="n">Fact</span> <span class="o">=</span> <span class="n">DOFACT</span>
+<a name="ln-963"></a>      <span class="n">sulu</span><span class="p">%</span><span class="n">SMB</span><span class="p">%</span><span class="n">ncol</span>     <span class="o">=</span> <span class="mi">0</span>
+<a name="ln-964"></a>
+<a name="ln-965"></a>      <span class="k">call </span><span class="n">dgssvx</span><span class="p">(</span>   <span class="k">options</span>            <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="k">options</span><span class="p">,</span>       <span class="p">&amp;</span> <span class="c">! superlu_options_t   *options</span>
+<a name="ln-966"></a>                     <span class="n">A</span>                  <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">SMA</span><span class="p">,</span>           <span class="p">&amp;</span> <span class="c">! SuperMatrix         *A</span>
+<a name="ln-967"></a>                     <span class="n">perm_c</span>             <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">perm_c</span><span class="p">,</span>        <span class="p">&amp;</span> <span class="c">! int                 *perm_c</span>
+<a name="ln-968"></a>                     <span class="n">perm_r</span>             <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">perm_r</span><span class="p">,</span>        <span class="p">&amp;</span> <span class="c">! int                 *perm_r</span>
+<a name="ln-969"></a>                     <span class="n">etree</span>              <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">etree</span> <span class="p">,</span>        <span class="p">&amp;</span> <span class="c">! int                 *etree</span>
+<a name="ln-970"></a>                     <span class="n">equed</span>              <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">equed</span><span class="p">,</span>         <span class="p">&amp;</span> <span class="c">! char                *equed</span>
+<a name="ln-971"></a>                     <span class="n">R</span>                  <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">RR</span><span class="p">,</span>            <span class="p">&amp;</span> <span class="c">! double              *R</span>
+<a name="ln-972"></a>                     <span class="n">C</span>                  <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">CC</span><span class="p">,</span>            <span class="p">&amp;</span> <span class="c">! double              *C</span>
+<a name="ln-973"></a>                     <span class="n">L</span>                  <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">SML</span><span class="p">,</span>           <span class="p">&amp;</span> <span class="c">! SuperMatrix         *L</span>
+<a name="ln-974"></a>                     <span class="n">U</span>                  <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">SMU</span><span class="p">,</span>           <span class="p">&amp;</span> <span class="c">! SuperMatrix         *U</span>
+<a name="ln-975"></a>                     <span class="n">work</span>               <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">work</span><span class="p">,</span>          <span class="p">&amp;</span> <span class="c">! void                *work</span>
+<a name="ln-976"></a>                     <span class="n">lwork</span>              <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">lwork</span><span class="p">,</span>         <span class="p">&amp;</span> <span class="c">! int                  lwork</span>
+<a name="ln-977"></a>                     <span class="n">B</span>                  <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">SMB</span><span class="p">,</span>           <span class="p">&amp;</span> <span class="c">! SuperMatrix         *B</span>
+<a name="ln-978"></a>                     <span class="n">X</span>                  <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">SMX</span><span class="p">,</span>           <span class="p">&amp;</span> <span class="c">! SuperMatrix         *X</span>
+<a name="ln-979"></a>                     <span class="n">recip_pivot_growth</span> <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">rpg</span><span class="p">,</span>           <span class="p">&amp;</span> <span class="c">! double              *recip_pivot_growth</span>
+<a name="ln-980"></a>                     <span class="n">rcond</span>              <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">rcond</span><span class="p">,</span>         <span class="p">&amp;</span> <span class="c">! double              *rcond</span>
+<a name="ln-981"></a>                     <span class="n">ferr</span>               <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">ferr</span><span class="p">,</span>          <span class="p">&amp;</span> <span class="c">! double              *ferr</span>
+<a name="ln-982"></a>                     <span class="n">berr</span>               <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">berr</span><span class="p">,</span>          <span class="p">&amp;</span> <span class="c">! double              *berr</span>
+<a name="ln-983"></a>                     <span class="n">Glu</span>                <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">Glu</span><span class="p">,</span>           <span class="p">&amp;</span> <span class="c">! GlobalLU_t          *Glu</span>
+<a name="ln-984"></a>                     <span class="n">mem_usage</span>          <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">mem_usage</span><span class="p">,</span>     <span class="p">&amp;</span> <span class="c">! mem_usage_t         *mem_usage</span>
+<a name="ln-985"></a>                     <span class="nb">stat</span>               <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="nb">stat</span><span class="p">,</span>          <span class="p">&amp;</span> <span class="c">! SuperLUStat_t       *stat</span>
+<a name="ln-986"></a>                     <span class="n">info</span>               <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">info</span>           <span class="p">&amp;</span> <span class="c">! int                 *info</span>
+<a name="ln-987"></a>                  <span class="p">)</span>
+<a name="ln-988"></a>
+<a name="ln-989"></a>      <span class="k">if</span> <span class="p">(</span><span class="n">verbose</span><span class="p">)</span> <span class="k">call </span><span class="n">StatPrint</span><span class="p">(</span><span class="n">sulu</span><span class="p">%</span><span class="nb">stat</span><span class="p">)</span>
+<a name="ln-990"></a>      <span class="k">call </span><span class="n">StatFree</span><span class="p">(</span><span class="n">sulu</span><span class="p">%</span><span class="nb">stat</span><span class="p">)</span>
+<a name="ln-991"></a>
+<a name="ln-992"></a>   <span class="k">return</span>
+<a name="ln-993"></a><span class="k">   </span><span class="n">endsubroutine</span> <span class="n">fact_superlu</span>
+<a name="ln-994"></a>
+<a name="ln-995"></a>
+<a name="ln-996"></a>   <span class="c">!=========================================================================================</span>
+<a name="ln-997"></a>   <span class="c">!&lt; @note</span>
+<a name="ln-998"></a>   <span class="c">! **Subroutine to solve the system**</span>
+<a name="ln-999"></a>   <span class="c">!</span>
+<a name="ln-1000"></a>   <span class="c">! + If no resolution has yet occured, sulu%first=```true```</span>
+<a name="ln-1001"></a>   <span class="c">!     * sulu%options%Fact = ```FACTORED```</span>
+<a name="ln-1002"></a>   <span class="c">!     * sulu%SMB%ncol     = sulu%nrhs (usually ```1```)</span>
+<a name="ln-1003"></a>   <span class="c">! + otherwise</span>
+<a name="ln-1004"></a>   <span class="c">!     * sulu%options%Fact = ```SAMEPATTERN```</span>
+<a name="ln-1005"></a>   <span class="c">!     * sma, smb and smx are recreated but do not forget that we still have:</span>
+<a name="ln-1006"></a>   <span class="c">!         - mat%matsulu%irow   =&gt; mat%irow</span>
+<a name="ln-1007"></a>   <span class="c">!         - mat%matsulu%jptr   =&gt; mat%jptr</span>
+<a name="ln-1008"></a>   <span class="c">!         - mat%matsulu%a_elt  =&gt; mat%a_elt</span>
+<a name="ln-1009"></a>   <span class="c">!         - mat%matsulu%b      =&gt; mat%b</span>
+<a name="ln-1010"></a>   <span class="c">!</span>
+<a name="ln-1011"></a>   <span class="c">! @endnote</span>
+<a name="ln-1012"></a>   <span class="c">!</span>
+<a name="ln-1013"></a>   <span class="c">! @note</span>
+<a name="ln-1014"></a>   <span class="c">! The solution is retrieved with the pointer *store* of type [[NCFORMAT]] which</span>
+<a name="ln-1015"></a>   <span class="c">! gives access to [[NCFORMAT:nzval]]</span>
+<a name="ln-1016"></a>   <span class="c">! @endnote</span>
+<a name="ln-1017"></a>   <span class="c">!</span>
+<a name="ln-1018"></a>   <span class="c">! @warning</span>
+<a name="ln-1019"></a>   <span class="c">! At the end, the memory is released with the dstruction of *sml* and *smu*</span>
+<a name="ln-1020"></a>   <span class="c">! @endwarning</span>
+<a name="ln-1021"></a>   <span class="c">!-----------------------------------------------------------------------------------------</span>
+<a name="ln-1022"></a>   <span class="k">subroutine </span><span class="n">solv_superlu</span><span class="p">(</span><span class="n">sol_x</span><span class="p">,</span> <span class="n">sulu</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+<a name="ln-1023"></a>   <span class="k">implicit none</span>
+<a name="ln-1024"></a><span class="k">   </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span>    <span class="k">dimension</span><span class="p">(:),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">sol_x</span>
+<a name="ln-1025"></a>   <span class="k">type</span><span class="p">(</span><span class="n">SULU_ENV</span><span class="p">),</span>                 <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">sulu</span>
+<a name="ln-1026"></a>   <span class="kt">logical</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">verbose</span>
+<a name="ln-1027"></a>      <span class="k">type</span><span class="p">(</span><span class="n">NCFORMAT</span><span class="p">),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">Xstore</span>
+<a name="ln-1028"></a>      <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span>  <span class="k">pointer</span> <span class="kd">::</span> <span class="n">tabX</span><span class="p">(:)</span>
+<a name="ln-1029"></a>      <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span>        <span class="kd">::</span> <span class="n">i</span>
+<a name="ln-1030"></a>
+<a name="ln-1031"></a>      <span class="k">call </span><span class="n">StatInit</span><span class="p">(</span><span class="n">sulu</span><span class="p">%</span><span class="nb">stat</span><span class="p">)</span>
+<a name="ln-1032"></a>
+<a name="ln-1033"></a>      <span class="k">if</span> <span class="p">(</span> <span class="n">sulu</span><span class="p">%</span><span class="n">first</span> <span class="p">)</span> <span class="k">then</span>
+<a name="ln-1034"></a><span class="k">         </span><span class="n">sulu</span><span class="p">%</span><span class="k">options</span><span class="p">%</span><span class="n">Fact</span> <span class="o">=</span> <span class="n">FACTORED</span>
+<a name="ln-1035"></a>         <span class="n">sulu</span><span class="p">%</span><span class="n">SMB</span><span class="p">%</span><span class="n">ncol</span>     <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">nrhs</span>
+<a name="ln-1036"></a>      <span class="k">else</span>
+<a name="ln-1037"></a><span class="k">         </span><span class="n">sulu</span><span class="p">%</span><span class="k">options</span><span class="p">%</span><span class="n">Fact</span> <span class="o">=</span> <span class="n">SAMEPATTERN</span>
+<a name="ln-1038"></a>         <span class="k">call </span><span class="n">prep_superlu</span><span class="p">(</span><span class="n">sulu</span><span class="p">)</span>
+<a name="ln-1039"></a>      <span class="n">endif</span>
+<a name="ln-1040"></a>
+<a name="ln-1041"></a>      <span class="k">call </span><span class="n">dgssvx</span><span class="p">(</span>   <span class="k">options</span>            <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="k">options</span><span class="p">,</span>   <span class="p">&amp;</span> <span class="c">! superlu_options_t   *options</span>
+<a name="ln-1042"></a>                     <span class="n">A</span>                  <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">SMA</span><span class="p">,</span>       <span class="p">&amp;</span> <span class="c">! SuperMatrix         *A</span>
+<a name="ln-1043"></a>                     <span class="n">perm_c</span>             <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">perm_c</span><span class="p">,</span>    <span class="p">&amp;</span> <span class="c">! int                 *perm_c</span>
+<a name="ln-1044"></a>                     <span class="n">perm_r</span>             <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">perm_r</span><span class="p">,</span>    <span class="p">&amp;</span> <span class="c">! int                 *perm_r</span>
+<a name="ln-1045"></a>                     <span class="n">etree</span>              <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">etree</span> <span class="p">,</span>    <span class="p">&amp;</span> <span class="c">! int                 *etree</span>
+<a name="ln-1046"></a>                     <span class="n">equed</span>              <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">equed</span><span class="p">,</span>     <span class="p">&amp;</span> <span class="c">! char                *equed</span>
+<a name="ln-1047"></a>                     <span class="n">R</span>                  <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">RR</span><span class="p">,</span>        <span class="p">&amp;</span> <span class="c">! double              *R</span>
+<a name="ln-1048"></a>                     <span class="n">C</span>                  <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">CC</span><span class="p">,</span>        <span class="p">&amp;</span> <span class="c">! double              *C</span>
+<a name="ln-1049"></a>                     <span class="n">L</span>                  <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">SML</span><span class="p">,</span>       <span class="p">&amp;</span> <span class="c">! SuperMatrix         *L</span>
+<a name="ln-1050"></a>                     <span class="n">U</span>                  <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">SMU</span><span class="p">,</span>       <span class="p">&amp;</span> <span class="c">! SuperMatrix         *U</span>
+<a name="ln-1051"></a>                     <span class="n">work</span>               <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">work</span><span class="p">,</span>      <span class="p">&amp;</span> <span class="c">! void                *work</span>
+<a name="ln-1052"></a>                     <span class="n">lwork</span>              <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">lwork</span><span class="p">,</span>     <span class="p">&amp;</span> <span class="c">! int                  lwork</span>
+<a name="ln-1053"></a>                     <span class="n">B</span>                  <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">SMB</span><span class="p">,</span>       <span class="p">&amp;</span> <span class="c">! SuperMatrix         *B</span>
+<a name="ln-1054"></a>                     <span class="n">X</span>                  <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">SMX</span><span class="p">,</span>       <span class="p">&amp;</span> <span class="c">! SuperMatrix         *X</span>
+<a name="ln-1055"></a>                     <span class="n">recip_pivot_growth</span> <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">rpg</span><span class="p">,</span>       <span class="p">&amp;</span> <span class="c">! double              *recip_pivot_growth</span>
+<a name="ln-1056"></a>                     <span class="n">rcond</span>              <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">rcond</span><span class="p">,</span>     <span class="p">&amp;</span> <span class="c">! double              *rcond</span>
+<a name="ln-1057"></a>                     <span class="n">ferr</span>               <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">ferr</span><span class="p">,</span>      <span class="p">&amp;</span> <span class="c">! double              *ferr</span>
+<a name="ln-1058"></a>                     <span class="n">berr</span>               <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">berr</span><span class="p">,</span>      <span class="p">&amp;</span> <span class="c">! double              *berr</span>
+<a name="ln-1059"></a>                     <span class="n">Glu</span>                <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">Glu</span><span class="p">,</span>       <span class="p">&amp;</span> <span class="c">! GlobalLU_t          *Glu</span>
+<a name="ln-1060"></a>                     <span class="n">mem_usage</span>          <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">mem_usage</span><span class="p">,</span> <span class="p">&amp;</span> <span class="c">! mem_usage_t         *mem_usage</span>
+<a name="ln-1061"></a>                     <span class="nb">stat</span>               <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="nb">stat</span><span class="p">,</span>      <span class="p">&amp;</span> <span class="c">! SuperLUStat_t       *stat</span>
+<a name="ln-1062"></a>                     <span class="n">info</span>               <span class="o">=</span> <span class="n">sulu</span><span class="p">%</span><span class="n">info</span>       <span class="p">&amp;</span> <span class="c">! int                 *info</span>
+<a name="ln-1063"></a>                  <span class="p">)</span>
+<a name="ln-1064"></a>
+<a name="ln-1065"></a>      <span class="k">call </span><span class="nb">c_f_pointer</span><span class="p">(</span><span class="n">sulu</span><span class="p">%</span><span class="n">SMX</span><span class="p">%</span><span class="n">Store</span><span class="p">,</span> <span class="n">XStore</span><span class="p">)</span>
+<a name="ln-1066"></a>      <span class="k">call </span><span class="nb">c_f_pointer</span><span class="p">(</span><span class="n">XStore</span><span class="p">%</span><span class="n">nzval</span><span class="p">,</span> <span class="n">tabX</span><span class="p">,</span> <span class="p">[</span><span class="n">XStore</span><span class="p">%</span><span class="n">nnz</span><span class="p">])</span>
+<a name="ln-1067"></a>      <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sulu</span><span class="p">%</span><span class="n">n</span>
+<a name="ln-1068"></a>         <span class="n">sol_x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">tabX</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a name="ln-1069"></a>      <span class="n">enddo</span>
+<a name="ln-1070"></a>      <span class="k">nullify</span><span class="p">(</span><span class="n">Xstore</span><span class="p">,</span> <span class="n">tabX</span><span class="p">)</span>
+<a name="ln-1071"></a>
+<a name="ln-1072"></a>      <span class="k">if</span> <span class="p">(</span><span class="n">verbose</span><span class="p">)</span> <span class="k">call </span><span class="n">StatPrint</span><span class="p">(</span><span class="n">sulu</span><span class="p">%</span><span class="nb">stat</span><span class="p">)</span>
+<a name="ln-1073"></a>      <span class="k">call </span><span class="n">StatFree</span><span class="p">(</span><span class="n">sulu</span><span class="p">%</span><span class="nb">stat</span><span class="p">)</span>
+<a name="ln-1074"></a>
+<a name="ln-1075"></a>      <span class="k">call </span><span class="n">Destroy_SuperNode_Matrix</span><span class="p">(</span><span class="n">sulu</span><span class="p">%</span><span class="n">SML</span><span class="p">)</span>
+<a name="ln-1076"></a>      <span class="k">call </span><span class="n">Destroy_CompCol_Matrix</span><span class="p">(</span>  <span class="n">sulu</span><span class="p">%</span><span class="n">SMU</span><span class="p">)</span>
+<a name="ln-1077"></a>
+<a name="ln-1078"></a>   <span class="k">return</span>
+<a name="ln-1079"></a><span class="k">   </span><span class="n">endsubroutine</span> <span class="n">solv_superlu</span>
+<a name="ln-1080"></a>
+<a name="ln-1081"></a>
+<a name="ln-1082"></a>   <span class="c">!=========================================================================================</span>
+<a name="ln-1083"></a>   <span class="c">!&lt; @note Subroutine that actually does nothing yet. Maybe, there will be extra memory that</span>
+<a name="ln-1084"></a>   <span class="c">! could be released here?</span>
+<a name="ln-1085"></a>   <span class="c">!-----------------------------------------------------------------------------------------</span>
+<a name="ln-1086"></a>   <span class="k">subroutine </span><span class="n">free_superlu</span><span class="p">()</span>
+<a name="ln-1087"></a>   <span class="k">implicit none</span>
+<a name="ln-1088"></a>   <span class="c">!type(SULU_ENV), intent(inout) :: sulu</span>
+<a name="ln-1089"></a>   <span class="k">return</span>
+<a name="ln-1090"></a><span class="k">   </span><span class="n">endsubroutine</span> <span class="n">free_superlu</span>
+<a name="ln-1091"></a>
+<a name="ln-1092"></a>
+<a name="ln-1093"></a>   <span class="c">!=========================================================================================</span>
+<a name="ln-1094"></a>   <span class="c">!&gt; @note **Subroutine to close the SuperLU process, with memory release**</span>
+<a name="ln-1095"></a>   <span class="c">!-----------------------------------------------------------------------------------------</span>
+<a name="ln-1096"></a>   <span class="k">subroutine </span><span class="n">close_superlu</span><span class="p">(</span><span class="n">sulu</span><span class="p">)</span>
+<a name="ln-1097"></a>   <span class="k">implicit none</span>
+<a name="ln-1098"></a><span class="k">   type</span><span class="p">(</span><span class="n">SULU_ENV</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">sulu</span>
+<a name="ln-1099"></a>
+<a name="ln-1100"></a>      <span class="k">call </span><span class="n">Destroy_CompCol_Matrix</span><span class="p">(</span><span class="n">sulu</span><span class="p">%</span><span class="n">SMA</span><span class="p">)</span>
+<a name="ln-1101"></a>      <span class="k">call </span><span class="n">Destroy_Dense_Matrix</span><span class="p">(</span>  <span class="n">sulu</span><span class="p">%</span><span class="n">smb</span><span class="p">)</span>
+<a name="ln-1102"></a>      <span class="k">call </span><span class="n">Destroy_Dense_Matrix</span><span class="p">(</span>  <span class="n">sulu</span><span class="p">%</span><span class="n">smx</span><span class="p">)</span>
+<a name="ln-1103"></a>
+<a name="ln-1104"></a>      <span class="k">deallocate</span><span class="p">(</span> <span class="n">sulu</span><span class="p">%</span><span class="n">perm_c</span> <span class="p">)</span>
+<a name="ln-1105"></a>      <span class="k">deallocate</span><span class="p">(</span> <span class="n">sulu</span><span class="p">%</span><span class="n">perm_r</span> <span class="p">)</span>
+<a name="ln-1106"></a>      <span class="k">deallocate</span><span class="p">(</span> <span class="n">sulu</span><span class="p">%</span><span class="n">etree</span>  <span class="p">)</span>
+<a name="ln-1107"></a>
+<a name="ln-1108"></a>      <span class="k">deallocate</span><span class="p">(</span> <span class="n">sulu</span><span class="p">%</span><span class="n">RR</span> <span class="p">)</span>
+<a name="ln-1109"></a>      <span class="k">deallocate</span><span class="p">(</span> <span class="n">sulu</span><span class="p">%</span><span class="n">CC</span> <span class="p">)</span>
+<a name="ln-1110"></a>
+<a name="ln-1111"></a>      <span class="k">deallocate</span><span class="p">(</span> <span class="n">sulu</span><span class="p">%</span><span class="n">ferr</span> <span class="p">)</span>
+<a name="ln-1112"></a>      <span class="k">deallocate</span><span class="p">(</span> <span class="n">sulu</span><span class="p">%</span><span class="n">berr</span> <span class="p">)</span>
+<a name="ln-1113"></a>
+<a name="ln-1114"></a>      <span class="k">deallocate</span><span class="p">(</span> <span class="n">sulu</span><span class="p">%</span><span class="n">rpg</span>   <span class="p">)</span>
+<a name="ln-1115"></a>      <span class="k">deallocate</span><span class="p">(</span> <span class="n">sulu</span><span class="p">%</span><span class="n">rcond</span> <span class="p">)</span>
+<a name="ln-1116"></a>
+<a name="ln-1117"></a>   <span class="k">return</span>
+<a name="ln-1118"></a><span class="k">   </span><span class="n">endsubroutine</span> <span class="n">close_superlu</span>
+<a name="ln-1119"></a>
+<a name="ln-1120"></a><span class="n">endmodule</span> <span class="n">sulu_wrapper</span>
+</pre></div>
+
+    </section>
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2018 
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2018-07-20 11:50  
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> MSOLV-fortran was developed by Arthur Francisco - Noël Brunetière</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

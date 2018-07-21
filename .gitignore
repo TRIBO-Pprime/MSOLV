@@ -1,0 +1,16 @@
+# Compiled Object files
+*.o
+*.mod
+
+# Compiled Static libraries
+*.a
+
+# Executables
+prg
+
+# Files
+test.f90
+fort.*
+hsl_*
+
+lib/
