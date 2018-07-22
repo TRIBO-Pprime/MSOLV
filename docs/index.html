@@ -133,18 +133,18 @@
 		  
           <h1>MSOLV-fortran</h1>
           <hr>
-<p><strong>Table of Contents</strong> # MSOLV</p>
+<h2 id="table-of-contents">Table of Contents</h2>
 <ul>
 <li><a href="#brief-description">Brief description</a></li>
-<li><a href="#Requested-libraries">Requested libraries</a></li>
-<li><a href="#Example-of-use">Example of use</a></li>
-<li><a href="#Data-format">Data-format</a></li>
-<li><a href="#Limitations">Limitations</a></li>
-<li><a href="#Prerequesites">Prerequesites</a></li>
-<li><a href="#Wrappers">Wrappers</a></li>
-<li><a href="#Make">Make</a></li>
-<li><a href="#Full-description">Full description</a></li>
-<li><a href="#License">License</a></li>
+<li><a href="#requested-libraries">Requested libraries</a></li>
+<li><a href="#example-of-use">Example of use</a></li>
+<li><a href="#data-format">Data-format</a></li>
+<li><a href="#limitations">Limitations</a></li>
+<li><a href="#prerequesites">Prerequesites</a></li>
+<li><a href="#wrappers">Wrappers</a></li>
+<li><a href="#make">Make</a></li>
+<li><a href="#full-description">Full description</a></li>
+<li><a href="#license">License</a></li>
 </ul>
 <h2 id="brief-description">Brief description</h2>
 <p>A generic API for using Sparse Direct Solvers, written in modern Fortran. It is designed to work with:</p>
@@ -154,7 +154,7 @@
 <li><a href="http://crd-legacy.lbl.gov/~xiaoye/SuperLU/#superlu">SuperLU</a> - LU decomposition with partial pivoting and triangular system solves through forward and back substitution <sup id="fnref-3"><a class="footnote-ref" href="#fn-3">3</a></sup></li>
 <li><a href="http://www.hsl.rl.ac.uk/catalogue/ma48.html">MA48</a> - Sparse unsymmetric system solver <sup id="fnref-4"><a class="footnote-ref" href="#fn-4">4</a></sup></li>
 </ul>
-<p><a href="#MSOLV">top</a></p>
+<p><a href="#table-of-contents">top</a></p>
 <h2 id="requested-libraries">Requested libraries</h2>
 <ul>
 <li><em>Generic</em></br><ul>
@@ -188,13 +188,13 @@
 </ul>
 </li>
 </ul>
-<p><a href="#MSOLV">top</a></p>
+<p><a href="#table-of-contents">top</a></p>
 <h2 id="example-of-use">Example of use</h2>
 <p><a href="./program/test_solvers.html">test_solvers</a> proposes to test the solvers on two systems, a very small one and a "bigger" one. Some solvers have an "analyze" step during which symbolic factorization is performed.
 Hence if the sparsity of a new system does not change much, the symbolic factorisation is reused for the numerical factorization. To assess the time gained, after the first resolution other
 resolution are proposed with the same matrix pattern.
 After each resolution, the error is assessed remultipying the solution by the matrix and comparing it to the right-hand side.</p>
-<p><a href="#MSOLV">top</a></p>
+<p><a href="#table-of-contents">top</a></p>
 <h2 id="data-format">Data format</h2>
 <p>By default, </p>
 <ul>
@@ -202,7 +202,7 @@ After each resolution, the error is assessed remultipying the solution by the ma
 <li><strong>MUMPS</strong> reads elemental CC formatted data,</br></br></li>
 <li><strong>MA48</strong> reads sparse triplet formatted data.</li>
 </ul>
-<p><a href="#MSOLV">top</a></p>
+<p><a href="#table-of-contents">top</a></p>
 <h2 id="limitations">Limitations</h2>
 <p>The package <strong>MUSST</strong> is developped to handle some lubrication problems thanks to a multiscale approach. During the processe, sparse linear systems are solved either on concurrent threads or using all threads. In the first case, 'OpenMP' is not usefull because each thread is dedicated to the resolution of its own bunch of systems (<strong>B</strong>ottom <strong>S</strong>cale systems). In the second case, 'OpenMP' is desirable to speed up the resolution (<strong>T</strong>op <strong>S</strong>cale systems). For the moment, <strong>MUSST</strong> isn't designed for distributed shared memory architectures. 
 Therefore the following choices are made:</p>
@@ -211,7 +211,7 @@ Therefore the following choices are made:</p>
 <li><strong>BLAS</strong> is built without <em>OpenMP</em></br></br></li>
 <li><strong>UMFPACK</strong>, <strong>SuperLU</strong> and <strong>MA48</strong> are built without <em>OpenMP</em>. They are dedicated to <strong>BS</strong> systems.</li>
 </ul>
-<p><a href="#MSOLV">top</a></p>
+<p><a href="#table-of-contents">top</a></p>
 <h2 id="prerequesites">Prerequesites</h2>
 <p>The solver libraries must be downloaded and statically compiled together with their prerequisites:</p>
 <ul>
@@ -224,7 +224,7 @@ Therefore the following choices are made:</p>
 <li><strong>MA48</strong></br>
     <em>BLAS</em></li>
 </ul>
-<p><a href="#MSOLV">top</a></p>
+<p><a href="#table-of-contents">top</a></p>
 <h2 id="wrappers">Wrappers</h2>
 <ul>
 <li><strong>UMFPACK</strong> </br>
@@ -237,7 +237,7 @@ Therefore the following choices are made:</p>
     In its <em>double</em> flavour, <em>HSL_MA48</em> needs 3 files: <code>common90.f90</code>, <code>ddeps90.f90</code> and <code>hsl_ma48d.f90</code>, renamed <a>hsl_common90.f90</a> and <a>hsl_ddeps90.f90</a> for the two first.
     In order to work with arrays independently from the solvers, the global solver type <a href="./type/mat_solv.html">MAT_SOLV</a> contains the system arrays &ndash;like <code>eltptr</code>, <code>eltvar</code>, <code>a_elt</code>, etc.&ndash; pointed by a solver type, for instance <a>ZD11_TYPE</a>. Therefore, in version 3.3 of <em>HSL_MA48</em>, the attribute <code>allocatable</code> (in ZD11_TYPE) of <code>row</code>, <code>col</code>, <code>ptr</code> and <code>val</code> is changed to <code>pointer</code>.</li>
 </ul>
-<p><a href="#MSOLV">top</a></p>
+<p><a href="#table-of-contents">top</a></p>
 <h2 id="make">Make</h2>
 <p>General syntax:</p>
 <div class="codehilite"><pre><span></span>./comp.sh ALL:s/a FORT:gfortran-x DEBUG:yes/no GPROF:yes/no
@@ -259,7 +259,7 @@ Therefore the following choices are made:</p>
 </pre></div>
 
 
-<p><a href="#MSOLV">top</a></p>
+<p><a href="#table-of-contents">top</a></p>
 <h2 id="full-description">Full description</h2>
 <p>The aim of the present project is to provide generic subroutines for the direct full resolution of sparse linear systems:</p>
 <ul>
@@ -305,7 +305,7 @@ Therefore the following choices are made:</p>
 
 
 <p><code>system_type</code> is of complex type <a href="./type/mat_solv.html">MAT_SOLV</a> built to deal with <em>MUMPS</em>, <em>UMFPACK</em>, <em>SuperLU</em> and <em>MA48</em> requirements.</p>
-<p><a href="#MSOLV">top</a></p>
+<p><a href="#table-of-contents">top</a></p>
 <h2 id="license">License</h2>
 <div class="footnote">
 <hr>
@@ -1139,7 +1139,7 @@ Therefore the following choices are made:</p>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2018-07-22 09:40  
+             on 2018-07-22 09:54  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> MSOLV-fortran was developed by Arthur Francisco - Noël Brunetière</p></div>

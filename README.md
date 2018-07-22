@@ -1,16 +1,17 @@
 
-**Table of Contents** # MSOLV
+Table of Contents
+-----------------
 
 - [Brief description](#brief-description)
-- [Requested libraries](#Requested-libraries)
-- [Example of use](#Example-of-use)
-- [Data-format](#Data-format)
-- [Limitations](#Limitations)
-- [Prerequesites](#Prerequesites)
-- [Wrappers](#Wrappers)
-- [Make](#Make)
-- [Full description](#Full-description)
-- [License](#License)
+- [Requested libraries](#requested-libraries)
+- [Example of use](#example-of-use)
+- [Data-format](#data-format)
+- [Limitations](#limitations)
+- [Prerequesites](#prerequesites)
+- [Wrappers](#wrappers)
+- [Make](#make)
+- [Full description](#full-description)
+- [License](#license)
 
 Brief description
 -----------------
@@ -22,7 +23,7 @@ A generic API for using Sparse Direct Solvers, written in modern Fortran. It is 
 * [SuperLU](http://crd-legacy.lbl.gov/~xiaoye/SuperLU/#superlu) - LU decomposition with partial pivoting and triangular system solves through forward and back substitution [^3]
 * [MA48](http://www.hsl.rl.ac.uk/catalogue/ma48.html) - Sparse unsymmetric system solver [^4]
 
-[top](#MSOLV)
+[top](#table-of-contents)
 
 Requested libraries
 -------------------
@@ -48,7 +49,7 @@ Requested libraries
 * **MA48**</br>
 	+ ```libhsl_ma48.a```
 
-[top](#MSOLV)
+[top](#table-of-contents)
 
 Example of use
 --------------
@@ -58,7 +59,7 @@ Hence if the sparsity of a new system does not change much, the symbolic factori
 resolution are proposed with the same matrix pattern.
 After each resolution, the error is assessed remultipying the solution by the matrix and comparing it to the right-hand side.
 
-[top](#MSOLV)
+[top](#table-of-contents)
 
 Data format
 -----------
@@ -69,7 +70,7 @@ By default,
 * **MUMPS** reads elemental CC formatted data,</br></br>
 * **MA48** reads sparse triplet formatted data.
 
-[top](#MSOLV)
+[top](#table-of-contents)
 
 Limitations
 -----------
@@ -81,7 +82,7 @@ Therefore the following choices are made:
 * **BLAS** is built without *OpenMP*</br></br>
 * **UMFPACK**, **SuperLU** and **MA48** are built without *OpenMP*. They are dedicated to **BS** systems.
 
-[top](#MSOLV)
+[top](#table-of-contents)
 
 Prerequesites
 -------------
@@ -96,7 +97,7 @@ The solver libraries must be downloaded and statically compiled together with th
 * **MA48**</br>
 	*BLAS*
 	
-[top](#MSOLV)
+[top](#table-of-contents)
 
 Wrappers
 --------
@@ -111,7 +112,7 @@ Wrappers
 	In its *double* flavour, *HSL_MA48* needs 3 files: ```common90.f90```, ```ddeps90.f90``` and ```hsl_ma48d.f90```, renamed [[hsl_common90.f90]] and [[hsl_ddeps90.f90]] for the two first.
 	In order to work with arrays independently from the solvers, the global solver type [[MAT_SOLV]] contains the system arrays --like ```eltptr```, ```eltvar```, ```a_elt```, etc.-- pointed by a solver type, for instance [[ZD11_TYPE]]. Therefore, in version 3.3 of *HSL_MA48*, the attribute ```allocatable``` (in ZD11_TYPE) of ```row```, ```col```, ```ptr``` and ```val``` is changed to ```pointer```.
 
-[top](#MSOLV)
+[top](#table-of-contents)
 
 Make
 ----
@@ -131,7 +132,7 @@ Examples with gfortran-7:
 ./comp.sh s gfortran-7 no no
 ```
 
-[top](#MSOLV)
+[top](#table-of-contents)
 
 Full description
 -----------------
@@ -166,7 +167,7 @@ call solve_syst(mat=system_type, step='end')
 ```system_type``` is of complex type [[MAT_SOLV]] built to deal with *MUMPS*, *UMFPACK*, *SuperLU* and *MA48* requirements.
 
 
-[top](#MSOLV)
+[top](#table-of-contents)
 
 License
 -------

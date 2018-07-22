@@ -274,32 +274,29 @@ public subroutine init_solver(mat)
 <polygon fill="none" stroke="#000000" points="61,-150 0,-150 0,-126 61,-126 61,-150"/>
 <text text-anchor="middle" x="30.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">init_solver</text>
 </g>
-<!-- proc~umfpack_di_defaults -->
-<g id="proc~~init_solver~~CallsGraph_node2" class="node">
-<title>proc~umfpack_di_defaults</title>
-<g id="a_proc~~init_solver~~CallsGraph_node2"><a xlink:href=".././proc/umfpack_di_defaults.html" xlink:title="umfpack_di_defaults">
-<polygon fill="#d9534f" stroke="#d9534f" points="221,-276 112,-276 112,-252 221,-252 221,-276"/>
-<text text-anchor="middle" x="166.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">umfpack_di_defaults</text>
-</a>
-</g>
-</g>
-<!-- proc~init_solver&#45;&gt;proc~umfpack_di_defaults -->
-<g id="proc~~init_solver~~CallsGraph_edge2" class="edge">
-<title>proc~init_solver&#45;&gt;proc~umfpack_di_defaults</title>
-<path fill="none" stroke="#ff0000" d="M34.8381,-150.0473C43.3193,-171.8882 64.1866,-218.0639 97,-243 98.8754,-244.4252 100.8474,-245.7542 102.8918,-246.9936"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="101.7599,-250.3507 112.2449,-251.8726 104.9975,-244.1443 101.7599,-250.3507"/>
-</g>
 <!-- ma48_initialize -->
-<g id="proc~~init_solver~~CallsGraph_node3" class="node">
+<g id="proc~~init_solver~~CallsGraph_node2" class="node">
 <title>ma48_initialize</title>
-<polygon fill="#777777" stroke="#777777" points="207.5,-234 125.5,-234 125.5,-210 207.5,-210 207.5,-234"/>
-<text text-anchor="middle" x="166.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ma48_initialize</text>
+<polygon fill="#777777" stroke="#777777" points="207.5,-276 125.5,-276 125.5,-252 207.5,-252 207.5,-276"/>
+<text text-anchor="middle" x="166.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ma48_initialize</text>
 </g>
 <!-- proc~init_solver&#45;&gt;ma48_initialize -->
-<g id="proc~~init_solver~~CallsGraph_edge3" class="edge">
+<g id="proc~~init_solver~~CallsGraph_edge1" class="edge">
 <title>proc~init_solver&#45;&gt;ma48_initialize</title>
-<path fill="none" stroke="#ff0000" d="M40.48,-150.4605C52.4745,-164.6472 73.8926,-187.5878 97,-201 102.8595,-204.4011 109.3223,-207.2997 115.8768,-209.757"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="114.8911,-213.1189 125.4857,-213.0484 117.1596,-206.4967 114.8911,-213.1189"/>
+<path fill="none" stroke="#ff0000" d="M34.8381,-150.0473C43.3193,-171.8882 64.1866,-218.0639 97,-243 102.5291,-247.2017 108.8972,-250.5676 115.4872,-253.2627"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="114.6346,-256.675 125.2292,-256.7508 116.9943,-250.0847 114.6346,-256.675"/>
+</g>
+<!-- dmumps -->
+<g id="proc~~init_solver~~CallsGraph_node3" class="node">
+<title>dmumps</title>
+<polygon fill="#777777" stroke="#777777" points="193.5,-234 139.5,-234 139.5,-210 193.5,-210 193.5,-234"/>
+<text text-anchor="middle" x="166.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dmumps</text>
+</g>
+<!-- proc~init_solver&#45;&gt;dmumps -->
+<g id="proc~~init_solver~~CallsGraph_edge2" class="edge">
+<title>proc~init_solver&#45;&gt;dmumps</title>
+<path fill="none" stroke="#ff0000" d="M40.48,-150.4605C52.4745,-164.6472 73.8926,-187.5878 97,-201 106.9323,-206.765 118.5978,-211.0864 129.5049,-214.2616"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="128.6721,-217.6618 139.2369,-216.8638 130.4804,-210.8994 128.6721,-217.6618"/>
 </g>
 <!-- proc~umfpack_di_report_control -->
 <g id="proc~~init_solver~~CallsGraph_node4" class="node">
@@ -311,7 +308,7 @@ public subroutine init_solver(mat)
 </g>
 </g>
 <!-- proc~init_solver&#45;&gt;proc~umfpack_di_report_control -->
-<g id="proc~~init_solver~~CallsGraph_edge4" class="edge">
+<g id="proc~~init_solver~~CallsGraph_edge3" class="edge">
 <title>proc~init_solver&#45;&gt;proc~umfpack_di_report_control</title>
 <path fill="none" stroke="#ff0000" d="M61.2655,-147.8032C72.5012,-151.3602 85.3167,-155.3903 97,-159 103.3922,-160.9749 110.1215,-163.0337 116.7732,-165.0566"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="115.8295,-168.4278 126.4149,-167.9808 117.8612,-161.7291 115.8295,-168.4278"/>
@@ -323,7 +320,7 @@ public subroutine init_solver(mat)
 <text text-anchor="middle" x="166.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mpi_init</text>
 </g>
 <!-- proc~init_solver&#45;&gt;mpi_init -->
-<g id="proc~~init_solver~~CallsGraph_edge5" class="edge">
+<g id="proc~~init_solver~~CallsGraph_edge4" class="edge">
 <title>proc~init_solver&#45;&gt;mpi_init</title>
 <path fill="none" stroke="#ff0000" d="M61.0211,-138C81.2117,-138 107.8132,-138 129.2499,-138"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="129.3078,-141.5001 139.3078,-138 129.3077,-134.5001 129.3078,-141.5001"/>
@@ -335,7 +332,7 @@ public subroutine init_solver(mat)
 <text text-anchor="middle" x="166.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mpi_finalize</text>
 </g>
 <!-- proc~init_solver&#45;&gt;mpi_finalize -->
-<g id="proc~~init_solver~~CallsGraph_edge6" class="edge">
+<g id="proc~~init_solver~~CallsGraph_edge5" class="edge">
 <title>proc~init_solver&#45;&gt;mpi_finalize</title>
 <path fill="none" stroke="#ff0000" d="M61.2655,-128.1968C72.5012,-124.6398 85.3167,-120.6097 97,-117 105.2231,-114.4594 114.004,-111.7801 122.4601,-109.2168"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="123.6257,-112.5209 132.1847,-106.2763 121.5997,-105.8205 123.6257,-112.5209"/>
@@ -350,37 +347,25 @@ public subroutine init_solver(mat)
 </g>
 </g>
 <!-- proc~init_solver&#45;&gt;proc~init_superlu -->
-<g id="proc~~init_solver~~CallsGraph_edge1" class="edge">
+<g id="proc~~init_solver~~CallsGraph_edge6" class="edge">
 <title>proc~init_solver&#45;&gt;proc~init_superlu</title>
 <path fill="none" stroke="#ff0000" d="M40.48,-125.5395C52.4745,-111.3528 73.8926,-88.4122 97,-75 105.1659,-70.2603 114.5034,-66.4963 123.6277,-63.5429"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="124.7887,-66.8493 133.3794,-60.6484 122.7968,-60.1387 124.7887,-66.8493"/>
 </g>
-<!-- dmumps -->
+<!-- proc~umfpack_di_defaults -->
 <g id="proc~~init_solver~~CallsGraph_node8" class="node">
-<title>dmumps</title>
-<polygon fill="#777777" stroke="#777777" points="193.5,-24 139.5,-24 139.5,0 193.5,0 193.5,-24"/>
-<text text-anchor="middle" x="166.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dmumps</text>
-</g>
-<!-- proc~init_solver&#45;&gt;dmumps -->
-<g id="proc~~init_solver~~CallsGraph_edge7" class="edge">
-<title>proc~init_solver&#45;&gt;dmumps</title>
-<path fill="none" stroke="#ff0000" d="M34.8381,-125.9527C43.3193,-104.1118 64.1866,-57.9361 97,-33 106.374,-25.8763 118.1599,-21.1554 129.3497,-18.0321"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="130.4851,-21.358 139.3722,-15.5899 128.8278,-14.5569 130.4851,-21.358"/>
-</g>
-<!-- interface~c_umfpack_di_defaults -->
-<g id="proc~~init_solver~~CallsGraph_node9" class="node">
-<title>interface~c_umfpack_di_defaults</title>
-<g id="a_proc~~init_solver~~CallsGraph_node9"><a xlink:href=".././interface/c_umfpack_di_defaults.html" xlink:title="c_umfpack_di_defaults">
-<polygon fill="#a7506f" stroke="#a7506f" points="407,-276 287,-276 287,-252 407,-252 407,-276"/>
-<text text-anchor="middle" x="347" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">c_umfpack_di_defaults</text>
+<title>proc~umfpack_di_defaults</title>
+<g id="a_proc~~init_solver~~CallsGraph_node8"><a xlink:href=".././proc/umfpack_di_defaults.html" xlink:title="umfpack_di_defaults">
+<polygon fill="#d9534f" stroke="#d9534f" points="221,-24 112,-24 112,0 221,0 221,-24"/>
+<text text-anchor="middle" x="166.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">umfpack_di_defaults</text>
 </a>
 </g>
 </g>
-<!-- proc~umfpack_di_defaults&#45;&gt;interface~c_umfpack_di_defaults -->
-<g id="proc~~init_solver~~CallsGraph_edge8" class="edge">
-<title>proc~umfpack_di_defaults&#45;&gt;interface~c_umfpack_di_defaults</title>
-<path fill="none" stroke="#ff0000" d="M221.1458,-264C238.6555,-264 258.2947,-264 276.7575,-264"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="276.8726,-267.5001 286.8726,-264 276.8726,-260.5001 276.8726,-267.5001"/>
+<!-- proc~init_solver&#45;&gt;proc~umfpack_di_defaults -->
+<g id="proc~~init_solver~~CallsGraph_edge7" class="edge">
+<title>proc~init_solver&#45;&gt;proc~umfpack_di_defaults</title>
+<path fill="none" stroke="#ff0000" d="M34.8381,-125.9527C43.3193,-104.1118 64.1866,-57.9361 97,-33 98.8754,-31.5748 100.8474,-30.2458 102.8918,-29.0064"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="104.9975,-31.8557 112.2449,-24.1274 101.7599,-25.6493 104.9975,-31.8557"/>
 </g>
 <!-- interface~c_umfpack_di_report_control -->
 <g id="proc~~init_solver~~CallsGraph_node10" class="node">
@@ -392,25 +377,40 @@ public subroutine init_solver(mat)
 </g>
 </g>
 <!-- proc~umfpack_di_report_control&#45;&gt;interface~c_umfpack_di_report_control -->
-<g id="proc~~init_solver~~CallsGraph_edge9" class="edge">
+<g id="proc~~init_solver~~CallsGraph_edge8" class="edge">
 <title>proc~umfpack_di_report_control&#45;&gt;interface~c_umfpack_di_report_control</title>
 <path fill="none" stroke="#48ff00" d="M236.0278,-180C244.4507,-180 253.1281,-180 261.7447,-180"/>
 <polygon fill="#48ff00" stroke="#48ff00" points="261.8129,-183.5001 271.8128,-180 261.8128,-176.5001 261.8129,-183.5001"/>
 </g>
 <!-- interface~set_default_options -->
-<g id="proc~~init_solver~~CallsGraph_node11" class="node">
+<g id="proc~~init_solver~~CallsGraph_node9" class="node">
 <title>interface~set_default_options</title>
-<g id="a_proc~~init_solver~~CallsGraph_node11"><a xlink:href=".././interface/set_default_options.html" xlink:title="set_default_options">
+<g id="a_proc~~init_solver~~CallsGraph_node9"><a xlink:href=".././interface/set_default_options.html" xlink:title="set_default_options">
 <polygon fill="#a7506f" stroke="#a7506f" points="399.5,-66 294.5,-66 294.5,-42 399.5,-42 399.5,-66"/>
 <text text-anchor="middle" x="347" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">set_default_options</text>
 </a>
 </g>
 </g>
 <!-- proc~init_superlu&#45;&gt;interface~set_default_options -->
-<g id="proc~~init_solver~~CallsGraph_edge10" class="edge">
+<g id="proc~~init_solver~~CallsGraph_edge9" class="edge">
 <title>proc~init_superlu&#45;&gt;interface~set_default_options</title>
 <path fill="none" stroke="#4800ff" d="M199.6065,-54C223.1738,-54 255.5726,-54 283.9939,-54"/>
 <polygon fill="#4800ff" stroke="#4800ff" points="284.2612,-57.5001 294.2612,-54 284.2611,-50.5001 284.2612,-57.5001"/>
+</g>
+<!-- interface~c_umfpack_di_defaults -->
+<g id="proc~~init_solver~~CallsGraph_node11" class="node">
+<title>interface~c_umfpack_di_defaults</title>
+<g id="a_proc~~init_solver~~CallsGraph_node11"><a xlink:href=".././interface/c_umfpack_di_defaults.html" xlink:title="c_umfpack_di_defaults">
+<polygon fill="#a7506f" stroke="#a7506f" points="407,-24 287,-24 287,0 407,0 407,-24"/>
+<text text-anchor="middle" x="347" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">c_umfpack_di_defaults</text>
+</a>
+</g>
+</g>
+<!-- proc~umfpack_di_defaults&#45;&gt;interface~c_umfpack_di_defaults -->
+<g id="proc~~init_solver~~CallsGraph_edge10" class="edge">
+<title>proc~umfpack_di_defaults&#45;&gt;interface~c_umfpack_di_defaults</title>
+<path fill="none" stroke="#ff00da" d="M221.1458,-12C238.6555,-12 258.2947,-12 276.7575,-12"/>
+<polygon fill="#ff00da" stroke="#ff00da" points="276.8726,-15.5001 286.8726,-12 276.8726,-8.5001 276.8726,-15.5001"/>
 </g>
 </g>
 </svg>
@@ -746,7 +746,7 @@ public subroutine init_solver(mat)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2018-07-22 09:40  
+             on 2018-07-22 09:54  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> MSOLV-fortran was developed by Arthur Francisco - Noël Brunetière</p></div>
