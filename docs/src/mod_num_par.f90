@@ -21,6 +21,9 @@ integer(kind=I4)   :: SOLV_MESS           !! *Solver output detail control*
 integer(kind=I4)   :: OPU = output_unit   !! *Output unit*
 integer(kind=I4)   :: IPU = input_unit    !! *Input unit*
 
+integer(kind=I4)   :: VERBOSE             !! *Output detail control*
+character(len=128) :: OUTPUT_FILE         !! *When needed, output file*
+
 ! num_par definition
 type NUM_PAR
    real(kind=R8)    :: relax            !! *relaxation parameter*

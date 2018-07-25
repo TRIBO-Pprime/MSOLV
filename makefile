@@ -1,3 +1,11 @@
+.PHONY: clean debug prod gprof all
+
+clean:
+	rm -f $(OBJDIR)/*.o
+	rm -f $(MODDIR)/*.mod
+	rm prg
+
+common_dir = ../common
 
 MODDIR = mod
 OBJDIR = obj
@@ -45,27 +53,27 @@ EXE = prg
 
 SRC = $(notdir $(wildcard $(SRCDIR)/*.$(EXT)))
 
-OBJ = $(SRC:.$(EXT)=.o)
+OBJ      = $(SRC:.$(EXT)=.o)
+ALL_OBJS = $(addprefix $(OBJDIR)/, *.o) $(addprefix $(common_dir)/$(OBJDIR)/, *.o) 
 
-CFLAGS = -I$(MODDIR) -I$(INCDIR) -fopenmp
+
+CFLAGS  = -I$(MODDIR) -I$(INCDIR) -I$(common_dir)/$(MODDIR)
+CFLAGS += -cpp -DGFORTRANMOD -ffree-form -ffree-line-length-none -march=native -fimplicit-none -fall-intrinsics -fmax-errors=1 -finit-real=nan -ffpe-summary=none -fopenmp
 
 LFLAGS  = $(SMALIB)
 LFLAGS += -lpthread -lm -lgomp
 
 
-ifeq ($(GPROF),yes)
-   CFLAGS += -pg -g
-   LFLAGS += -pg
-endif
-
-
-CFLAGS += -cpp -DGFORTRANMOD -ffree-form -ffree-line-length-none -march=native -fimplicit-none -fall-intrinsics -fmax-errors=1 -finit-real=nan -ffpe-summary=none
-ifeq ($(DEBUG),yes)
-   CFLAGS += -Og -g -Wall -Wextra -fbacktrace -pedantic -fbounds-check -Wuninitialized -fimplicit-none
+ifneq ('$(DEBUG)','')
+	CFLAGS += -Og -g -Wall -Wextra -fbacktrace -pedantic -fbounds-check -Wuninitialized -fimplicit-none
 else
-   CFLAGS += -O3
+	CFLAGS += -O3
 endif
 
+ifneq ('$(GPROF)','')
+	CFLAGS += -pg -g
+	LFLAGS += -pg
+endif
 
 all: $(EXE)
 
@@ -74,10 +82,7 @@ all: $(EXE)
 	-mv -f *.mod $(MODDIR)
 
 $(EXE): $(OBJ)
-	$(FORT) $(addprefix $(OBJDIR)/, $(OBJ)) $(LFLAGS) -o $(EXE)
-
-mod_data_arch.o :
-mod_num_par.o : mod_data_arch.o
+	$(FORT) $(ALL_OBJS) $(LFLAGS) -o $(EXE)
 
 umfpack.o :
 superlu.o :
@@ -86,13 +91,7 @@ hsl_common90.o :
 hsl_ddeps90.o :
 hsl_ma48d.o : hsl_common90.o hsl_ddeps90.o
 
-mod_solver.o : umfpack.o hsl_ma48d.o mod_data_arch.o superlu.o dmumps_struc.o mod_num_par.o
+mod_solver.o : umfpack.o hsl_ma48d.o superlu.o dmumps_struc.o
 
-prg.o : mod_solver.o mod_num_par.o mod_data_arch.o
-
-.PHONY: clean
-
-clean:
-	rm -f $(OBJDIR)/*.o
-	rm -f $(MODDIR)/*.mod
+prg.o : mod_solver.o
 

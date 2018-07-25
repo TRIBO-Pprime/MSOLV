@@ -10,6 +10,7 @@ module solver
 use iso_c_binding, only : C_PTR, C_NULL_PTR, C_ASSOCIATED
 use data_arch,     only : I4, I8, R8, EPS_R8, HIG_R8
 use num_param,     only : OPU, SOLV_MESS, NO_MESS, PRINT_MESS
+use sort_arrays,   only : sort_int_1real, sort_int_1int_1real
 !-------------------------------------------------
 use hsl_ma48_double
 !-------------------------------------------------
@@ -54,10 +55,10 @@ endtype MAT_MA48
 
 type MAT_UMFP
 !! <span style="color:green">All the stuff needed by *UMFPACK*</span>
-   type(c_ptr) :: c_symbolic                             
-   type(c_ptr) :: c_numeric                                    
-   real(kind=R8), dimension(0:UMFPACK_CONTROL-1) :: c_control  
-   real(kind=R8), dimension(0:UMFPACK_INFO   -1) :: c_info     
+   type(c_ptr) :: c_symbolic
+   type(c_ptr) :: c_numeric
+   real(kind=R8), dimension(0:UMFPACK_CONTROL-1) :: c_control
+   real(kind=R8), dimension(0:UMFPACK_INFO   -1) :: c_info
 endtype MAT_UMFP
 
 type MAT_SOLV
@@ -89,11 +90,11 @@ type MAT_SOLV
    real(kind=R8), dimension(:), allocatable    :: b      !! *right hand side vector*
    real(kind=R8), dimension(:), allocatable    :: x      !! *unknwon vector*
 endtype MAT_SOLV
-  
+
 
 !< <span style="color:green">MUSST multiscale high level solver type</span>
 !  @note ```MS_MAT_SOLV``` is needed by MUSST, but it is useless for the present module
-! 
+!
 type MS_MAT_SOLV
    type(MAT_SOLV) :: ts_mat                                       !! *top-scale solver type matrices*
    type(MAT_SOLV),   dimension(:), allocatable :: bs_mat          !! *bottom-scale solver type matrices (table)*
@@ -112,7 +113,7 @@ integer(kind=I4) :: SOLVER_BS = -1 !! *solver used for bottom scale grids* [not 
 integer(kind=I4) :: SOLVER_TS = -1 !! *solver used for top scale grids* [not used by the present module]
 
 contains
-  
+
    !=========================================================================================
    !< @note General hat subroutine that handles the resolution steps:      <br/>
    !  * ```ini``` solver initialization                                    <br/>
@@ -417,10 +418,10 @@ contains
 
          case(MA48)
             continue
-            
+
          case(MUMP)
             continue
-            
+
          case(SULU)
             call free_superlu()
 
@@ -453,7 +454,7 @@ contains
             nullify( mat%matma48%zmat%row )
             nullify( mat%matma48%zmat%col )
             nullify( mat%matma48%zmat%val )
-            
+
             call ma48_finalize(factors = mat%matma48%fact, &
                                control = mat%matma48%ctrl, &
                                info    = ierr)
@@ -466,7 +467,7 @@ contains
                nullify( mat%matmump%eltvar )
                nullify( mat%matmump%a_elt  )
             endif
-            
+
             ! destroy the instance (deallocate internal data structures)
             mat%matmump%job = -2
             call dmumps(mat%matmump)
@@ -512,7 +513,7 @@ contains
    !-----------------------------------------------------------------------------------------
    subroutine convert_matrice_format(mat)
    implicit none
-   type(MAT_SOLV), intent(inout) :: mat   !! *high level system type*
+   type(MAT_SOLV), intent(inout), target :: mat   !! *high level system type*
       integer(kind=I4) :: i
 
       ! =======================================================================================================================
@@ -561,116 +562,20 @@ contains
             do i = 1, mat%nn +1
                mat%jptr(i) = mat%jptr(i) -1
             enddo
+
+            if (mat%slv_t==SULU) mat%matsulu%jptr => mat%jptr ! otherwise, matsulu%jptr will be associated to
+                                                              ! a deallocated part of memory
+
             do i = 1, mat%nz
                mat%irow(i) = mat%irow(i) -1
             enddo
-            
+
          case default
             stop 'Unknown solver type, CONVERT_MATRICE_FORMAT'
 
       endselect
    return
    endsubroutine convert_matrice_format
-
-
-   !=========================================================================================
-   !< @note Subroutine to sort an integer vector and a real vector (tabint, tabreal) according 
-   !  tabref
-   !-----------------------------------------------------------------------------------------
-   recursive subroutine sort_entier_int_real(g, d, tabref, tabint, tabreal)
-   implicit none
-   integer(kind=I4), intent(in)    :: g, d
-   integer(kind=I4), dimension(:), intent(inout) :: tabref
-   integer(kind=I4), dimension(:), intent(inout) :: tabint
-   real(kind=R8),    dimension(:), intent(inout) :: tabreal
-      integer(kind=I4) :: i, j, mil, itmp
-      integer(kind=I4) :: tmp, cle
-      real(kind=R8)    :: atmp
-      i = g
-      j = d
-      mil = (g+d)/2
-      cle = tabref(mil)
-
-      if (g>=d) return
-
-      do while (i<=j)
-         do while (tabref(i)<cle)
-            i = i + 1
-         enddo
-         do while (tabref(j)>cle)
-            j = j - 1
-         enddo
-         if (i<=j) then
-            ! échange des éléments du tableau
-            tmp       = tabref(i)
-            tabref(i) = tabref(j)
-            tabref(j) = tmp
-            ! échange des éléments du vecteur 2
-            itmp      = tabint(i)
-            tabint(i) = tabint(j)
-            tabint(j) = itmp
-            ! échange des éléments du vecteur 3
-            atmp       = tabreal(i)
-            tabreal(i) = tabreal(j)
-            tabreal(j) = atmp
-
-            i = i + 1
-            j = j - 1
-         endif
-      enddo
-
-      if (g<j) call sort_entier_int_real(g, j, tabref, tabint, tabreal)
-      if (d>i) call sort_entier_int_real(i, d, tabref, tabint, tabreal)
-
-   return
-   endsubroutine sort_entier_int_real
-
-
-   !=========================================================================================
-   !> @note Subroutine to sort a real vector (tabreal) according tabref
-   !-----------------------------------------------------------------------------------------
-   recursive subroutine sort_entier_real(g, d, tabref, tabreal)
-   implicit none
-   integer(kind=I4), intent(in)    :: g, d
-   integer(kind=I4), dimension(:), intent(inout) :: tabref
-   real(kind=R8),    dimension(:), intent(inout) :: tabreal
-      integer(kind=I4) :: i, j, mil
-      integer(kind=I4) :: tmp, cle
-      real(kind=R8)    :: atmp
-      i = g
-      j = d
-      mil = (g+d)/2
-      cle = tabref(mil)
-
-      if (g>=d) return
-
-      do while (i<=j)
-         do while (tabref(i)<cle)
-            i = i + 1
-         enddo
-         do while (tabref(j)>cle)
-            j = j - 1
-         enddo
-         if (i<=j) then
-            ! échange des éléments du tableau
-            tmp       = tabref(i)
-            tabref(i) = tabref(j)
-            tabref(j) = tmp
-            ! échange des éléments du vecteur 2
-            atmp       = tabreal(i)
-            tabreal(i) = tabreal(j)
-            tabreal(j) = atmp
-
-            i = i + 1
-            j = j - 1
-         endif
-      enddo
-
-      if (g<j) call sort_entier_real(g, j, tabref, tabreal)
-      if (d>i) call sort_entier_real(i, d, tabref, tabreal)
-
-   return
-   endsubroutine sort_entier_real
 
 
    !=========================================================================================
@@ -692,7 +597,7 @@ contains
       n        => mat%nn
       ntot     => mat%nt
       nz       => mat%nz
-      
+
       if (solver==MUMP) return
 
       ! conversion from elemental form to triplet form, perhaps with null a_elts
@@ -712,7 +617,7 @@ contains
 
       irow(1:ntot) = -1
       jcol(1:ntot) = -1
-      
+
       ii = 1
       do inelt = 1, nb_elt
          imatorder = eltptr(inelt +1) -eltptr(inelt)
@@ -732,8 +637,7 @@ contains
 
       ! the triplet irow, jcol and a_elt is sorted according jcol
       !-----------------------------------------------------------
-      call sort_entier_int_real(g=1, d=ntot, tabref=jcol(1:ntot), tabint=irow(1:ntot), tabreal=a_elt(1:ntot))
-
+      call sort_int_1int_1real(g=1, d=ntot, itabref=jcol(1:ntot), itab1=irow(1:ntot), rtab2=a_elt(1:ntot))
 
       ! column pointer determination for each new value
       !----------------------------------------------
@@ -760,7 +664,7 @@ contains
       do i = 1, n
          i1 = jptr(i)
          i2 = jptr(i +1) -1
-         call sort_entier_real(g=1, d=i2 -i1 +1, tabref=irow(i1:i2), tabreal=a_elt(i1:i2))
+         call sort_int_1real(g=1, d=i2 -i1 +1, itabref=irow(i1:i2), rtab1=a_elt(i1:i2))
       enddo
 
       ! assembly starting from the jcol, irow and a_elt top
@@ -806,6 +710,9 @@ contains
          jptr(j +1) = jj
       enddo
       jptr(n +1) = nz +1
+
+      nullify(eltptr, eltvar, a_elt, irow, jcol, jptr)
+
    return
    endsubroutine from_elemental_to_assembled
 

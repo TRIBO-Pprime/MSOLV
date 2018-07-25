@@ -8,6 +8,7 @@ github: https://github.com/Arthur-Francisco
 project_github: https://github.com/TRIBO-Pprime/MSOLV
 include:    ./inc
 src_dir:    ./src
+src_dir:    ../common/src
 exclude: hsl_common90.f90
          hsl_ddeps90.f90
          hsl_ma48d.f90

@@ -53,21 +53,21 @@
 !
 ! @endwarning
 program test_solvers
-use omp_lib,         only : omp_get_wtime
-use data_arch,       only : I4, R4, R8, get_unit
+use omp_lib,   only :   omp_get_wtime
+use data_arch, only :   I4, R4, R8, get_unit
 
-use num_param,       only : OPU,          & ! *default output unit*
-                            IPU,          & ! *default input unit*
-                            SOLV_MESS,    & ! *Solver message: yes=```PRINT_MESS```, no=```NO_MESS```*
-                            NO_MESS,      & ! *no output message*
-                            PRINT_MESS      ! *solver infos output*
+use num_param, only :   OPU,          & ! *default output unit*
+                        IPU,          & ! *default input unit*
+                        SOLV_MESS,    & ! *Solver message: yes=```PRINT_MESS```, no=```NO_MESS```*
+                        NO_MESS,      & ! *no output message*
+                        PRINT_MESS      ! *solver infos output*
 
-use solver,          only : MAT_SOLV,     & ! *system data type*
-                            solve_syst,   & ! *subroutine for the system resolution*
-                            MUMP,         & ! *integer*
-                            UMFP,         & ! *integer*
-                            SULU,         & ! *integer*
-                            convert_matrice_format ! *various matrix format conversion*
+use solver,    only :   MAT_SOLV,     & ! *system data type*
+                        solve_syst,   & ! *subroutine for the system resolution*
+                        MUMP,         & ! *integer*
+                        UMFP,         & ! *integer*
+                        SULU,         & ! *integer*
+                        convert_matrice_format ! *various matrix format conversion*
 implicit none
 
 integer(kind=I4) :: i, ii, uu, size_a_elt, state
@@ -243,53 +243,6 @@ contains
    endsubroutine verif_solution
    
 
-   !=========================================================================================
-   !> @note real fast sorting
-   !-----------------------------------------------------------------------------------------
-   recursive subroutine sort_reel(g, d, tab, ordre)
-      implicit none
-      !---------------------------------
-      integer(kind=I4), intent(in)    :: g, d
-      integer(kind=I4), intent(inout) :: ordre(g:d)
-      real(kind=R8), intent(inout)  :: tab(g:d)
-      !---------------------------------
-      integer(kind=I4) :: i, j, mil, itmp
-      real(kind=R8)  :: tmp, cle
-      i = g
-      j = d
-      mil = (g+d)/2
-      cle = tab(mil)
-
-      if (g>=d) return
-
-      do while (i<=j)
-         do while (tab(i)<cle)
-            i = i + 1
-         enddo
-         do while (tab(j)>cle)
-            j = j - 1
-         enddo
-         if (i<=j) then
-            ! échange des éléments du tableau
-            tmp = tab(i)
-            tab(i) = tab(j)
-            tab(j) = tmp
-            ! échange des éléments du vecteur position
-            itmp = ordre(i)
-            ordre(i) = ordre(j)
-            ordre(j) = itmp
-            i = i + 1
-            j = j - 1
-         endif
-      enddo
-
-      if (g<j) call sort_reel(g, j, tab(g:j), ordre(g:j))
-      if (d>i) call sort_reel(i, d, tab(i:d), ordre(i:d))
-
-   return
-   endsubroutine sort_reel
-
-   
    !=========================================================================================
    !> @note multiplication of the system coefficient by a random factor
    !-----------------------------------------------------------------------------------------

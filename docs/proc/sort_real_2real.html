@@ -10,7 +10,7 @@
     <meta name="author" content="Arthur Francisco - Noël Brunetière" >
     <link rel="icon" href="../favicon.png">
 
-    <title>sort_entier_int_real &ndash; MSOLV-fortran</title>
+    <title>sort_real_2real &ndash; MSOLV-fortran</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -112,7 +112,7 @@
     
   
   <div class="row">
-    <h1>sort_entier_int_real
+    <h1>sort_real_2real
       <small>Subroutine</small>
     
     </h1>
@@ -130,24 +130,24 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for procedures.">39 statements</a>
+    title=" 0.4% of total for procedures.">38 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/mod_solver.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_sort.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/mod_solver.f90.html'>mod_solver.f90</a></li>
+     <li><a href='../sourcefile/mod_sort.f90.html'>mod_sort.f90</a></li>
     
-     <li><a href='../module/solver.html'>solver</a></li>
+     <li><a href='../module/sort_arrays.html'>sort_arrays</a></li>
     
   
-     <li class="active">sort_entier_int_real</li>
+     <li class="active">sort_real_2real</li>
   </ol>
 </div>
 </div>
@@ -191,7 +191,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../proc/sort_entier_int_real.html#src">sort_entier_int_real</a>
+    <a class="list-group-item" href="../proc/sort_real_2real.html#src">sort_real_2real</a>
   </div>
 </div>
 
@@ -203,7 +203,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-public recursive subroutine sort_entier_int_real(g, d, tabref, tabint, tabreal)
+public recursive subroutine sort_real_2real(g, d, rtabref, rtab1, rtab2)
     
     
    
@@ -213,8 +213,9 @@ public recursive subroutine sort_entier_int_real(g, d, tabref, tabint, tabreal)
 
 
     
-    <p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p>Subroutine to sort an integer vector and a real vector (tabint, tabreal) according 
-  tabref</p></div>
+    <p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p>Subroutine to sort 2 vectors of reals, according a vector of realq
+ </p></div>
+<p>
 <hr>
     
 
@@ -236,7 +237,7 @@ public recursive subroutine sort_entier_int_real(g, d, tabref, tabint, tabreal)
   
 <tr>
   
-  <td><span class="anchor" id="variable-g"></span>integer(kind=I4),</td>
+  <td><span class="anchor" id="variable-g%7E2"></span>integer(kind=I4),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -251,7 +252,7 @@ public recursive subroutine sort_entier_int_real(g, d, tabref, tabint, tabreal)
   
 <tr>
   
-  <td><span class="anchor" id="variable-d"></span>integer(kind=I4),</td>
+  <td><span class="anchor" id="variable-d%7E2"></span>integer(kind=I4),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -266,12 +267,12 @@ public recursive subroutine sort_entier_int_real(g, d, tabref, tabint, tabreal)
   
 <tr>
   
-  <td><span class="anchor" id="variable-tabref"></span>integer(kind=I4),</td>
+  <td><span class="anchor" id="variable-rtabref%7E2"></span>real(kind=R8),</td>
   <td>intent(inout),</td>
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>tabref</strong></td><td></td>
+  <td><strong>rtabref</strong></td><td></td>
   
 </tr>
 
@@ -281,12 +282,12 @@ public recursive subroutine sort_entier_int_real(g, d, tabref, tabint, tabreal)
   
 <tr>
   
-  <td><span class="anchor" id="variable-tabint"></span>integer(kind=I4),</td>
+  <td><span class="anchor" id="variable-rtab1%7E2"></span>real(kind=R8),</td>
   <td>intent(inout),</td>
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>tabint</strong></td><td></td>
+  <td><strong>rtab1</strong></td><td></td>
   
 </tr>
 
@@ -296,12 +297,12 @@ public recursive subroutine sort_entier_int_real(g, d, tabref, tabint, tabreal)
   
 <tr>
   
-  <td><span class="anchor" id="variable-tabreal"></span>real(kind=R8),</td>
+  <td><span class="anchor" id="variable-rtab2"></span>real(kind=R8),</td>
   <td>intent(inout),</td>
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>tabreal</strong></td><td></td>
+  <td><strong>rtab2</strong></td><td></td>
   
 </tr>
 
@@ -343,7 +344,7 @@ public recursive subroutine sort_entier_int_real(g, d, tabref, tabint, tabreal)
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../proc/sort_entier_int_real.html#src">sort_entier_int_real</a>
+    <a class="list-group-item" href="../proc/sort_real_2real.html#src">sort_real_2real</a>
   </div>
 </div>
 
@@ -372,53 +373,52 @@ public recursive subroutine sort_entier_int_real(g, d, tabref, tabint, tabreal)
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>   <span class="k">recursive subroutine </span><span class="n">sort_entier_int_real</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">tabref</span><span class="p">,</span> <span class="n">tabint</span><span class="p">,</span> <span class="n">tabreal</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span>   <span class="k">recursive subroutine </span><span class="n">sort_real_2real</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">rtabref</span><span class="p">,</span> <span class="n">rtab1</span><span class="p">,</span> <span class="n">rtab2</span><span class="p">)</span>
    <span class="k">implicit none</span>
-<span class="k">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">g</span><span class="p">,</span> <span class="n">d</span>
-   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">tabref</span>
-   <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">tabint</span>
-   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span>    <span class="k">dimension</span><span class="p">(:),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">tabreal</span>
-      <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">mil</span><span class="p">,</span> <span class="n">itmp</span>
-      <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span> <span class="kd">::</span> <span class="n">tmp</span><span class="p">,</span> <span class="n">cle</span>
-      <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">atmp</span>
+<span class="k">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">g</span><span class="p">,</span> <span class="n">d</span>
+   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">rtabref</span>
+   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">rtab1</span>
+   <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">rtab2</span>
+      <span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">mil</span>
+      <span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">rtmp</span><span class="p">,</span> <span class="n">cle</span>
       <span class="n">i</span> <span class="o">=</span> <span class="n">g</span>
       <span class="n">j</span> <span class="o">=</span> <span class="n">d</span>
       <span class="n">mil</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span><span class="o">+</span><span class="n">d</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
-      <span class="n">cle</span> <span class="o">=</span> <span class="n">tabref</span><span class="p">(</span><span class="n">mil</span><span class="p">)</span>
+      <span class="n">cle</span> <span class="o">=</span> <span class="n">rtabref</span><span class="p">(</span><span class="n">mil</span><span class="p">)</span>
 
       <span class="k">if</span> <span class="p">(</span><span class="n">g</span><span class="o">&gt;=</span><span class="n">d</span><span class="p">)</span> <span class="k">return</span>
 
 <span class="k">      do while</span> <span class="p">(</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">j</span><span class="p">)</span>
-         <span class="k">do while</span> <span class="p">(</span><span class="n">tabref</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">&lt;</span><span class="n">cle</span><span class="p">)</span>
+         <span class="k">do while</span> <span class="p">(</span><span class="n">rtabref</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">&lt;</span><span class="n">cle</span><span class="p">)</span>
             <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
          <span class="n">enddo</span>
-         <span class="k">do while</span> <span class="p">(</span><span class="n">tabref</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">&gt;</span><span class="n">cle</span><span class="p">)</span>
+         <span class="k">do while</span> <span class="p">(</span><span class="n">rtabref</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">&gt;</span><span class="n">cle</span><span class="p">)</span>
             <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span>
          <span class="n">enddo</span>
          <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">j</span><span class="p">)</span> <span class="k">then</span>
             <span class="c">! échange des éléments du tableau</span>
-            <span class="n">tmp</span>       <span class="o">=</span> <span class="n">tabref</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-            <span class="n">tabref</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">tabref</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
-            <span class="n">tabref</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">tmp</span>
+            <span class="n">rtmp</span>       <span class="o">=</span> <span class="n">rtabref</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">rtabref</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">rtabref</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+            <span class="n">rtabref</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">rtmp</span>
             <span class="c">! échange des éléments du vecteur 2</span>
-            <span class="n">itmp</span>      <span class="o">=</span> <span class="n">tabint</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-            <span class="n">tabint</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">tabint</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
-            <span class="n">tabint</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">itmp</span>
+            <span class="n">rtmp</span>     <span class="o">=</span> <span class="n">rtab1</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">rtab1</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">rtab1</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+            <span class="n">rtab1</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">rtmp</span>
             <span class="c">! échange des éléments du vecteur 3</span>
-            <span class="n">atmp</span>       <span class="o">=</span> <span class="n">tabreal</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-            <span class="n">tabreal</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">tabreal</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
-            <span class="n">tabreal</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">atmp</span>
+            <span class="n">rtmp</span>     <span class="o">=</span> <span class="n">rtab2</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">rtab2</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">rtab2</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+            <span class="n">rtab2</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">rtmp</span>
 
             <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
             <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span>
          <span class="n">endif</span>
       <span class="n">enddo</span>
 
-      <span class="k">if</span> <span class="p">(</span><span class="n">g</span><span class="o">&lt;</span><span class="n">j</span><span class="p">)</span> <span class="k">call </span><span class="n">sort_entier_int_real</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">tabref</span><span class="p">,</span> <span class="n">tabint</span><span class="p">,</span> <span class="n">tabreal</span><span class="p">)</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">d</span><span class="o">&gt;</span><span class="n">i</span><span class="p">)</span> <span class="k">call </span><span class="n">sort_entier_int_real</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">tabref</span><span class="p">,</span> <span class="n">tabint</span><span class="p">,</span> <span class="n">tabreal</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">g</span><span class="o">&lt;</span><span class="n">j</span><span class="p">)</span> <span class="k">call </span><span class="n">sort_real_2real</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">rtabref</span><span class="p">,</span> <span class="n">rtab1</span><span class="p">,</span> <span class="n">rtab2</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">d</span><span class="o">&gt;</span><span class="n">i</span><span class="p">)</span> <span class="k">call </span><span class="n">sort_real_2real</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">rtabref</span><span class="p">,</span> <span class="n">rtab1</span><span class="p">,</span> <span class="n">rtab2</span><span class="p">)</span>
 
    <span class="k">return</span>
-<span class="k">   </span><span class="n">endsubroutine</span> <span class="n">sort_entier_int_real</span>
+<span class="k">   </span><span class="n">endsubroutine</span> <span class="n">sort_real_2real</span>
 </pre></div>
 
     </section>
@@ -440,7 +440,7 @@ public recursive subroutine sort_entier_int_real(g, d, tabref, tabint, tabreal)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2018-07-22 09:54  
+             on 2018-07-25 11:53  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> MSOLV-fortran was developed by Arthur Francisco - Noël Brunetière</p></div>
