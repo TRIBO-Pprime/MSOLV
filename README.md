@@ -118,18 +118,19 @@ Make
 ----
 General syntax:
 ```bash
-./comp.sh ALL:s/a FORT:gfortran-x DEBUG:yes/no GPROF:yes/no
+make clean all "DEBUG=[yes,'']" "GPROF=[yes,'']"
 ```
-Examples with gfortran-7:
+Examples:
 
-* first rebuild all, then make the 'debug' executable ```prg``` for profiling
+* first clean all, then make the 'debug' executable ```prg``` for profiling
 ```bash
-./comp.sh a gfortran-7 yes yes
+make clean
+make all "DEBUG=yes" "GPROF=yes"
 ```
 
 * just build the modified sources, then make a productive executable
 ```bash
-./comp.sh s gfortran-7 no no
+make all
 ```
 
 [top](#table-of-contents)

@@ -1,4 +1,4 @@
-.PHONY: clean debug prod gprof all
+.PHONY: clean debug gprof all
 
 clean:
 	rm -f $(OBJDIR)/*.o
