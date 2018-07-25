@@ -273,28 +273,25 @@ public subroutine analyse_solver(mat)
 <polygon fill="none" stroke="black" points="84,-87 7.10543e-15,-87 7.10543e-15,-63 84,-63 84,-87"/>
 <text text-anchor="middle" x="42" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50">analyse_solver</text>
 </g>
+<!-- ma48_analyse -->
+<g id="proc~~analyse_solver~~CallsGraph_node2" class="node"><title>ma48_analyse</title>
+<polygon fill="#777777" stroke="#777777" points="224,-150 142,-150 142,-126 224,-126 224,-150"/>
+<text text-anchor="middle" x="183" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ma48_analyse</text>
+</g>
+<!-- proc~analyse_solver&#45;&gt;ma48_analyse -->
+<g id="proc~~analyse_solver~~CallsGraph_edge1" class="edge"><title>proc~analyse_solver&#45;&gt;ma48_analyse</title>
+<path fill="none" stroke="#ff0000" d="M62.7862,-87.0299C78.0631,-96.0109 99.9159,-108.2 120,-117 124.326,-118.896 128.882,-120.729 133.479,-122.471"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="132.317,-125.773 142.911,-125.908 134.714,-119.196 132.317,-125.773"/>
+</g>
 <!-- dmumps -->
-<g id="proc~~analyse_solver~~CallsGraph_node2" class="node"><title>dmumps</title>
-<polygon fill="#777777" stroke="#777777" points="210,-150 156,-150 156,-126 210,-126 210,-150"/>
-<text text-anchor="middle" x="183" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">dmumps</text>
+<g id="proc~~analyse_solver~~CallsGraph_node3" class="node"><title>dmumps</title>
+<polygon fill="#777777" stroke="#777777" points="210,-108 156,-108 156,-84 210,-84 210,-108"/>
+<text text-anchor="middle" x="183" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">dmumps</text>
 </g>
 <!-- proc~analyse_solver&#45;&gt;dmumps -->
-<g id="proc~~analyse_solver~~CallsGraph_edge1" class="edge"><title>proc~analyse_solver&#45;&gt;dmumps</title>
-<path fill="none" stroke="#ff0000" d="M62.7862,-87.0299C78.0631,-96.0109 99.9159,-108.2 120,-117 128.395,-120.678 137.654,-124.123 146.399,-127.117"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="145.387,-130.469 155.981,-130.293 147.59,-123.824 145.387,-130.469"/>
-</g>
-<!-- proc~s_umfpack_di_symbolic -->
-<g id="proc~~analyse_solver~~CallsGraph_node3" class="node"><title>proc~s_umfpack_di_symbolic</title>
-<g id="a_proc~~analyse_solver~~CallsGraph_node3"><a xlink:href=".././proc/s_umfpack_di_symbolic.html" xlink:title="s_umfpack_di_symbolic">
-<polygon fill="#d9534f" stroke="#d9534f" points="246,-108 120,-108 120,-84 246,-84 246,-108"/>
-<text text-anchor="middle" x="183" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">s_umfpack_di_symbolic</text>
-</a>
-</g>
-</g>
-<!-- proc~analyse_solver&#45;&gt;proc~s_umfpack_di_symbolic -->
-<g id="proc~~analyse_solver~~CallsGraph_edge2" class="edge"><title>proc~analyse_solver&#45;&gt;proc~s_umfpack_di_symbolic</title>
-<path fill="none" stroke="#ff0000" d="M84.3282,-81.2438C92.4684,-82.4736 101.229,-83.7972 110.043,-85.1288"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="109.575,-88.5977 119.986,-86.6309 110.621,-81.6763 109.575,-88.5977"/>
+<g id="proc~~analyse_solver~~CallsGraph_edge2" class="edge"><title>proc~analyse_solver&#45;&gt;dmumps</title>
+<path fill="none" stroke="#ff0000" d="M84.3282,-81.2438C103.91,-84.2022 127.083,-87.7031 145.942,-90.5524"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="145.515,-94.0275 155.925,-92.0607 146.56,-87.106 145.515,-94.0275"/>
 </g>
 <!-- proc~prep_superlu -->
 <g id="proc~~analyse_solver~~CallsGraph_node4" class="node"><title>proc~prep_superlu</title>
@@ -305,71 +302,74 @@ public subroutine analyse_solver(mat)
 </g>
 </g>
 <!-- proc~analyse_solver&#45;&gt;proc~prep_superlu -->
-<g id="proc~~analyse_solver~~CallsGraph_edge3" class="edge"><title>proc~analyse_solver&#45;&gt;proc~prep_superlu</title>
+<g id="proc~~analyse_solver~~CallsGraph_edge4" class="edge"><title>proc~analyse_solver&#45;&gt;proc~prep_superlu</title>
 <path fill="none" stroke="#ff0000" d="M84.3282,-68.7562C100.233,-66.3532 118.508,-63.5923 134.916,-61.1134"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="135.488,-64.5667 144.853,-59.6121 134.443,-57.6453 135.488,-64.5667"/>
 </g>
-<!-- ma48_analyse -->
-<g id="proc~~analyse_solver~~CallsGraph_node5" class="node"><title>ma48_analyse</title>
-<polygon fill="#777777" stroke="#777777" points="224,-24 142,-24 142,-0 224,-0 224,-24"/>
-<text text-anchor="middle" x="183" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ma48_analyse</text>
-</g>
-<!-- proc~analyse_solver&#45;&gt;ma48_analyse -->
-<g id="proc~~analyse_solver~~CallsGraph_edge4" class="edge"><title>proc~analyse_solver&#45;&gt;ma48_analyse</title>
-<path fill="none" stroke="#ff0000" d="M62.7862,-62.9701C78.0631,-53.9891 99.9159,-41.8001 120,-33 124.326,-31.1044 128.882,-29.2707 133.479,-27.5289"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="134.714,-30.8042 142.911,-24.0922 132.317,-24.2272 134.714,-30.8042"/>
-</g>
-<!-- proc~umfpack_di_symbolic -->
-<g id="proc~~analyse_solver~~CallsGraph_node6" class="node"><title>proc~umfpack_di_symbolic</title>
-<g id="a_proc~~analyse_solver~~CallsGraph_node6"><a xlink:href=".././proc/umfpack_di_symbolic.html" xlink:title="umfpack_di_symbolic">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="407.5,-108 292.5,-108 292.5,-84 407.5,-84 407.5,-108"/>
-<text text-anchor="middle" x="350" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack_di_symbolic</text>
+<!-- proc~s_umfpack_di_symbolic -->
+<g id="proc~~analyse_solver~~CallsGraph_node5" class="node"><title>proc~s_umfpack_di_symbolic</title>
+<g id="a_proc~~analyse_solver~~CallsGraph_node5"><a xlink:href=".././proc/s_umfpack_di_symbolic.html" xlink:title="s_umfpack_di_symbolic">
+<polygon fill="#d9534f" stroke="#d9534f" points="246,-24 120,-24 120,-0 246,-0 246,-24"/>
+<text text-anchor="middle" x="183" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">s_umfpack_di_symbolic</text>
 </a>
 </g>
 </g>
-<!-- proc~s_umfpack_di_symbolic&#45;&gt;proc~umfpack_di_symbolic -->
-<g id="proc~~analyse_solver~~CallsGraph_edge5" class="edge"><title>proc~s_umfpack_di_symbolic&#45;&gt;proc~umfpack_di_symbolic</title>
-<path fill="none" stroke="#7fff00" d="M246.379,-96C258.026,-96 270.242,-96 282.02,-96"/>
-<polygon fill="#7fff00" stroke="#7fff00" points="282.233,-99.5001 292.233,-96 282.233,-92.5001 282.233,-99.5001"/>
+<!-- proc~analyse_solver&#45;&gt;proc~s_umfpack_di_symbolic -->
+<g id="proc~~analyse_solver~~CallsGraph_edge3" class="edge"><title>proc~analyse_solver&#45;&gt;proc~s_umfpack_di_symbolic</title>
+<path fill="none" stroke="#ff0000" d="M62.7862,-62.9701C78.0631,-53.9891 99.9159,-41.8001 120,-33 124.326,-31.1044 128.882,-29.2707 133.479,-27.5289"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="134.714,-30.8042 142.911,-24.0922 132.317,-24.2272 134.714,-30.8042"/>
 </g>
 <!-- interface~dcreate_compcol_matrix -->
 <g id="proc~~analyse_solver~~CallsGraph_node7" class="node"><title>interface~dcreate_compcol_matrix</title>
 <g id="a_proc~~analyse_solver~~CallsGraph_node7"><a xlink:href=".././interface/dcreate_compcol_matrix.html" xlink:title="dCreate_CompCol_Matrix">
-<polygon fill="#a7506f" stroke="#a7506f" points="418,-66 282,-66 282,-42 418,-42 418,-66"/>
-<text text-anchor="middle" x="350" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">dCreate_CompCol_Matrix</text>
+<polygon fill="#a7506f" stroke="#a7506f" points="418,-108 282,-108 282,-84 418,-84 418,-108"/>
+<text text-anchor="middle" x="350" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">dCreate_CompCol_Matrix</text>
 </a>
 </g>
 </g>
 <!-- proc~prep_superlu&#45;&gt;interface~dcreate_compcol_matrix -->
-<g id="proc~~analyse_solver~~CallsGraph_edge7" class="edge"><title>proc~prep_superlu&#45;&gt;interface~dcreate_compcol_matrix</title>
-<path fill="none" stroke="#00ffff" d="M221.029,-54C236.041,-54 253.973,-54 271.595,-54"/>
-<polygon fill="#00ffff" stroke="#00ffff" points="271.91,-57.5001 281.91,-54 271.91,-50.5001 271.91,-57.5001"/>
+<g id="proc~~analyse_solver~~CallsGraph_edge5" class="edge"><title>proc~prep_superlu&#45;&gt;interface~dcreate_compcol_matrix</title>
+<path fill="none" stroke="#00ffff" d="M221.029,-63.4256C241.897,-68.7374 268.409,-75.4859 291.883,-81.4612"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="291.178,-84.8932 301.732,-83.9682 292.905,-78.1095 291.178,-84.8932"/>
 </g>
 <!-- interface~dcreate_dense_matrix -->
 <g id="proc~~analyse_solver~~CallsGraph_node8" class="node"><title>interface~dcreate_dense_matrix</title>
 <g id="a_proc~~analyse_solver~~CallsGraph_node8"><a xlink:href=".././interface/dcreate_dense_matrix.html" xlink:title="dCreate_Dense_Matrix">
-<polygon fill="#a7506f" stroke="#a7506f" points="411.5,-24 288.5,-24 288.5,-0 411.5,-0 411.5,-24"/>
-<text text-anchor="middle" x="350" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">dCreate_Dense_Matrix</text>
+<polygon fill="#a7506f" stroke="#a7506f" points="411.5,-66 288.5,-66 288.5,-42 411.5,-42 411.5,-66"/>
+<text text-anchor="middle" x="350" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">dCreate_Dense_Matrix</text>
 </a>
 </g>
 </g>
 <!-- proc~prep_superlu&#45;&gt;interface~dcreate_dense_matrix -->
 <g id="proc~~analyse_solver~~CallsGraph_edge6" class="edge"><title>proc~prep_superlu&#45;&gt;interface~dcreate_dense_matrix</title>
-<path fill="none" stroke="#00ffff" d="M221.029,-44.5744C241.897,-39.2626 268.409,-32.5141 291.883,-26.5388"/>
-<polygon fill="#00ffff" stroke="#00ffff" points="292.905,-29.8905 301.732,-24.0318 291.178,-23.1068 292.905,-29.8905"/>
+<path fill="none" stroke="#00ffff" d="M221.029,-54C237.94,-54 258.557,-54 278.26,-54"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="278.456,-57.5001 288.456,-54 278.456,-50.5001 278.456,-57.5001"/>
+</g>
+<!-- proc~umfpack_di_symbolic -->
+<g id="proc~~analyse_solver~~CallsGraph_node6" class="node"><title>proc~umfpack_di_symbolic</title>
+<g id="a_proc~~analyse_solver~~CallsGraph_node6"><a xlink:href=".././proc/umfpack_di_symbolic.html" xlink:title="umfpack_di_symbolic">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="407.5,-24 292.5,-24 292.5,-0 407.5,-0 407.5,-24"/>
+<text text-anchor="middle" x="350" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack_di_symbolic</text>
+</a>
+</g>
+</g>
+<!-- proc~s_umfpack_di_symbolic&#45;&gt;proc~umfpack_di_symbolic -->
+<g id="proc~~analyse_solver~~CallsGraph_edge7" class="edge"><title>proc~s_umfpack_di_symbolic&#45;&gt;proc~umfpack_di_symbolic</title>
+<path fill="none" stroke="#7f00ff" d="M246.379,-12C258.026,-12 270.242,-12 282.02,-12"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="282.233,-15.5001 292.233,-12 282.233,-8.5001 282.233,-15.5001"/>
 </g>
 <!-- interface~c_umfpack_di_symbolic -->
 <g id="proc~~analyse_solver~~CallsGraph_node9" class="node"><title>interface~c_umfpack_di_symbolic</title>
 <g id="a_proc~~analyse_solver~~CallsGraph_node9"><a xlink:href=".././interface/c_umfpack_di_symbolic.html" xlink:title="c_umfpack_di_symbolic">
-<polygon fill="#a7506f" stroke="#a7506f" points="580,-108 454,-108 454,-84 580,-84 580,-108"/>
-<text text-anchor="middle" x="517" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">c_umfpack_di_symbolic</text>
+<polygon fill="#a7506f" stroke="#a7506f" points="580,-24 454,-24 454,-0 580,-0 580,-24"/>
+<text text-anchor="middle" x="517" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">c_umfpack_di_symbolic</text>
 </a>
 </g>
 </g>
 <!-- proc~umfpack_di_symbolic&#45;&gt;interface~c_umfpack_di_symbolic -->
 <g id="proc~~analyse_solver~~CallsGraph_edge8" class="edge"><title>proc~umfpack_di_symbolic&#45;&gt;interface~c_umfpack_di_symbolic</title>
-<path fill="none" stroke="#ff0000" d="M407.784,-96C419.363,-96 431.694,-96 443.73,-96"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="443.747,-99.5001 453.747,-96 443.747,-92.5001 443.747,-99.5001"/>
+<path fill="none" stroke="#ff0000" d="M407.784,-12C419.363,-12 431.694,-12 443.73,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="443.747,-15.5001 453.747,-12 443.747,-8.5001 443.747,-15.5001"/>
 </g>
 </g>
 </svg>
@@ -683,7 +683,7 @@ public subroutine analyse_solver(mat)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2018-07-25 11:53  
+             on 2018-07-25 12:30  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> MSOLV-fortran was developed by Arthur Francisco - Noël Brunetière</p></div>
